@@ -31,21 +31,13 @@
           <br />
           <div class="no-print preamble">
             <div class="en_only">
-              <h2><i>***PROTOTYPE***</i><br/>Shelby County Employment Services</h2>
-              <p>
-                Click on one of the services below to see a list of organizations that provide that service.
+              <h2><i>***PROTOTYPE***</i><br/>Shelby County Employment Services Screener</h2>
+              <div class="target">
+              </div>
               </p>
             </div>
           </div>
           <br />
-          <form class="form">
-            <input type="radio" id="job_training" name="services" value="job_training">
-            <label for="job_training">Job Training</label><br>
-            <input type="radio" id="job_placement" name="services" value="job_placement">
-            <label for="job_placement">Job Placement</label><br>
-            <input type="radio" id="literacy" name="services" value="literacy">
-            <label for="javascript">Literacy (reading and/or writing)</label>
-          </form>
         </div>
       </div>
       <div class="providers">
@@ -58,5 +50,54 @@
   <script src="./popper.min.js"></script>
   <script src="./bootstrap.min.js"></script>
   <script src="./formflow.js"></script>
+
+  <div class="intro" hidden>
+    <h3>
+      Introduction 
+    </h3>
+    <p>
+      We’re going to ask you a few questions to help narrow down the 
+      most relevant non-profits. At the end of the screener you’ll be 
+      able to opt in to sharing your contact information. 
+      Opting in to sharing your information helps nonprofits to 
+      proactively get in touch with you.
+    </p>
+    <input type="button" id="next0" name="next0" value="Next"/>
+  </div>
+
+  <div class="q1" hidden>
+    <h3>
+      What is your ZIP code? 
+    </h3>
+    <input type="button" id="next1" name="next1" value="Next"/>
+  </div>
+
+  <div class="q2" hidden>
+    <h3>
+      What is your race? 
+    </h3>
+    <input type="button" id="next2" name="next2" value="Next"/>
+  </div>
+
+  <div class="q3" hidden>
+    <h3>
+      What is your gender? 
+    </h3>
+    <input type="button" id="next3" name="next3" value="Next"/>
+  </div>
+
+  <div class="summary" hidden>
+    <h3>
+      Summary to come... 
+    </h3>
+    <input type="button" id="next4" name="next4" value="Next"/>
+  </div>
+
+  <div class="matches" hidden>
+    <h3>
+      Matches to come... 
+    </h3>
+  </div>
+
 </body>
 </html>
