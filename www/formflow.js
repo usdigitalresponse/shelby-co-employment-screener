@@ -5,11 +5,22 @@ $(document).ready(function() {
       selection_handler.handle();
     });
   }
-  $("#zip_code").submit(function(event) {
-    selection_handler.client_data.zip_code = $("input").first().val();
-    selection_handler.handle();
-    event.preventDefault();
-  });
+  let question_form_ids = ['zip_code', 'race'];
+  for (let id of question_form_ids) {
+    $("#" + id).submit(function(event) {
+      switch (id) {
+        case 'zip_code':
+          selection_handler.client_data.zip_code = $("input").first().val();
+          break;
+        case 'race':
+          selection_handler.client_data.race = 
+                $('input[name=' + id + ']:checked', '#' + id).val();
+          break; 
+      }
+      selection_handler.handle();
+      event.preventDefault();
+    });
+  }
   selection_handler.handle();
 });
 
@@ -66,11 +77,16 @@ class SelectionHandler {
       "Prefer not to say"
     ]
   }
-  load(name, element) {
+  load(name) {
     switch (name) {
+      case 'q2' :
+        this.append_radios('race', this.race_types);
+        break;
       case 'summary' :
         let el = $(".summary_div");
-        el.text('Zip code: ' + this.client_data.zip_code);
+        el.empty();
+        el.append('<p>Zip code: ' + this.client_data.zip_code + '</p>');
+        el.append('<p>Race: ' + this.client_data.race + '</p>');
         break;
     } 
   }
@@ -89,14 +105,17 @@ class SelectionHandler {
     targetElem.show();
     next_elem.show();
   }
-  append_radio(target, id, name, value) {
-    target.append(
-      $('<input>').prop({
-          type: 'radio',
-          id: id,
-          name: name,
-          value: value
-      })
-    )
+  append_radios(id, vals) {
+    let el = $("#" + id);
+    el.empty();
+    for (let i = 0; i < vals.length; i++) {
+      let val = vals[i];
+      let re = /\W/g;
+      let the_name = val.replace(re, '_').substring(0, 20).toLowerCase();
+      el.append('<label><input type="radio" name="' + id + 
+        '" value="' + the_name + 
+        '" /> ' + val + '</label><br/>');
+    }
+    el.append('<input type="submit" value="Next">');
   }
 }
