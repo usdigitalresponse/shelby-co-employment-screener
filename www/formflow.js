@@ -5,7 +5,7 @@ $(document).ready(function() {
       selection_handler.handle();
     });
   }
-  let question_form_ids = ['zip_code', 'race'];
+  let question_form_ids = ['zip_code', 'race', 'gender'];
   for (let id of question_form_ids) {
     $("#" + id).submit(function(event) {
       switch (id) {
@@ -16,7 +16,11 @@ $(document).ready(function() {
           selection_handler.client_data.race = 
                 $('input[name=' + id + ']:checked', '#' + id).val();
           break; 
-      }
+        case 'gender':
+          selection_handler.client_data.gender = 
+                $('input[name=' + id + ']:checked', '#' + id).val();
+          break; 
+        }
       selection_handler.handle();
       event.preventDefault();
     });
@@ -82,11 +86,15 @@ class SelectionHandler {
       case 'q2' :
         this.append_radios('race', this.race_types);
         break;
+      case 'q3' :
+        this.append_radios('gender', this.gender_types);
+        break;
       case 'summary' :
         let el = $(".summary_div");
         el.empty();
         el.append('<p>Zip code: ' + this.client_data.zip_code + '</p>');
         el.append('<p>Race: ' + this.client_data.race + '</p>');
+        el.append('<p>Gender: ' + this.client_data.gender + '</p>');
         break;
     } 
   }
