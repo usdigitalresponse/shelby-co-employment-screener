@@ -80,6 +80,79 @@ class SelectionHandler {
       "No",
       "Prefer not to say"
     ]
+    this.providers = {
+      two_unique : {
+        name : "2Unique Community Salvation Foundation",
+        website : "https://www.2unique-csf.org ",
+        phone_number : "901-489-2386",
+        email : "Thisis2unique@gmail.com",
+        location : "Hickory Ridge Mall, C. D. Corporation 3743 S. Hickory Ridge Mall, Suite 494 Memphis, TN 38115",
+        gmap_link : "https://goo.gl/maps/GkfpfKmG2hNR4dTEA"
+      },
+      deaf_connect : {
+        name : "DeafConnect of the Mid-South, Inc.",
+        website : "https://www.deafconnect.org",
+        phone_number : "901-278-9307",
+        email : "natasha@deafconnect.org",
+        location : "6045 Shelby Oaks Dr., Memphis, TN 38134",
+        gmap_link : "https://goo.gl/maps/6n2XZUChBm7sWwDG6"
+      },
+      goodwill_excel : {
+        name : "Goodwill Excel Center Midsouth Inc.",
+        website : "https://www.goodwillmemphis.org/theexcelcenter",
+        phone_number : "901-323-6221",
+        email : "cmolinski@goodwillmemphis.org",
+        location : "6895 Stage Road, Memphis, TN 38133",
+        gmap_link : "https://goo.gl/maps/mknsLfa5qPEQYdoH9"
+      },
+      fresh_start : {
+        name : "A Fresh Start to a New Beginning",
+        website : "https://afreshstarttoanewbeginning.org",
+        phone_number : "901-690-0327",
+        email : "afreshstarttoanewbeginning@yahoo.com",
+        location : "",
+        gmap_link : ""
+      },
+      kingdom_community : {
+        name : "Kingdom Community Builders",
+        website : "https://www.facebook.com/KingdomCommunityBuilders",
+        phone_number : "",
+        email : "dongilbert876@gmail.com",
+        location : "",
+        gmap_link : ""
+      },
+      priority_teachers : {
+        name : "Priority Teachers University",
+        website : "https://www.priorityteachersuniversity.com",
+        phone_number : "901-209-2342",
+        email : "priorityteachersuniversity@gmail.com",
+        location : "2124 Democrat Rd, Memphis, TN 38132",
+        gmap_link : "https://goo.gl/maps/ktcDgiC629pJKdKH9"
+      }     
+    },
+    this.services = {
+      job_training : {
+        name : "Job training",
+        providers : [
+          this.providers.two_unique,
+          this.providers.fresh_start
+        ]
+      },
+      job_placement : {
+        name : "Job Placement",
+        providers : [
+          this.providers.fresh_start
+        ]
+      },
+      literacy : {
+        name : "Literacy (reading and/or writing)",
+        providers : [
+          this.providers.goodwill_excel,
+          this.providers.kingdom_community,
+          this.providers.priority_teachers
+        ]
+      }
+    }
   }
   load(name) {
     switch (name) {
@@ -96,7 +169,42 @@ class SelectionHandler {
         el.append('<p>Race: ' + this.client_data.race + '</p>');
         el.append('<p>Gender: ' + this.client_data.gender + '</p>');
         break;
-    } 
+      case 'matches' :
+        this.show_matches();
+        break;
+      } 
+  }
+  make_link(tag, url) {
+    let ret = '<a href="';
+    if (tag) {
+      ret += tag + ':';
+    }
+    ret += (url + '">' + url + '</a>');
+    return ret;
+  }
+  load_provider(el, provider) {
+    el.append('<br/><b>' + provider.name + '</b>');
+    if (provider.phone_number) {
+      let pn = '1' + provider.phone_number.replaceAll('-', '');
+      el.append('<br/><a href="tel:' + pn + '">' + provider.phone_number + '</a>');
+    }
+    if (provider.email) {
+      el.append('<br/>' + this.make_link('email', provider.email));
+    }
+    if (provider.website) {
+      el.append('<br/>' + this.make_link('', provider.website));
+    }
+    if (provider.location) { // TODO: figure out whether add a _blank to open a new tab.
+      el.append('<br/><p><a href="' + provider.gmap_link + '">' +
+                provider.location + '</a></p>');
+    }
+}
+  show_matches() {
+    let el = $(".matches_div");
+    el.empty();
+    this.load_provider(el, this.providers.two_unique);
+    this.load_provider(el, this.providers.goodwill_excel);
+    this.load_provider(el, this.providers.priority_teachers);
   }
   handle() {
     let targetElem = $(".target");
