@@ -189,7 +189,7 @@ class SelectionHandler {
       el.append('<br/><a href="tel:' + pn + '">' + provider.phone_number + '</a>');
     }
     if (provider.email) {
-      el.append('<br/>' + this.make_link('email', provider.email));
+      el.append('<br/>' + this.make_link('mailto', provider.email));
     }
     if (provider.website) {
       el.append('<br/>' + this.make_link('', provider.website));
