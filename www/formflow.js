@@ -14,11 +14,11 @@ $(document).ready(function() {
           break;
         case 'race':
           selection_handler.client_data.race = 
-                $('input[name=' + id + ']:checked', '#' + id).val();
+                $('input[name=' + id + ']:checked', '#' + id).parent().text();
           break; 
         case 'gender':
           selection_handler.client_data.gender = 
-                $('input[name=' + id + ']:checked', '#' + id).val();
+                $('input[name=' + id + ']:checked', '#' + id).parent().text();
           break; 
         }
       selection_handler.handle();
