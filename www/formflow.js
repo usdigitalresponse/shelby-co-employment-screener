@@ -179,9 +179,9 @@ class SelectionHandler {
       case 'summary' :
         let el = $(".summary_div");
         el.empty();
-        el.append('<p>Zip code: ' + this.client_data.zip_code + '</p>');
-        el.append('<p>Race: ' + this.client_data.race + '</p>');
-        el.append('<p>Gender: ' + this.client_data.gender + '</p>');
+        el.append('<p><b>Zip code</b>: ' + this.client_data.zip_code + '</p>');
+        el.append('<p><b>Race</b>: ' + this.client_data.race + '</p>');
+        el.append('<p><b>Gender</b>: ' + this.client_data.gender + '</p>');
         break;
       case 'matches' :
         this.show_matches();
@@ -197,19 +197,19 @@ class SelectionHandler {
     return ret;
   }
   load_provider(el, provider) {
-    el.append('<br/><b>' + provider.name + '</b>');
+    el.append('<br/><b><i>' + provider.name + '</i></b>');
     if (provider.phone_number) {
       let pn = '1' + provider.phone_number.replaceAll('-', '');
-      el.append('<br/><a href="tel:' + pn + '">' + provider.phone_number + '</a>');
+      el.append('<br/><b>Phone Number</b>: <a href="tel:' + pn + '">' + provider.phone_number + '</a>');
     }
     if (provider.email) {
-      el.append('<br/>' + this.make_link('mailto', provider.email));
+      el.append('<br/><b>Email</b>: ' + this.make_link('mailto', provider.email));
     }
     if (provider.website) {
-      el.append('<br/>' + this.make_link('', provider.website));
+      el.append('<br/><b>Website</b>: ' + this.make_link('', provider.website));
     }
     if (provider.location) { // TODO: figure out whether add a _blank to open a new tab.
-      el.append('<br/><p><a href="' + provider.gmap_link + '">' +
+      el.append('<br/><p><b>Location</b>: <a href="' + provider.gmap_link + '">' +
                 provider.location + '</a></p>');
     }
 }
