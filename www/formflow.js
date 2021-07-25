@@ -8,20 +8,34 @@ $(document).ready(function() {
   let question_form_ids = ['zip_code', 'race', 'gender'];
   for (let id of question_form_ids) {
     $("#" + id).submit(function(event) {
+      let do_continue = false;
+      let val;
       switch (id) {
         case 'zip_code':
-          selection_handler.client_data.zip_code = $("input").first().val();
+          val = $("input").first().val();
+          if (val) {
+            selection_handler.client_data.zip_code = $("input").first().val();
+            do_continue = true;
+          }
           break;
         case 'race':
-          selection_handler.client_data.race = 
-                $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          if (val) {
+            selection_handler.client_data.race = val;
+            do_continue = true;
+          }
           break; 
         case 'gender':
-          selection_handler.client_data.gender = 
-                $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          if (val) {
+            selection_handler.client_data.gender = val;
+            do_continue = true;
+          }
           break; 
-        }
-      selection_handler.handle();
+      }
+      if (do_continue) {
+        selection_handler.handle();
+      }
       event.preventDefault();
     });
   }
