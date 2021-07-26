@@ -94,6 +94,253 @@ class SelectionHandler {
       "No",
       "Prefer not to say"
     ]
+    this.provider_data2 =  {
+      "Shelby County Office of Reentry": {
+        "email": "Harold.Collins@shelbycountytn.gov",
+        "url": "https://reentry.shelbycountytn.gov/",
+        "services": [
+          "Job training",
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Supportive services (e.g., housing)",
+          "Certifications"
+        ]
+      },
+      "Shelby County Division of Community Services": {
+        "email": "janet.lo@shelbycountytn.gov",
+        "url": "https://shelbycountytn.gov/16/Community-Services",
+        "services": [
+          "Supportive services (e.g., housing)",
+          "Total services indicated"
+        ]
+      },
+      "Tech901": {
+        "email": "robert@tech901.org",
+        "url": "tech901.org",
+        "services": [
+          "Job training",
+          "Employability/job readiness skills (e.g., making a resume)"
+        ]
+      },
+      "The Collective Blueprint": {
+        "email": "Sarah@changeiscollective.org",
+        "url": "www.thecollectiveblueprint.org",
+        "services": [
+          "Job training",
+          "Job placement",
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Supportive services (e.g., housing)",
+          "Certifications"
+        ]
+      },
+      "Greater Memphis Financial Empowerment Center & Bank on Memphis Coalition": {
+        "email": "mpolatty@shelbycountytrustee.com",
+        "url": "www.gmfec.org ; www.bankonmemphis.org",
+        "services": [
+          "Financial counseling",
+          "Total services indicated"
+        ]
+      },
+      "Goodwill Excel Center Midsouth Inc.": {
+        "email": "cmolinski@goodwillmemphis.org",
+        "url": "https://www.goodwillmemphis.org/theexcelcenter",
+        "services": [
+          "Job placement",
+          "Literacy (reading and/or writing)",
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Access to technology",
+          "Supportive services (e.g., housing)",
+          "Education - high school",
+          "Certifications"
+        ]
+      },
+      "DeafConnect of the Mid-South, Inc.": {
+        "email": "natasha@deafconnect.org",
+        "url": "www.deafconnect.org",
+        "services": [
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Supportive services (e.g., housing)"
+        ]
+      },
+      "HopeWorks": {
+        "email": "rwade@whyhopeworks.org",
+        "url": "www.whyhopeworks.org",
+        "services": [
+          "Job training",
+          "Job placement",
+          "Education - GED",
+          "Job training",
+          "Job placement",
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Financial counseling",
+          "Education - GED"
+        ]
+      },
+      "2Unique Community Salvation Foundation ": {
+        "email": "Thisis2unique@gmail.com",
+        "url": "www.2unique-csf.org ",
+        "services": [
+          "Job training",
+          "Job placement",
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Supportive services (e.g., housing)",
+          "Networking",
+          "Financial counseling",
+          "Mentorship"
+        ]
+      },
+      "M I C A H  - Memphis Interfaith Coalition for Action and Hope": {
+        "email": "curtis@micahmemphis.org",
+        "url": "https://www.micahmemphis.org/",
+        "services": [
+          "Supportive services (e.g., housing)",
+          "Networking",
+          "Financial counseling",
+          "Education - high school"
+        ]
+      },
+      "Kingdom Community Builders": {
+        "email": "dongilbert876@gmail.com",
+        "url": "https://www.facebook.com/KingdomCommunityBuilders",
+        "services": [
+          "Literacy (reading and/or writing)",
+          "Total services indicated"
+        ]
+      },
+      "World Relief Memphis": {
+        "email": "dprovidence@wr.org",
+        "url": "https://worldreliefmemphis.org/",
+        "services": [
+          "Job placement",
+          "Literacy (reading and/or writing)",
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Supportive services (e.g., housing)"
+        ]
+      },
+      "Priority Teachers University": {
+        "email": "Tinieka41@gmail.com",
+        "url": "www.priorityteachersuniversity.com",
+        "services": [
+          "Job training",
+          "Job placement",
+          "Literacy (reading and/or writing)",
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Financial counseling",
+          "Education - GED"
+        ]
+      },
+      "RIVERVIEW-KANSAS COMMUNITY DEVELOPMENT CORPORATION": {
+        "email": "riverviewkansascdc@gmail.com",
+        "url": "Melrose Place Apts",
+        "services": [
+          "Supportive services (e.g., housing)",
+          "Total services indicated"
+        ]
+      },
+      "RISE Foundation, Inc.": {
+        "email": "kimberly@risememphis.org",
+        "url": "www.risememphis.org",
+        "services": [
+          "Financial counseling",
+          "Mentorship"
+        ]
+      },
+      "A Fresh Start to a New Beginning": {
+        "email": "greennadja@yahoo.com",
+        "url": "afreshstarttoanewbeginning.org",
+        "services": [
+          "Job training",
+          "Job placement",
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Access to technology",
+          "Supportive services (e.g., housing)",
+          "Financial counseling",
+          "Education - GED"
+        ]
+      },
+      "BLDG Memphis": {
+        "email": "courtney@bldgmemphis.org",
+        "url": "https://www.bldgmemphis.org/",
+        "services": []
+      },
+      "Greater Whitehaven Economic Redevelopment Corporation": {
+        "email": "mharris@gwercmemphis.org",
+        "url": "Www.gwercmemphis.org",
+        "services": [
+          "Job training",
+          "Job placement",
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Financial counseling",
+          "Mentorship",
+          "Certifications"
+        ]
+      },
+      "Persevere": {
+        "email": "sbooks@perseverenow.org",
+        "url": "www.perseverenow.org",
+        "services": [
+          "Job training",
+          "Job placement",
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Supportive services (e.g., housing)",
+          "Financial counseling",
+          "Certifications"
+        ]
+      },
+      "Leadership Memphis": {
+        "email": "ahill@leadershipmemphis.org",
+        "url": "Www.leadershipmemphis.org; www.volunteermemphis.org",
+        "services": [
+          "Networking",
+          "Total services indicated"
+        ]
+      },
+      "Refuge Memphis": {
+        "email": "niki.schoggen@refuge-memphis.org",
+        "url": "www.refuge-memphis.org",
+        "services": [
+          "Financial counseling",
+          "Mentorship"
+        ]
+      },
+      "Let's Innovate Through Education (LITE Memphis)": {
+        "email": "lakethia@litememphis.org",
+        "url": "www.litememphis.org",
+        "services": [
+          "Job training",
+          "Education - high school"
+        ]
+      },
+      "Power Center CDC": {
+        "email": "Brodywamble@gmail.com",
+        "url": "www.Powercenter.org",
+        "services": [
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Supportive services (e.g., housing)",
+          "Financial counseling"
+        ]
+      },
+      "Alzheimer's and Dementia Services of Memphis": {
+        "email": "bquran@adsmemphis.org",
+        "url": "adsmemphis.org",
+        "services": []
+      },
+      "Heights Community Development Corp": {
+        "email": "christina@heightscdc.org",
+        "url": "Heightscdc.org",
+        "services": [
+          "Job training",
+          "Employability/job readiness skills (e.g., making a resume)",
+          "Supportive services (e.g., housing)",
+          "Networking",
+          "Mentorship"
+        ]
+      },
+      "": {
+        "email": "",
+        "url": "",
+        "services": []
+      }
+    }
     this.providers = {
       two_unique : {
         name : "2Unique Community Salvation Foundation",
