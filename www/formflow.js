@@ -94,7 +94,7 @@ class SelectionHandler {
       "No",
       "Prefer not to say"
     ]
-    this.provider_data2 =  {
+    this.provider_data =  {
       "Shelby County Office of Reentry": {
         "email": "Harold.Collins@shelbycountytn.gov",
         "url": "https://reentry.shelbycountytn.gov/",
@@ -143,6 +143,10 @@ class SelectionHandler {
       "Goodwill Excel Center Midsouth Inc.": {
         "email": "cmolinski@goodwillmemphis.org",
         "url": "https://www.goodwillmemphis.org/theexcelcenter",
+        "website" : "https://www.goodwillmemphis.org/theexcelcenter",
+        "phone_number" : "901-323-6221",
+        "location" : "6895 Stage Road, Memphis, TN 38133",
+        "gmap_link" : "https://goo.gl/maps/mknsLfa5qPEQYdoH9",
         "services": [
           "Job placement",
           "Literacy (reading and/or writing)",
@@ -156,6 +160,10 @@ class SelectionHandler {
       "DeafConnect of the Mid-South, Inc.": {
         "email": "natasha@deafconnect.org",
         "url": "www.deafconnect.org",
+        "website" : "https://www.deafconnect.org",
+        "phone_number" : "901-278-9307",
+        "location" : "6045 Shelby Oaks Dr., Memphis, TN 38134",
+        "gmap_link" : "https://goo.gl/maps/6n2XZUChBm7sWwDG6",
         "services": [
           "Employability/job readiness skills (e.g., making a resume)",
           "Supportive services (e.g., housing)"
@@ -178,6 +186,10 @@ class SelectionHandler {
       "2Unique Community Salvation Foundation ": {
         "email": "Thisis2unique@gmail.com",
         "url": "www.2unique-csf.org ",
+        "website" : "https://www.2unique-csf.org ",
+        "phone_number" : "901-489-2386",
+        "location" : "Hickory Ridge Mall, C. D. Corporation 3743 S. Hickory Ridge Mall, Suite 494 Memphis, TN 38115",
+        "gmap_link" : "https://goo.gl/maps/GkfpfKmG2hNR4dTEA",
         "services": [
           "Job training",
           "Job placement",
@@ -201,6 +213,10 @@ class SelectionHandler {
       "Kingdom Community Builders": {
         "email": "dongilbert876@gmail.com",
         "url": "https://www.facebook.com/KingdomCommunityBuilders",
+        "website" : "https://www.facebook.com/KingdomCommunityBuilders",
+        "phone_number" : "",
+        "location" : "",
+        "gmap_link" : "",
         "services": [
           "Literacy (reading and/or writing)",
           "Total services indicated"
@@ -217,8 +233,12 @@ class SelectionHandler {
         ]
       },
       "Priority Teachers University": {
-        "email": "Tinieka41@gmail.com",
+        "email": "priorityteachersuniversity@gmail.com",
         "url": "www.priorityteachersuniversity.com",
+        "website" : "https://www.priorityteachersuniversity.com",
+        "phone_number" : "901-209-2342",
+        "location" : "2124 Democrat Rd, Memphis, TN 38132",
+        "gmap_link" : "https://goo.gl/maps/ktcDgiC629pJKdKH9",
         "services": [
           "Job training",
           "Job placement",
@@ -245,8 +265,12 @@ class SelectionHandler {
         ]
       },
       "A Fresh Start to a New Beginning": {
-        "email": "greennadja@yahoo.com",
+        "email": "afreshstarttoanewbeginning@yahoo.com",
         "url": "afreshstarttoanewbeginning.org",
+        "website" : "https://afreshstarttoanewbeginning.org",
+        "phone_number" : "901-690-0327",
+        "location" : "",
+        "gmap_link" : "",
         "services": [
           "Job training",
           "Job placement",
@@ -341,79 +365,6 @@ class SelectionHandler {
         "services": []
       }
     }
-    this.providers = {
-      two_unique : {
-        name : "2Unique Community Salvation Foundation",
-        website : "https://www.2unique-csf.org ",
-        phone_number : "901-489-2386",
-        email : "Thisis2unique@gmail.com",
-        location : "Hickory Ridge Mall, C. D. Corporation 3743 S. Hickory Ridge Mall, Suite 494 Memphis, TN 38115",
-        gmap_link : "https://goo.gl/maps/GkfpfKmG2hNR4dTEA"
-      },
-      deaf_connect : {
-        name : "DeafConnect of the Mid-South, Inc.",
-        website : "https://www.deafconnect.org",
-        phone_number : "901-278-9307",
-        email : "natasha@deafconnect.org",
-        location : "6045 Shelby Oaks Dr., Memphis, TN 38134",
-        gmap_link : "https://goo.gl/maps/6n2XZUChBm7sWwDG6"
-      },
-      goodwill_excel : {
-        name : "Goodwill Excel Center Midsouth Inc.",
-        website : "https://www.goodwillmemphis.org/theexcelcenter",
-        phone_number : "901-323-6221",
-        email : "cmolinski@goodwillmemphis.org",
-        location : "6895 Stage Road, Memphis, TN 38133",
-        gmap_link : "https://goo.gl/maps/mknsLfa5qPEQYdoH9"
-      },
-      fresh_start : {
-        name : "A Fresh Start to a New Beginning",
-        website : "https://afreshstarttoanewbeginning.org",
-        phone_number : "901-690-0327",
-        email : "afreshstarttoanewbeginning@yahoo.com",
-        location : "",
-        gmap_link : ""
-      },
-      kingdom_community : {
-        name : "Kingdom Community Builders",
-        website : "https://www.facebook.com/KingdomCommunityBuilders",
-        phone_number : "",
-        email : "dongilbert876@gmail.com",
-        location : "",
-        gmap_link : ""
-      },
-      priority_teachers : {
-        name : "Priority Teachers University",
-        website : "https://www.priorityteachersuniversity.com",
-        phone_number : "901-209-2342",
-        email : "priorityteachersuniversity@gmail.com",
-        location : "2124 Democrat Rd, Memphis, TN 38132",
-        gmap_link : "https://goo.gl/maps/ktcDgiC629pJKdKH9"
-      }     
-    },
-    this.services = {
-      job_training : {
-        name : "Job training",
-        providers : [
-          this.providers.two_unique,
-          this.providers.fresh_start
-        ]
-      },
-      job_placement : {
-        name : "Job Placement",
-        providers : [
-          this.providers.fresh_start
-        ]
-      },
-      literacy : {
-        name : "Literacy (reading and/or writing)",
-        providers : [
-          this.providers.goodwill_excel,
-          this.providers.kingdom_community,
-          this.providers.priority_teachers
-        ]
-      }
-    }
   }
   load(name) {
     switch (name) {
@@ -443,29 +394,30 @@ class SelectionHandler {
     ret += (url + '">' + url + '</a>');
     return ret;
   }
-  load_provider(el, provider) {
-    el.append('<br/><b><i>' + provider.name + '</i></b>');
-    if (provider.phone_number) {
-      let pn = '1' + provider.phone_number.replaceAll('-', '');
-      el.append('<br/><b>Phone Number</b>: <a href="tel:' + pn + '">' + provider.phone_number + '</a>');
+  load_provider(el, provider_name) {
+    let provider = this.provider_data[provider_name];
+    el.append('<br/><b><i>' + provider_name + '</i></b>');
+    if (provider["phone_number"]) {
+      let pn = '1' + provider["phone_number"].replaceAll('-', '');
+      el.append('<br/><b>Phone Number</b>: <a href="tel:' + pn + '">' + provider["phone_number"] + '</a>');
     }
-    if (provider.email) {
-      el.append('<br/><b>Email</b>: ' + this.make_link('mailto', provider.email));
+    if (provider["email"]) {
+      el.append('<br/><b>Email</b>: ' + this.make_link('mailto', provider["email"]));
     }
-    if (provider.website) {
-      el.append('<br/><b>Website</b>: ' + this.make_link('', provider.website));
+    if (provider["website"]) {
+      el.append('<br/><b>Website</b>: ' + this.make_link('', provider["website"]));
     }
-    if (provider.location) { // TODO: figure out whether add a _blank to open a new tab.
-      el.append('<br/><p><b>Location</b>: <a href="' + provider.gmap_link + '">' +
-                provider.location + '</a></p>');
+    if (provider["location"]) { // TODO: figure out whether add a _blank to open a new tab.
+      el.append('<br/><p><b>Location</b>: <a href="' + provider["gmap_link"] + '">' +
+      provider["location"] + '</a></p>');
     }
 }
   show_matches() {
     let el = $(".matches_div");
     el.empty();
-    this.load_provider(el, this.providers.two_unique);
-    this.load_provider(el, this.providers.goodwill_excel);
-    this.load_provider(el, this.providers.priority_teachers);
+    this.load_provider(el, "2Unique Community Salvation Foundation ");
+    this.load_provider(el, "Goodwill Excel Center Midsouth Inc.");
+    this.load_provider(el, "Priority Teachers University");
   }
   handle() {
     let targetElem = $(".target");
