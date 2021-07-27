@@ -5,13 +5,17 @@ class ProviderDataExtractor {
     let nameIndex = providerInfo.columnIndex('What is the name of the organization?');
     let emailIndex = providerInfo.columnIndex('Email address');
     let urlIndex = providerInfo.columnIndex('Please provide the link to the organization’s website.  ');
+    let clientTypeIndex = providerInfo.columnIndex('If you answered YES to the previous question, which specific population(s) does the organization serve? '); 
     let iter = new SheetRowIterator(providerInfo);
     let row;
     while (row = iter.getNextRow()) {
       let name = row[nameIndex];
       let emailVal = row[emailIndex];
       let urlVal = row[urlIndex];
-      providers[name] = { email : emailVal, url : urlVal, services : [] };
+      let client_quals = row[clientTypeIndex];
+      providers[name] = { email : emailVal, website : urlVal,
+                          phone_number : '', location : '', gmap_link : '',
+                          services : [], client_qualifications: client_quals };
     }
     return providers;
   }
@@ -39,6 +43,13 @@ class ProviderDataExtractor {
     const providerServicesTabName = 'Services provided - categorized';
     let providerServices = new SheetClass(providerServicesTabName, providerWorkbookId);
     this.loadProviderServices(providerServices, providers);
+    let providers2 = {};
+    let keys = Object.keys(providers);
+    for (let i = 0; i < Object.keys(providers).length / 2; i++) {
+      providers2[keys[i]] = providers[keys[i]];
+      delete providers[keys[i]];
+    }
+    console.log(JSON.stringify(providers2));
     console.log(JSON.stringify(providers));
   }
 }
