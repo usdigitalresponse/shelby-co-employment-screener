@@ -14,7 +14,6 @@ class ProviderDataExtractor {
       let urlVal = row[urlIndex];
       let client_quals = row[clientTypeIndex];
       providers[name] = { email : emailVal, website : urlVal,
-                          phone_number : '', location : '', gmap_link : '',
                           services : [], client_qualifications: client_quals };
     }
     return providers;
