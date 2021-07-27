@@ -42,8 +42,15 @@ class ProviderDataExtractor {
     const providerServicesTabName = 'Services provided - categorized';
     let providerServices = new SheetClass(providerServicesTabName, providerWorkbookId);
     this.loadProviderServices(providerServices, providers);
-    let providers2 = {};
+
     let keys = Object.keys(providers);
+    let template_providers = {};
+    for (let i = 0; i < Object.keys(providers).length; i++) {
+      template_providers[keys[i]] = { phone_number : '', location : '', gmap_link : '' };
+    }
+    console.log(JSON.stringify(template_providers));
+
+    let providers2 = {};
     for (let i = 0; i < Object.keys(providers).length / 2; i++) {
       providers2[keys[i]] = providers[keys[i]];
       delete providers[keys[i]];
