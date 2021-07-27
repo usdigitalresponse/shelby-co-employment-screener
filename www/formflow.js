@@ -94,59 +94,60 @@ class SelectionHandler {
       "No",
       "Prefer not to say"
     ]
-    this.provider_data =  {
+    this.provider_data = {
       "Shelby County Office of Reentry": {
         "email": "Harold.Collins@shelbycountytn.gov",
-        "url": "https://reentry.shelbycountytn.gov/",
+        "website": "https://reentry.shelbycountytn.gov/",
         "services": [
           "Job training",
           "Employability/job readiness skills (e.g., making a resume)",
           "Supportive services (e.g., housing)",
           "Certifications"
-        ]
+        ],
+        "client_qualifications": "Person that are criminal justice involved/formerly incarcerated"
       },
       "Shelby County Division of Community Services": {
         "email": "janet.lo@shelbycountytn.gov",
-        "url": "https://shelbycountytn.gov/16/Community-Services",
+        "website": "https://shelbycountytn.gov/16/Community-Services",
         "services": [
           "Supportive services (e.g., housing)",
           "Total services indicated"
-        ]
+        ],
+        "client_qualifications": ""
       },
       "Tech901": {
         "email": "robert@tech901.org",
-        "url": "tech901.org",
+        "website": "tech901.org",
         "services": [
           "Job training",
           "Employability/job readiness skills (e.g., making a resume)"
-        ]
+        ],
+        "client_qualifications": "Adults in the Memphis area"
       },
       "The Collective Blueprint": {
         "email": "Sarah@changeiscollective.org",
-        "url": "www.thecollectiveblueprint.org",
+        "website": "www.thecollectiveblueprint.org",
         "services": [
           "Job training",
           "Job placement",
           "Employability/job readiness skills (e.g., making a resume)",
           "Supportive services (e.g., housing)",
           "Certifications"
-        ]
+        ],
+        "client_qualifications": "18-30 year olds who are / have been out of school and work "
       },
       "Greater Memphis Financial Empowerment Center & Bank on Memphis Coalition": {
         "email": "mpolatty@shelbycountytrustee.com",
-        "url": "www.gmfec.org ; www.bankonmemphis.org",
+        "website": "www.gmfec.org ; www.bankonmemphis.org",
         "services": [
           "Financial counseling",
           "Total services indicated"
-        ]
+        ],
+        "client_qualifications": "18+ Shelby County Residents"
       },
       "Goodwill Excel Center Midsouth Inc.": {
         "email": "cmolinski@goodwillmemphis.org",
-        "url": "https://www.goodwillmemphis.org/theexcelcenter",
-        "website" : "https://www.goodwillmemphis.org/theexcelcenter",
-        "phone_number" : "901-323-6221",
-        "location" : "6895 Stage Road, Memphis, TN 38133",
-        "gmap_link" : "https://goo.gl/maps/mknsLfa5qPEQYdoH9",
+        "website": "https://www.goodwillmemphis.org/theexcelcenter",
         "services": [
           "Job placement",
           "Literacy (reading and/or writing)",
@@ -155,23 +156,21 @@ class SelectionHandler {
           "Supportive services (e.g., housing)",
           "Education - high school",
           "Certifications"
-        ]
+        ],
+        "client_qualifications": "Shelby County"
       },
       "DeafConnect of the Mid-South, Inc.": {
         "email": "natasha@deafconnect.org",
-        "url": "www.deafconnect.org",
-        "website" : "https://www.deafconnect.org",
-        "phone_number" : "901-278-9307",
-        "location" : "6045 Shelby Oaks Dr., Memphis, TN 38134",
-        "gmap_link" : "https://goo.gl/maps/6n2XZUChBm7sWwDG6",
+        "website": "www.deafconnect.org",
         "services": [
           "Employability/job readiness skills (e.g., making a resume)",
           "Supportive services (e.g., housing)"
-        ]
+        ],
+        "client_qualifications": "D/deaf and Hard of Hearing community"
       },
       "HopeWorks": {
         "email": "rwade@whyhopeworks.org",
-        "url": "www.whyhopeworks.org",
+        "website": "www.whyhopeworks.org",
         "services": [
           "Job training",
           "Job placement",
@@ -181,15 +180,12 @@ class SelectionHandler {
           "Employability/job readiness skills (e.g., making a resume)",
           "Financial counseling",
           "Education - GED"
-        ]
+        ],
+        "client_qualifications": "Generational Poverty, Incarceration, High School Drop Outs"
       },
       "2Unique Community Salvation Foundation ": {
         "email": "Thisis2unique@gmail.com",
-        "url": "www.2unique-csf.org ",
-        "website" : "https://www.2unique-csf.org ",
-        "phone_number" : "901-489-2386",
-        "location" : "Hickory Ridge Mall, C. D. Corporation 3743 S. Hickory Ridge Mall, Suite 494 Memphis, TN 38115",
-        "gmap_link" : "https://goo.gl/maps/GkfpfKmG2hNR4dTEA",
+        "website": "www.2unique-csf.org ",
         "services": [
           "Job training",
           "Job placement",
@@ -198,47 +194,43 @@ class SelectionHandler {
           "Networking",
           "Financial counseling",
           "Mentorship"
-        ]
+        ],
+        "client_qualifications": "Youth, non-college, hs dropouts "
       },
       "M I C A H  - Memphis Interfaith Coalition for Action and Hope": {
-        "email": "curtis@micahmemphis.org",
-        "url": "https://www.micahmemphis.org/",
+          "email": "curtis@micahmemphis.org",
+        "website": "https://www.micahmemphis.org/",
         "services": [
           "Supportive services (e.g., housing)",
           "Networking",
           "Financial counseling",
           "Education - high school"
-        ]
+        ],
+        "client_qualifications": "Our current platform concentrates on three pillar issues, economic equity, education equity, and race & class equity in the justice system. The purpose of MICAH is not to replace each congregation or community organization's efforts, but instead to amplify the voice and the impact by working together interdependently. "
       },
       "Kingdom Community Builders": {
         "email": "dongilbert876@gmail.com",
-        "url": "https://www.facebook.com/KingdomCommunityBuilders",
-        "website" : "https://www.facebook.com/KingdomCommunityBuilders",
-        "phone_number" : "",
-        "location" : "",
-        "gmap_link" : "",
+        "website": "https://www.facebook.com/KingdomCommunityBuilders",
         "services": [
           "Literacy (reading and/or writing)",
           "Total services indicated"
-        ]
+        ],
+        "client_qualifications": "We serve a particular African-American community in Memphis"
       },
       "World Relief Memphis": {
         "email": "dprovidence@wr.org",
-        "url": "https://worldreliefmemphis.org/",
+        "website": "https://worldreliefmemphis.org/",
         "services": [
           "Job placement",
           "Literacy (reading and/or writing)",
           "Employability/job readiness skills (e.g., making a resume)",
           "Supportive services (e.g., housing)"
-        ]
+        ],
+        "client_qualifications": "World Relief Memphis (WRM) serves Refugees and other Office of Refugee Resettlement (ORR) eligible immigrants. (Refugees, Asylees, Cuban/Haitian Entrants, Victims of Human Trafficking, Special Immigrant Visas, Amerasians) "
       },
       "Priority Teachers University": {
-        "email": "priorityteachersuniversity@gmail.com",
-        "url": "www.priorityteachersuniversity.com",
-        "website" : "https://www.priorityteachersuniversity.com",
-        "phone_number" : "901-209-2342",
-        "location" : "2124 Democrat Rd, Memphis, TN 38132",
-        "gmap_link" : "https://goo.gl/maps/ktcDgiC629pJKdKH9",
+        "email": "Tinieka41@gmail.com",
+        "website": "www.priorityteachersuniversity.com",
         "services": [
           "Job training",
           "Job placement",
@@ -246,31 +238,30 @@ class SelectionHandler {
           "Employability/job readiness skills (e.g., making a resume)",
           "Financial counseling",
           "Education - GED"
-        ]
+        ],
+        "client_qualifications": ""
       },
       "RIVERVIEW-KANSAS COMMUNITY DEVELOPMENT CORPORATION": {
         "email": "riverviewkansascdc@gmail.com",
-        "url": "Melrose Place Apts",
+        "website": "Melrose Place Apts",
         "services": [
           "Supportive services (e.g., housing)",
           "Total services indicated"
-        ]
+        ],
+        "client_qualifications": ""
       },
       "RISE Foundation, Inc.": {
         "email": "kimberly@risememphis.org",
-        "url": "www.risememphis.org",
+        "website": "www.risememphis.org",
         "services": [
           "Financial counseling",
           "Mentorship"
-        ]
+        ],
+        "client_qualifications": "under-served community in 38126 ranging from 5th grade to senior citizens "
       },
       "A Fresh Start to a New Beginning": {
-        "email": "afreshstarttoanewbeginning@yahoo.com",
-        "url": "afreshstarttoanewbeginning.org",
-        "website" : "https://afreshstarttoanewbeginning.org",
-        "phone_number" : "901-690-0327",
-        "location" : "",
-        "gmap_link" : "",
+        "email": "greennadja@yahoo.com",
+        "website": "afreshstarttoanewbeginning.org",
         "services": [
           "Job training",
           "Job placement",
@@ -279,16 +270,18 @@ class SelectionHandler {
           "Supportive services (e.g., housing)",
           "Financial counseling",
           "Education - GED"
-        ]
+        ],
+        "client_qualifications": "Formerly incarcerated adults"
       },
       "BLDG Memphis": {
         "email": "courtney@bldgmemphis.org",
-        "url": "https://www.bldgmemphis.org/",
-        "services": []
+        "website": "https://www.bldgmemphis.org/",
+        "services": [],
+        "client_qualifications": "N/A "
       },
       "Greater Whitehaven Economic Redevelopment Corporation": {
         "email": "mharris@gwercmemphis.org",
-        "url": "Www.gwercmemphis.org",
+        "website": "Www.gwercmemphis.org",
         "services": [
           "Job training",
           "Job placement",
@@ -296,11 +289,12 @@ class SelectionHandler {
           "Financial counseling",
           "Mentorship",
           "Certifications"
-        ]
+        ],
+        "client_qualifications": "Residents and stakeholders in 38116 and 38109"
       },
       "Persevere": {
         "email": "sbooks@perseverenow.org",
-        "url": "www.perseverenow.org",
+        "website": "www.perseverenow.org",
         "services": [
           "Job training",
           "Job placement",
@@ -308,61 +302,192 @@ class SelectionHandler {
           "Supportive services (e.g., housing)",
           "Financial counseling",
           "Certifications"
-        ]
+        ],
+        "client_qualifications": ""
       },
       "Leadership Memphis": {
         "email": "ahill@leadershipmemphis.org",
-        "url": "Www.leadershipmemphis.org; www.volunteermemphis.org",
+        "website": "Www.leadershipmemphis.org; www.volunteermemphis.org",
         "services": [
           "Networking",
           "Total services indicated"
-        ]
+        ],
+        "client_qualifications": "Na"
       },
       "Refuge Memphis": {
         "email": "niki.schoggen@refuge-memphis.org",
-        "url": "www.refuge-memphis.org",
+        "website": "www.refuge-memphis.org",
         "services": [
           "Financial counseling",
           "Mentorship"
-        ]
+        ],
+        "client_qualifications": ""
       },
       "Let's Innovate Through Education (LITE Memphis)": {
         "email": "lakethia@litememphis.org",
-        "url": "www.litememphis.org",
+        "website": "www.litememphis.org",
         "services": [
           "Job training",
           "Education - high school"
-        ]
+        ],
+        "client_qualifications": "African American and Latinx High School Students"
       },
       "Power Center CDC": {
         "email": "Brodywamble@gmail.com",
-        "url": "www.Powercenter.org",
+        "website": "www.Powercenter.org",
         "services": [
           "Employability/job readiness skills (e.g., making a resume)",
           "Supportive services (e.g., housing)",
           "Financial counseling"
-        ]
+        ],
+        "client_qualifications": "Hickory Hill"
       },
       "Alzheimer's and Dementia Services of Memphis": {
         "email": "bquran@adsmemphis.org",
-        "url": "adsmemphis.org",
-        "services": []
+        "website": "adsmemphis.org",
+        "services": [],
+        "client_qualifications": "People with Dementia and Alzheimer's"
       },
       "Heights Community Development Corp": {
         "email": "christina@heightscdc.org",
-        "url": "Heightscdc.org",
+        "website": "Heightscdc.org",
         "services": [
           "Job training",
           "Employability/job readiness skills (e.g., making a resume)",
           "Supportive services (e.g., housing)",
           "Networking",
           "Mentorship"
-        ]
+        ],
+        "client_qualifications": ""
       },
-      "": {
-        "email": "",
-        "url": "",
-        "services": []
+    }
+    this.provider_manual_data = {
+      "Shelby County Office of Reentry": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Shelby County Division of Community Services": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Tech901": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "The Collective Blueprint": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Greater Memphis Financial Empowerment Center & Bank on Memphis Coalition": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Goodwill Excel Center Midsouth Inc.": {
+        "phone_number" : "901-323-6221",
+        "location" : "6895 Stage Road, Memphis, TN 38133",
+        "gmap_link" : "https://goo.gl/maps/mknsLfa5qPEQYdoH9",
+      },
+      "DeafConnect of the Mid-South, Inc.": {
+        "phone_number" : "901-278-9307",
+        "location" : "6045 Shelby Oaks Dr., Memphis, TN 38134",
+        "gmap_link" : "https://goo.gl/maps/6n2XZUChBm7sWwDG6",
+      },
+      "HopeWorks": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "2Unique Community Salvation Foundation ": {
+        "phone_number" : "901-489-2386",
+        "location" : "Hickory Ridge Mall, C. D. Corporation 3743 S. Hickory Ridge Mall, Suite 494 Memphis, TN 38115",
+        "gmap_link" : "https://goo.gl/maps/GkfpfKmG2hNR4dTEA",
+      },
+      "M I C A H  - Memphis Interfaith Coalition for Action and Hope": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Kingdom Community Builders": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "World Relief Memphis": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Priority Teachers University": {
+        "phone_number" : "901-209-2342",
+        "location" : "2124 Democrat Rd, Memphis, TN 38132",
+        "gmap_link" : "https://goo.gl/maps/ktcDgiC629pJKdKH9",
+        "email": "priorityteachersuniversity@gmail.com",
+      },
+      "RIVERVIEW-KANSAS COMMUNITY DEVELOPMENT CORPORATION": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "RISE Foundation, Inc.": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "A Fresh Start to a New Beginning": {
+        "phone_number" : "901-690-0327",
+        "location" : "",
+        "gmap_link" : "",
+        "email": "afreshstarttoanewbeginning@yahoo.com",
+      },
+      "BLDG Memphis": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Greater Whitehaven Economic Redevelopment Corporation": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Persevere": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Leadership Memphis": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Refuge Memphis": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Let's Innovate Through Education (LITE Memphis)": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Power Center CDC": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Alzheimer's and Dementia Services of Memphis": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
+      },
+      "Heights Community Development Corp": {
+        "phone_number": "",
+        "location": "",
+        "gmap_link": ""
       }
     }
   }
@@ -396,20 +521,25 @@ class SelectionHandler {
   }
   load_provider(el, provider_name) {
     let provider = this.provider_data[provider_name];
+    let provider_manual_data = this.provider_manual_data[provider_name];
     el.append('<br/><b><i>' + provider_name + '</i></b>');
-    if (provider["phone_number"]) {
-      let pn = '1' + provider["phone_number"].replaceAll('-', '');
-      el.append('<br/><b>Phone Number</b>: <a href="tel:' + pn + '">' + provider["phone_number"] + '</a>');
+    if (provider_manual_data["phone_number"]) {
+      let pn = '1' + provider_manual_data["phone_number"].replaceAll('-', '');
+      el.append('<br/><b>Phone Number</b>: <a href="tel:' + pn + '">' + provider_manual_data["phone_number"] + '</a>');
     }
-    if (provider["email"]) {
-      el.append('<br/><b>Email</b>: ' + this.make_link('mailto', provider["email"]));
+    if (provider_manual_data["email"]) {
+      el.append('<br/><b>Email</b>: ' + this.make_link('mailto', provider_manual_data["email"]));
+    } else {
+      if (provider["email"]) {
+        el.append('<br/><b>Email</b>: ' + this.make_link('mailto', provider["email"]));
+      }
     }
     if (provider["website"]) {
       el.append('<br/><b>Website</b>: ' + this.make_link('', provider["website"]));
     }
-    if (provider["location"]) { // TODO: figure out whether add a _blank to open a new tab.
-      el.append('<br/><p><b>Location</b>: <a href="' + provider["gmap_link"] + '">' +
-      provider["location"] + '</a></p>');
+    if (provider_manual_data["location"]) { // TODO: figure out whether add a _blank to open a new tab.
+      el.append('<br/><p><b>Location</b>: <a href="' + provider_manual_data["gmap_link"] + '">' +
+      provider_manual_data["location"] + '</a></p>');
     }
 }
   show_matches() {
