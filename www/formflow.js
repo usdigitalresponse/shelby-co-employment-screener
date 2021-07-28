@@ -422,7 +422,7 @@ class SelectionHandler {
         "location": "",
         "gmap_link": "",
         "client_characteristics" : {
-          "age_limits" : "18-30",
+          "age_range" : "18-30",
           "work_status" : "Unemployed"
         }
       },
@@ -437,10 +437,7 @@ class SelectionHandler {
       "Goodwill Excel Center Midsouth Inc.": {
         "phone_number" : "901-323-6221",
         "location" : "6895 Stage Road, Memphis, TN 38133",
-        "gmap_link" : "https://goo.gl/maps/mknsLfa5qPEQYdoH9",
-        "client_characteristics" : [
-          "Shelby County"
-        ]
+        "gmap_link" : "https://goo.gl/maps/mknsLfa5qPEQYdoH9"
       },
       "DeafConnect of the Mid-South, Inc.": {
         "phone_number" : "901-278-9307",
@@ -680,6 +677,29 @@ class SelectionHandler {
     s += "<br/></div>";
     el.append(s);
   }
+  filter_orgs(orgs) {
+    let orgs_to_be_deleted = {};
+    for (let org_name of Object.keys(orgs)) {
+      let org = this.provider_manual_data[org_name];
+      let client_quals = org["client_characteristics"];
+      if (client_quals) {
+        for (let qual_name of Object.keys(client_quals)) {
+          let quals = client_quals[qual_name];
+          let client_characteristic = this.client_data[qual_name];
+          if (client_characteristic) {
+            // TODO : age_range and education_level (others?) need special code
+            // to handle multiple values (e.g., age > 18)
+            if (!quals.includes(client_characteristic)) {
+              orgs_to_be_deleted[org_name] = org_name;
+            }
+          }
+        }
+      }
+    }
+    for (let o of Object.keys(orgs_to_be_deleted)) {
+      delete orgs[o];
+    }
+  }
   get_matches() {
     let orgs = {};
     for (let service of this.services_by_needs[this.client_data.client_needs]) {
@@ -691,6 +711,7 @@ class SelectionHandler {
         }
       }
     }
+    this.filter_orgs(orgs);
     return Object.keys(orgs);
   }
   show_matches() {
