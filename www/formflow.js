@@ -72,9 +72,11 @@ $(document).ready(function() {
 class SelectionHandler {
   constructor() {
     this.current_content_index = -1;
-    this.content_classes = [ 'q1', 'q2', 'q3', 'q7', 'matches' ];
+    this.content_classes = [ 'q1', 'q2', 'q3', 'q4', 'q5', 'q7', 'matches' ];
     this.question_form_ids = [ 'client_needs', 'client_education_level',
-                               'client_age_ranges', 'client_criminal_history' ];
+                               'client_age_ranges', 'client_criminal_history',
+                               'zip_code', 'race',
+                               'gender' ];
     this.client_data = {
       needs : null,
       zip_code : null,
@@ -86,7 +88,7 @@ class SelectionHandler {
       disability : null,
       evicted : null,
       criminal_history : null,
-      legal_resident : null // == 'prefer not to say'?
+      legal_resident : null // === 'prefer not to say'?
     } 
     this.client_needs = [
       "I need help finding a job",
@@ -397,7 +399,10 @@ class SelectionHandler {
       "Shelby County Office of Reentry": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "client_characteristics" : {
+          "criminal_history" : [ "Yes", "Prefer not to say" ]
+        }
       },
       "Shelby County Division of Community Services": {
         "phone_number": "",
@@ -407,17 +412,27 @@ class SelectionHandler {
       "Tech901": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "client_characteristics" : {
+          "age_range" : "18+"
+        }
       },
       "The Collective Blueprint": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "client_characteristics" : {
+          "age_limits" : "18-30",
+          "work_status" : "Unemployed"
+        }
       },
       "Greater Memphis Financial Empowerment Center & Bank on Memphis Coalition": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "client_characteristics" : {
+          "age_range" : "18+"
+        }
       },
       "Goodwill Excel Center Midsouth Inc.": {
         "phone_number" : "901-323-6221",
@@ -431,25 +446,26 @@ class SelectionHandler {
         "phone_number" : "901-278-9307",
         "location" : "6045 Shelby Oaks Dr., Memphis, TN 38134",
         "gmap_link" : "https://goo.gl/maps/6n2XZUChBm7sWwDG6",
-        "client_characteristics" : [
-          "D/deaf",
-          "Hard of hearing"
-        ]
+        "client_characteristics" : {
+          "disability" : ["D/deaf", "Hard of hearing" ]
+        }
       },
       "HopeWorks": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "client_characteristics" : {
+          "criminal_history" : [ "Yes", "Prefer not to say" ]
+        }
       },
       "2Unique Community Salvation Foundation ": {
         "phone_number" : "901-489-2386",
         "location" : "Hickory Ridge Mall, C. D. Corporation 3743 S. Hickory Ridge Mall, Suite 494 Memphis, TN 38115",
         "gmap_link" : "https://goo.gl/maps/GkfpfKmG2hNR4dTEA",
-        "client_characteristics" : [
-          "Youth",
-          "Non-college",
-          "High school dropouts"
-        ]
+        "client_characteristics" : {
+          "age_range" : "0-18",
+          "education_level" : "Some high school, no diploma"
+        }
       },
       "M I C A H  - Memphis Interfaith Coalition for Action and Hope": {
         "phone_number": "",
@@ -464,7 +480,10 @@ class SelectionHandler {
       "World Relief Memphis": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "client_characteristics" : {
+          "legal_resident" : "No"
+        }
       },
       "Priority Teachers University": {
         "phone_number" : "901-209-2342",
@@ -480,13 +499,19 @@ class SelectionHandler {
       "RISE Foundation, Inc.": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "client_characteristics" : {
+          "zip_code" : [ "38126" ]
+        }
       },
       "A Fresh Start to a New Beginning": {
         "phone_number" : "901-690-0327",
         "location" : "",
         "gmap_link" : "",
         "email": "afreshstarttoanewbeginning@yahoo.com",
+        "client_characteristics" : {
+          "criminal_history" : [ "Yes", "Prefer not to say" ]
+        }
       },
       "BLDG Memphis": {
         "phone_number": "",
@@ -496,7 +521,10 @@ class SelectionHandler {
       "Greater Whitehaven Economic Redevelopment Corporation": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "client_characteristics" : {
+          "zip_code" : [ "38116", "38109" ]
+        }
       },
       "Persevere": {
         "phone_number": "",
@@ -516,17 +544,27 @@ class SelectionHandler {
       "Let's Innovate Through Education (LITE Memphis)": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "client_characteristics" : {
+          "race" : [ "African American", "Hispanic or Latino" ],
+          "education_level" : "some high school"
+        }
       },
       "Power Center CDC": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "client_characteristics" : {
+          "zip_code" : [ "38141", "38115" ] // Hickory Hill
+        }
       },
       "Alzheimer's and Dementia Services of Memphis": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "client_characteristics" : {
+          "disability" : [ "Dementia", "Alzheimer's" ]
+        }
       },
       "Heights Community Development Corp": {
         "phone_number": "",
