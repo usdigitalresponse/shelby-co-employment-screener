@@ -210,11 +210,8 @@ class SelectionHandler {
           "Job training",
           "Job placement",
           "Education - GED",
-          "Job training",
-          "Job placement",
           "Employability/job readiness skills (e.g., making a resume)",
           "Financial counseling",
-          "Education - GED"
         ],
         "client_qualifications": "Generational Poverty, Incarceration, High School Drop Outs"
       },
