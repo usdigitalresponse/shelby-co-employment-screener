@@ -669,7 +669,7 @@ class SelectionHandler {
     }
     s += '<br/><b>Location</b>: ';
     if (provider_manual_data["location"]) {
-      s += provider_manual_data["gmap_link"] + '">' +
+      s += '<a href="' + provider_manual_data["gmap_link"] + '">' +
                 provider_manual_data["location"] + '</a>';
     } else {
       s += to_come;
