@@ -5,8 +5,7 @@ $(document).ready(function() {
       selection_handler.handle();
     });
   }
-  let question_form_ids = ['zip_code', 'race', 'gender'];
-  for (let id of question_form_ids) {
+  for (let id of selection_handler.question_form_ids) {
     $("#" + id).submit(function(event) {
       let do_continue = false;
       let val;
@@ -18,6 +17,27 @@ $(document).ready(function() {
             do_continue = true;
           }
           break;
+        case 'client_needs':
+          val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          if (val) {
+            selection_handler.client_data.client_needs = val;
+            do_continue = true;
+          }
+          break; 
+        case 'client_age_ranges':
+          val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          if (val) {
+            selection_handler.client_data.age_range = val;
+            do_continue = true;
+          }
+          break; 
+        case 'client_education_level':
+          val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          if (val) {
+            selection_handler.client_data.age_range = val;
+            do_continue = true;
+          }
+          break;    
         case 'race':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
@@ -45,8 +65,10 @@ $(document).ready(function() {
 class SelectionHandler {
   constructor() {
     this.current_content_index = -1;
-    this.content_classes = [ 'intro', 'q1', 'q2', 'q3', 'summary', 'matches' ];
+    this.content_classes = [ 'q1', 'q2', 'q3', 'matches' ];
+    this.question_form_ids = [ 'client_needs', 'client_education_level', 'client_age_ranges' ];
     this.client_data = {
+      needs : null,
       zip_code : null,
       race : null,
       gender : null,
@@ -55,9 +77,12 @@ class SelectionHandler {
       work_status : null,
       disability : null,
       evicted : null,
-      criminal_history : null,
-      legal_resident : null // == 'prefer not to say'
+      criminal_justice_status : null,
+      legal_resident : null // == 'prefer not to say'?
     } 
+    this.client_needs = [
+      "I need a job", "I need more education"
+    ]    
     this.race_types = [
       "White", "African American", "Hispanic or Latino",
       "American Indian or Alaskan Native", "Chinese", "Vietnamese", 
@@ -67,7 +92,7 @@ class SelectionHandler {
     this.gender_types = [
       "Male", "Female", "Non-binary"
     ]    
-    this.age_brackets = [
+    this.client_age_ranges = [
       "0-18", "19-24", "25-34", "35-44", "45-54", "55-64", "65+"
     ]
     this.education_levels = [
@@ -391,11 +416,18 @@ class SelectionHandler {
         "phone_number" : "901-323-6221",
         "location" : "6895 Stage Road, Memphis, TN 38133",
         "gmap_link" : "https://goo.gl/maps/mknsLfa5qPEQYdoH9",
+        "client_characteristics" : [
+          "Shelby County"
+        ]
       },
       "DeafConnect of the Mid-South, Inc.": {
         "phone_number" : "901-278-9307",
         "location" : "6045 Shelby Oaks Dr., Memphis, TN 38134",
         "gmap_link" : "https://goo.gl/maps/6n2XZUChBm7sWwDG6",
+        "client_characteristics" : [
+          "D/deaf",
+          "Hard of hearing"
+        ]
       },
       "HopeWorks": {
         "phone_number": "",
@@ -406,6 +438,11 @@ class SelectionHandler {
         "phone_number" : "901-489-2386",
         "location" : "Hickory Ridge Mall, C. D. Corporation 3743 S. Hickory Ridge Mall, Suite 494 Memphis, TN 38115",
         "gmap_link" : "https://goo.gl/maps/GkfpfKmG2hNR4dTEA",
+        "client_characteristics" : [
+          "Youth",
+          "Non-college",
+          "High school dropouts"
+        ]
       },
       "M I C A H  - Memphis Interfaith Coalition for Action and Hope": {
         "phone_number": "",
@@ -493,10 +530,19 @@ class SelectionHandler {
   }
   load(name) {
     switch (name) {
+      case 'q1' :
+        this.append_radios('client_needs', this.client_needs);
+        break;
       case 'q2' :
-        this.append_radios('race', this.race_types);
+        this.append_radios('client_age_ranges', this.client_age_ranges);
         break;
       case 'q3' :
+        this.append_radios('client_education_level', this.education_levels);
+        break;
+      case 'q5' :
+        this.append_radios('race', this.race_types);
+        break;
+      case 'q6' :
         this.append_radios('gender', this.gender_types);
         break;
       case 'summary' :
