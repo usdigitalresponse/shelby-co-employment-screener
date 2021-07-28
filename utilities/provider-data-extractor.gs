@@ -20,6 +20,7 @@ class ProviderDataExtractor {
   }
 
   loadProviderServices(providerServices, providers) {
+    let all_services = {};
     let headers = providerServices.headerData[0];
     let nameIndex = providerServices.columnIndex('What is the name of the organization?');
     let providerIter = new SheetRowIterator(providerServices);
@@ -29,9 +30,11 @@ class ProviderDataExtractor {
         if (services[i] === 1) {
           let serviceName = headers[i];
           providers[services[nameIndex]].services.push(serviceName);
+          all_services[serviceName] = serviceName;
         }
       }
     }
+    console.log(Object.keys(all_services));
   }
 
   extract() {
