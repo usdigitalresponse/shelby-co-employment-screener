@@ -591,41 +591,56 @@ class SelectionHandler {
     ret += (url + '">' + url + '</a>');
     return ret;
   }
-  append_services(el, provider_name) {
-    el.append("<ul>")
+  append_services(provider_name) {
+    let s = "<ul>";
     for (let service of this.services_by_needs[this.client_data.client_needs]) {
       for (let org_service of this.provider_data[provider_name].services) {
         if (service === org_service) {
-          el.append("<li>" + service + "</li>");
+          s += "<li>" + service + "</li>";
         }
       }
     }
-    el.append("</ul>")
+    s += "</ul>"
+    return s;
   }
   load_provider(el, provider_name) {
     let provider = this.provider_data[provider_name];
     let provider_manual_data = this.provider_manual_data[provider_name];
-    el.append('<hr><b><i>' + provider_name + '</i></b>');
-    this.append_services(el, provider_name);
+    let to_come = '<i>to come</>';
+    let s = '<h5><b><i>' + provider_name + '</i></b></h5>';
+    s += this.append_services(provider_name);
+    s += "<div style=\"margin-left: 40px;\">";
+    s += '<b>Phone Number</b>: ';
     if (provider_manual_data["phone_number"]) {
       let pn = '1' + provider_manual_data["phone_number"].replaceAll('-', '');
-      el.append('<br/><b>Phone Number</b>: <a href="tel:' + pn + '">' + provider_manual_data["phone_number"] + '</a>');
+      s += '<a href="tel:' + pn + '">' + provider_manual_data["phone_number"] + '</a>';
+    } else {
+      s += to_come;
     }
+    let em = to_come;
     if (provider_manual_data["email"]) {
-      el.append('<br/><b>Email</b>: ' + this.make_link('mailto', provider_manual_data["email"]));
+      em = this.make_link('mailto', provider_manual_data["email"]);
     } else {
       if (provider["email"]) {
-        el.append('<br/><b>Email</b>: ' + this.make_link('mailto', provider["email"]));
+        em = this.make_link('mailto', provider["email"]);
       }
     }
+    s += '<br/><b>Email</b>: ' + em;
+    s += '<br/><b>Website</b>: ';
     if (provider["website"]) {
-      el.append('<br/><b>Website</b>: ' + this.make_link('', provider["website"]));
+      s += this.make_link('', provider["website"]);
+    } else {
+      s += to_come;
     }
+    s += '<br/><b>Location</b>: ';
     if (provider_manual_data["location"]) {
-      el.append('<br/><b>Location</b>: <a href="' + provider_manual_data["gmap_link"] + '">' +
-                provider_manual_data["location"] + '</a>');
+      s += provider_manual_data["gmap_link"] + '">' +
+                provider_manual_data["location"] + '</a>';
+    } else {
+      s += to_come;
     }
-    el.append("<br/>")
+    s += "<br/></div>";
+    el.append(s);
   }
   get_matches() {
     let orgs = {};
