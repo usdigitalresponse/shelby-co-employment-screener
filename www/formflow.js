@@ -537,6 +537,22 @@ class SelectionHandler {
         "gmap_link": ""
       }
     }
+    this.services_by_needs = {
+      "I need help finding a job" : [
+        'Job training',
+        'Job placement',
+        'Employability/job readiness skills (e.g., making a resume)',
+        'Certifications',
+      ],
+      "I want more skill training to find a better job" : [
+        'Certifications',
+      ],
+      "I want to get my degree (for example, GED or associate)" : [
+        'Education - GED',
+        'Literacy (reading and/or writing)',
+        'Education - high school',
+      ]
+    }
   }
   load(name) {
     switch (name) {
@@ -596,17 +612,31 @@ class SelectionHandler {
     if (provider["website"]) {
       el.append('<br/><b>Website</b>: ' + this.make_link('', provider["website"]));
     }
-    if (provider_manual_data["location"]) { // TODO: figure out whether add a _blank to open a new tab.
-      el.append('<br/><p><b>Location</b>: <a href="' + provider_manual_data["gmap_link"] + '">' +
-      provider_manual_data["location"] + '</a></p>');
+    if (provider_manual_data["location"]) {
+      el.append('<br/><b>Location</b>: <a href="' + provider_manual_data["gmap_link"] + '">' +
+                provider_manual_data["location"] + '</a>');
     }
-}
+    el.append("<br/>")
+  }
+  get_matches() {
+    let orgs = {};
+    for (let service of this.services_by_needs[this.client_data.client_needs]) {
+      for (let org of Object.keys(this.provider_data)) {
+        for (let org_service of this.provider_data[org].services) {
+          if (service === org_service) {
+            orgs[org] = org;
+          }
+        }
+      }
+    }
+    return Object.keys(orgs);
+  }
   show_matches() {
     let el = $(".matches_div");
     el.empty();
-    this.load_provider(el, "2Unique Community Salvation Foundation ");
-    this.load_provider(el, "Goodwill Excel Center Midsouth Inc.");
-    this.load_provider(el, "Priority Teachers University");
+    for (let m of this.get_matches()) {
+      this.load_provider(el, m);
+    }
   }
   handle() {
     let targetElem = $(".target");
@@ -632,7 +662,7 @@ class SelectionHandler {
       let the_name = val.replace(re, '_').substring(0, 20).toLowerCase();
       el.append('<label><input type="radio" name="' + id + 
         '" value="' + the_name + 
-        '" /> ' + val + '</label><br/>');
+        '" />' + val + '</label><br/>');
     }
     el.append('<input type="submit" value="Next">');
   }
