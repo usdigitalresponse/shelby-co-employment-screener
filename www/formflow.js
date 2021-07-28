@@ -594,10 +594,22 @@ class SelectionHandler {
     ret += (url + '">' + url + '</a>');
     return ret;
   }
+  append_services(el, provider_name) {
+    el.append("<ul>")
+    for (let service of this.services_by_needs[this.client_data.client_needs]) {
+      for (let org_service of this.provider_data[provider_name].services) {
+        if (service === org_service) {
+          el.append("<li>" + service + "</li>");
+        }
+      }
+    }
+    el.append("</ul>")
+  }
   load_provider(el, provider_name) {
     let provider = this.provider_data[provider_name];
     let provider_manual_data = this.provider_manual_data[provider_name];
-    el.append('<br/><b><i>' + provider_name + '</i></b>');
+    el.append('<hr><b><i>' + provider_name + '</i></b>');
+    this.append_services(el, provider_name);
     if (provider_manual_data["phone_number"]) {
       let pn = '1' + provider_manual_data["phone_number"].replaceAll('-', '');
       el.append('<br/><b>Phone Number</b>: <a href="tel:' + pn + '">' + provider_manual_data["phone_number"] + '</a>');
