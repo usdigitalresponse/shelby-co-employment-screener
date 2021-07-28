@@ -38,6 +38,13 @@ $(document).ready(function() {
             do_continue = true;
           }
           break;    
+        case 'client_criminal_history':
+          val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          if (val) {
+            selection_handler.client_data.criminal_history = val;
+            do_continue = true;
+          }
+          break;    
         case 'race':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
@@ -65,8 +72,9 @@ $(document).ready(function() {
 class SelectionHandler {
   constructor() {
     this.current_content_index = -1;
-    this.content_classes = [ 'q1', 'q2', 'q3', 'matches' ];
-    this.question_form_ids = [ 'client_needs', 'client_education_level', 'client_age_ranges' ];
+    this.content_classes = [ 'q1', 'q2', 'q3', 'q7', 'matches' ];
+    this.question_form_ids = [ 'client_needs', 'client_education_level',
+                               'client_age_ranges', 'client_criminal_history' ];
     this.client_data = {
       needs : null,
       zip_code : null,
@@ -77,11 +85,13 @@ class SelectionHandler {
       work_status : null,
       disability : null,
       evicted : null,
-      criminal_justice_status : null,
+      criminal_history : null,
       legal_resident : null // == 'prefer not to say'?
     } 
     this.client_needs = [
-      "I need a job", "I need more education"
+      "I need help finding a job",
+      "I want more skill training to find a better job",
+      "I want to get my degree (for example, GED or associate)"
     ]    
     this.race_types = [
       "White", "African American", "Hispanic or Latino",
@@ -114,7 +124,7 @@ class SelectionHandler {
       "Student",
       "Other"
     ]
-    this.yes_no_prefernot = [
+    this.client_criminal_history = [
       "Yes",
       "No",
       "Prefer not to say"
@@ -544,6 +554,9 @@ class SelectionHandler {
         break;
       case 'q6' :
         this.append_radios('gender', this.gender_types);
+        break;
+      case 'q7' :
+        this.append_radios('client_criminal_history', this.client_criminal_history);
         break;
       case 'summary' :
         let el = $(".summary_div");
