@@ -72,7 +72,9 @@ $(document).ready(function() {
 class SelectionHandler {
   constructor() {
     this.current_content_index = -1;
-    this.content_classes = [ 'q1', 'q2', 'q3', 'q4', 'q5', 'q7', 'matches' ];
+    this.content_classes = [ 'q_needs', 'q_zip_code', 'q_age', 'q_education',
+                             'q_race', 'q_criminal_history',
+                             'matches' ];
     this.question_form_ids = [ 'client_needs', 'client_education_level',
                                'client_age_ranges', 'client_criminal_history',
                                'zip_code', 'race',
@@ -588,22 +590,22 @@ class SelectionHandler {
   }
   load(name) {
     switch (name) {
-      case 'q1' :
+      case 'q_needs' :
         this.append_radios('client_needs', this.client_needs);
         break;
-      case 'q2' :
+      case 'q_age' :
         this.append_radios('client_age_ranges', this.client_age_ranges);
         break;
-      case 'q3' :
+      case 'q_education' :
         this.append_radios('client_education_level', this.education_levels);
         break;
-      case 'q5' :
+      case 'q_race' :
         this.append_radios('race', this.race_types);
         break;
-      case 'q6' :
+      case 'q_gender' :
         this.append_radios('gender', this.gender_types);
         break;
-      case 'q7' :
+      case 'q_criminal_history' :
         this.append_radios('client_criminal_history', this.client_criminal_history);
         break;
       case 'summary' :
