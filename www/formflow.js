@@ -133,6 +133,7 @@ class SelectionHandler {
       "No",
       "Prefer not to say"
     ]
+    // Data extracted from a Google sheet. See Google Scripts in utilities/ directory.
     this.provider_data = {
       "Shelby County Office of Reentry": {
         "email": "Harold.Collins@shelbycountytn.gov",
@@ -397,11 +398,14 @@ class SelectionHandler {
         "client_qualifications": ""
       },
     }
+    // Data found manually. Can 'override' data in this.provider_data .
+    // '!' means don't show data from this.provider_data .
     this.provider_manual_data = {
       "Shelby County Office of Reentry": {
         "phone_number": "",
         "location": "",
         "gmap_link": "",
+        "email" : '!',
         "client_characteristics" : {
           "criminal_history" : [ "Yes", "Prefer not to say" ]
         }
@@ -654,10 +658,10 @@ class SelectionHandler {
       entry_was_added = true;
     }
     let em = "";
-    if (provider_manual_data["email"]) {
+    if (provider_manual_data["email"] && (provider_manual_data["email"] !== '!')) {
       em = this.make_link('mailto', provider_manual_data["email"]);
     } else {
-      if (provider["email"]) {
+      if (provider["email"] && (provider_manual_data["email"] !== '!')) {
         em = this.make_link('mailto', provider["email"]);
       }
     }
