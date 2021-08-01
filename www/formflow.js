@@ -105,7 +105,7 @@ class SelectionHandler {
     ]    
     this.gender_types = [
       "Male", "Female", "Non-binary"
-    ]    
+    ] 
     this.client_age_ranges = [
       "0-18", "19-24", "25-34", "35-44", "45-54", "55-64", "65+"
     ]
@@ -643,18 +643,17 @@ class SelectionHandler {
   load_provider(el, provider_name) {
     let provider = this.provider_data[provider_name];
     let provider_manual_data = this.provider_manual_data[provider_name];
-    let to_come = '<i>to come</>';
     let s = '<h5><b><i>' + provider_name + '</i></b></h5>';
     s += this.append_services(provider_name);
     s += "<div style=\"margin-left: 40px;\">";
-    s += '<b>Phone Number</b>: ';
+    let entry_was_added = false;
     if (provider_manual_data["phone_number"]) {
+      s += '<b>Phone Number</b>: ';
       let pn = '1' + provider_manual_data["phone_number"].replaceAll('-', '');
       s += '<a href="tel:' + pn + '">' + provider_manual_data["phone_number"] + '</a>';
-    } else {
-      s += to_come;
+      entry_was_added = true;
     }
-    let em = to_come;
+    let em = "";
     if (provider_manual_data["email"]) {
       em = this.make_link('mailto', provider_manual_data["email"]);
     } else {
@@ -662,19 +661,29 @@ class SelectionHandler {
         em = this.make_link('mailto', provider["email"]);
       }
     }
-    s += '<br/><b>Email</b>: ' + em;
-    s += '<br/><b>Website</b>: ';
-    if (provider["website"]) {
-      s += this.make_link('', provider["website"]);
-    } else {
-      s += to_come;
+    if (em) {
+      if (entry_was_added) {
+        s += '<br/>';
+      }
+      s += '<b>Email</b>: ' + em;
+      entry_was_added = true;
     }
-    s += '<br/><b>Location</b>: ';
+    if (provider["website"]) {
+      if (entry_was_added) {
+        s += '<br/>';
+      }
+      s += '<b>Website</b>: ';
+      s += this.make_link('', provider["website"]);
+      entry_was_added = true;
+    }
     if (provider_manual_data["location"]) {
+      if (entry_was_added) {
+        s += '<br/>';
+      }
+      s += '<b>Location</b>: ';
       s += '<a href="' + provider_manual_data["gmap_link"] + '">' +
                 provider_manual_data["location"] + '</a>';
-    } else {
-      s += to_come;
+      entry_was_added = true;
     }
     s += "<br/></div>";
     el.append(s);
