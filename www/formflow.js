@@ -107,19 +107,15 @@ class SelectionHandler {
       "Male", "Female", "Non-binary"
     ] 
     this.client_age_ranges = [
-      "0-18", "19-24", "25-34", "35-44", "45-54", "55-64", "65+"
+      "Younger than 18", "18-30", "Older than 30"
     ]
     this.education_levels = [
-      "No schooling completed",
-      "Nursery school to 8th grade",
-      "Some high school, no diploma",
-      "High school graduate, diploma or the equivalent (for example: GED)",
-      "Some college credit, no degree, Trade/technical/vocational training",
+      "No high school diploma or equivalent (for example: no GED)",
+      "High school graduate, diploma or equivalent (for example: GED)",
+      "Some college credit or trade/technical/vocational training",
       "Associate degree",
       "Bachelor’s degree",
-      "Master’s degree",
-      "Professional degree",
-      "Doctorate degree"
+      "Advanced degree (above Bachelor's)",
     ]    
     this.work_statuses = [
       "Unemployed",
@@ -398,7 +394,7 @@ class SelectionHandler {
         "gmap_link": "https://goo.gl/maps/BQD4MD8iPXkVA2ws9",
         "email" : "",
         "client_characteristics" : {
-          "age_range" : "18+"
+          "age_range" : [ "18-30", "Older than 30" ]
         }
       },
       "The Collective Blueprint": {
@@ -407,8 +403,8 @@ class SelectionHandler {
         "gmap_link": "",
         "email" : "apply@thememphiscollective.org",
         "client_characteristics" : {
-          "age_range" : "18-30",
-          "work_status" : "Unemployed"
+          "age_range" : [ "18-30" ] ,
+          "work_status" : [ "Unemployed" ]
         }
       },
       "Greater Memphis Financial Empowerment Center & Bank on Memphis Coalition": {
@@ -416,7 +412,7 @@ class SelectionHandler {
         "location": "1355 Lynnfield Rd, Bldg B, Ste 101, Memphis TN",
         "gmap_link": "https://goo.gl/maps/97gjxQYXmWvpGnE37",
         "client_characteristics" : {
-          "age_range" : "18+"
+          "age_range" : [ "18-30", "Older than 30" ]
         }
       },
       "Goodwill Excel Center Midsouth Inc.": {
@@ -448,8 +444,8 @@ class SelectionHandler {
         "gmap_link" : "https://goo.gl/maps/GkfpfKmG2hNR4dTEA",
         "email" : "",
         "client_characteristics" : {
-          "age_range" : "0-18",
-          "education_level" : "Some high school, no diploma"
+          "age_range" : [ "Younger than 18" ],
+          "education_level" : [ "No high school diploma or equivalent (for example: no GED)" ]
         }
       },
       "M I C A H  - Memphis Interfaith Coalition for Action and Hope": {
@@ -470,7 +466,7 @@ class SelectionHandler {
         "gmap_link": "https://goo.gl/maps/1ZwTYKFw6pPdPvQS6",
         "email" : "",
         "client_characteristics" : {
-          "legal_resident" : "No"
+          "legal_resident" : [ "No" ]
         }
       },
       "Priority Teachers University": {
@@ -543,7 +539,7 @@ class SelectionHandler {
         "email" : "",
         "client_characteristics" : {
           "race" : [ "African American", "Hispanic or Latino" ],
-          "education_level" : "some high school"
+          "education_level" : [ "No high school diploma or equivalent (for example: no GED)" ]
         }
       },
       "Power Center CDC": {
@@ -690,8 +686,6 @@ class SelectionHandler {
           let quals = client_quals[qual_name];
           let client_characteristic = this.client_data[qual_name];
           if (client_characteristic) {
-            // TODO : age_range and education_level (others?) need special code
-            // to handle multiple values (e.g., age > 18)
             if (!quals.includes(client_characteristic)) {
               orgs_to_be_deleted[org_name] = org_name;
             }
