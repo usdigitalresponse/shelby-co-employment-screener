@@ -625,7 +625,7 @@ class SelectionHandler {
     return ret;
   }
   append_services(provider_name) {
-    let s = "<ul>";
+    let s = "<h5><i>Services</i></h5><ul>";
     for (let service of this.services_by_needs[this.client_data.client_needs]) {
       for (let org_service of this.provider_data[provider_name].services) {
         if (service === org_service) {
@@ -639,9 +639,9 @@ class SelectionHandler {
   load_provider(el, provider_name) {
     let provider = this.provider_data[provider_name];
     let provider_manual_data = this.provider_manual_data[provider_name];
-    let s = '<h5><b><i>' + provider_name + '</i></b></h5>';
+    let s = '<h4><b><i>' + provider_name + '</i></b></h4>';
     s += this.append_services(provider_name);
-    s += "<div style=\"margin-left: 40px;\">";
+    s += "<h5><i>Contact Information</i></h5><div style=\"margin-left: 40px;\">";
     let entry_was_added = false;
     if (provider_manual_data["phone_number"]) {
       s += '<b>Phone Number</b>: ';
