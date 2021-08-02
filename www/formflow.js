@@ -178,7 +178,7 @@ class SelectionHandler {
       },
       "Greater Memphis Financial Empowerment Center & Bank on Memphis Coalition": {
         "email": "mpolatty@shelbycountytrustee.com",
-        "website": "www.gmfec.org ; www.bankonmemphis.org",
+        "website": "www.gmfec.org", // ; www.bankonmemphis.org",
         "services": [
           "Financial counseling",
           "Total services indicated"
@@ -280,7 +280,7 @@ class SelectionHandler {
       },
       "RIVERVIEW-KANSAS COMMUNITY DEVELOPMENT CORPORATION": {
         "email": "riverviewkansascdc@gmail.com",
-        "website": "Melrose Place Apts",
+        "website": "https://www.memphishcd.org/chdo/riverview/index.html",
         "services": [
           "Supportive services (e.g., housing)",
           "Total services indicated"
@@ -344,7 +344,7 @@ class SelectionHandler {
       },
       "Leadership Memphis": {
         "email": "ahill@leadershipmemphis.org",
-        "website": "Www.leadershipmemphis.org; www.volunteermemphis.org",
+        "website": "Www.leadershipmemphis.org", //; www.volunteermemphis.org",
         "services": [
           "Networking",
           "Total services indicated"
@@ -371,7 +371,7 @@ class SelectionHandler {
       },
       "Power Center CDC": {
         "email": "Brodywamble@gmail.com",
-        "website": "www.Powercenter.org",
+        "website": "http://powercentercdc.org/",
         "services": [
           "Employability/job readiness skills (e.g., making a resume)",
           "Supportive services (e.g., housing)",
@@ -411,14 +411,16 @@ class SelectionHandler {
         }
       },
       "Shelby County Division of Community Services": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": ""
+        "phone_number": "901-222-3990",
+        "location": "160 N. Main St., 2nd Floor, Memphis, TN 38103",
+        "gmap_link": "https://goo.gl/maps/SqaAW6BpG7QfSKEA9",
+        "email" : "CommunityServicesInfo@shelbycountytn.gov"
       },
       "Tech901": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": "",
+        "phone_number": "901-881-2677",
+        "location": "1350 Concourse Ave. Suite 375, Memphis, TN  38104",
+        "gmap_link": "https://goo.gl/maps/BQD4MD8iPXkVA2ws9",
+        "email" : "!",
         "client_characteristics" : {
           "age_range" : "18+"
         }
@@ -427,15 +429,16 @@ class SelectionHandler {
         "phone_number": "",
         "location": "",
         "gmap_link": "",
+        "email" : "apply@thememphiscollective.org",
         "client_characteristics" : {
           "age_range" : "18-30",
           "work_status" : "Unemployed"
         }
       },
       "Greater Memphis Financial Empowerment Center & Bank on Memphis Coalition": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": "",
+        "phone_number": "901-390-4200",
+        "location": "1355 Lynnfield Rd, Bldg B, Ste 101, Memphis TN",
+        "gmap_link": "https://goo.gl/maps/97gjxQYXmWvpGnE37",
         "client_characteristics" : {
           "age_range" : "18+"
         }
@@ -454,9 +457,9 @@ class SelectionHandler {
         }
       },
       "HopeWorks": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": "",
+        "phone_number": "901-272-3700",
+        "location": "3334 Summer Ave., Memphis, TN 38122",
+        "gmap_link": "https://goo.gl/maps/TTUpwBfe2BFApKCFA",
         "client_characteristics" : {
           "criminal_history" : [ "Yes", "Prefer not to say" ]
         }
@@ -473,7 +476,8 @@ class SelectionHandler {
       "M I C A H  - Memphis Interfaith Coalition for Action and Hope": {
         "phone_number": "",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "email" : "info@micahmemphis.org"
       },
       "Kingdom Community Builders": {
         "phone_number": "",
@@ -481,9 +485,9 @@ class SelectionHandler {
         "gmap_link": ""
       },
       "World Relief Memphis": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": "",
+        "phone_number": "901-341-0220",
+        "location": "5340 Quince Rd, Suite A, Memphis, TN 38119",
+        "gmap_link": "https://goo.gl/maps/1ZwTYKFw6pPdPvQS6",
         "client_characteristics" : {
           "legal_resident" : "No"
         }
@@ -495,14 +499,15 @@ class SelectionHandler {
         "email": "priorityteachersuniversity@gmail.com",
       },
       "RIVERVIEW-KANSAS COMMUNITY DEVELOPMENT CORPORATION": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": ""
+        "phone_number": "901-314-7866",
+        "location": "1374 Elvis Presley Blvd., Ste 104, Memphis, TN 38116",
+        "gmap_link": "https://goo.gl/maps/LthKF5u9R6fZefKx8",
+        "email" : "riverviewkansas@cavtel.net"
       },
       "RISE Foundation, Inc.": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": "",
+        "phone_number": "901-507-6644",
+        "location": "1355 Lynnfield Rd, Building B, Suite 101, Memphis, Tennessee 38119",
+        "gmap_link": "https://goo.gl/maps/V1HQbnSMvDxuX32y8",
         "client_characteristics" : {
           "zip_code" : [ "38126" ]
         }
@@ -517,37 +522,42 @@ class SelectionHandler {
         }
       },
       "BLDG Memphis": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": ""
+        "phone_number": "901-725-0460",
+        "location": "1680 Jackson Avenue, Memphis, Tennessee 38107",
+        "gmap_link": "https://goo.gl/maps/c2iVqP7pBXv6Z57r6"
       },
       "Greater Whitehaven Economic Redevelopment Corporation": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": "",
+        "phone_number": "901-605-8213",
+        "location": "4466 Elvis Presley Boulevard Suite 216, Memphis, TN",
+        "gmap_link": "https://goo.gl/maps/ms4R9j5ZicjL1UXS7",
+        "email" : "info@gwercmemphis.org",
         "client_characteristics" : {
           "zip_code" : [ "38116", "38109" ]
         }
       },
       "Persevere": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": ""
-      },
-      "Leadership Memphis": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": ""
-      },
-      "Refuge Memphis": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": ""
-      },
-      "Let's Innovate Through Education (LITE Memphis)": {
-        "phone_number": "",
+        "phone_number": "877-260-7299",
         "location": "",
         "gmap_link": "",
+        "email" : "info@perseverenow.org"
+      },
+      "Leadership Memphis": {
+        "phone_number": "901-278-0016",
+        "location": "240 Madison Ave Suite 601, Memphis TN 38103",
+        "gmap_link": "https://goo.gl/maps/arKxLr7xC8DoVSv58",
+        "email" : "info@leadershipmemphis.org"
+      },
+      "Refuge Memphis": {
+        "phone_number": "901-410-8724",
+        "location": "3171 Signal Street, Memphis, TN 38127, US",
+        "gmap_link": "https://goo.gl/maps/ApBpdhUxtpDHxkXe6",
+        "email" : "!"
+      },
+      "Let's Innovate Through Education (LITE Memphis)": {
+        "phone_number": "901-634-0001",
+        "location": "88 Union Ave 6th Floor, Memphis, TN 38103",
+        "gmap_link": "https://goo.gl/maps/gnpWyySQ5ABVKkv26",
+        "email" : "!",
         "client_characteristics" : {
           "race" : [ "African American", "Hispanic or Latino" ],
           "education_level" : "some high school"
@@ -557,22 +567,25 @@ class SelectionHandler {
         "phone_number": "",
         "location": "",
         "gmap_link": "",
+        "email" : "!",
         "client_characteristics" : {
           "zip_code" : [ "38141", "38115" ] // Hickory Hill
         }
       },
       "Alzheimer's and Dementia Services of Memphis": {
-        "phone_number": "",
-        "location": "",
-        "gmap_link": "",
+        "phone_number": "901-372-4585",
+        "location": "4585 Raleigh LaGrange Rd., Memphis, TN 38128",
+        "gmap_link": "https://goo.gl/maps/kFHEG5Jsb1x69smo9",
+        "email" : "info@adsmemphis.org",
         "client_characteristics" : {
           "disability" : [ "Dementia", "Alzheimer's" ]
         }
       },
       "Heights Community Development Corp": {
-        "phone_number": "",
+        "phone_number": "901-730-6902",
         "location": "",
-        "gmap_link": ""
+        "gmap_link": "",
+        "email" : "info@heightscdc.org"
       }
     }
     this.services_by_needs = {
