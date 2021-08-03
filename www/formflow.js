@@ -649,7 +649,7 @@ class SelectionHandler {
       s += '<a href="tel:' + pn + '">' + provider_manual_data["phone_number"] + '</a>';
       entry_was_added = true;
     }
-    if (this.provider_manual_data["email"]) {
+    if (provider_manual_data["email"]) {
       if (entry_was_added) {
         s += '<br/>';
       }
