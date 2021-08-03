@@ -723,7 +723,7 @@ class SelectionHandler {
       }
     }
     this.filter_orgs(orgs);
-    return Object.keys(orgs);
+    return Object.keys(orgs).sort();
   }
   show_matches() {
     let el = $(".matches_div");
