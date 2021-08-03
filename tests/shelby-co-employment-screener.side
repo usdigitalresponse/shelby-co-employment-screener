@@ -206,6 +206,52 @@
         ["xpath=//i[contains(.,'Shelby County Office of Reentry')]", "xpath:innerText"]
       ],
       "value": "A Fresh Start to a New Beginning"
+    }, {
+      "id": "babaf433-d55b-450a-a537-7cd4a96b8aa5",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h4:nth-child(6) i",
+      "targets": [
+        ["css=h4:nth-child(6) i", "css:finder"],
+        ["xpath=//h4[2]/b/i", "xpath:position"],
+        ["xpath=//i[contains(.,'Goodwill Excel Center Midsouth Inc.')]", "xpath:innerText"]
+      ],
+      "value": "Goodwill Excel Center Midsouth Inc."
+    }, {
+      "id": "fd5588ef-5842-4669-af6e-8bb29047b343",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h4:nth-child(11) i",
+      "targets": [],
+      "value": "Heights Community Development Corp"
+    }, {
+      "id": "2aabf398-acf2-46bd-ad96-485d9a45d0ab",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h4:nth-child(16) i",
+      "targets": [],
+      "value": "HopeWorks"
+    }, {
+      "id": "1631676f-554b-4949-bdb8-99b747c18c37",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h4:nth-child(21) i",
+      "targets": [],
+      "value": "Persevere"
+    }, {
+      "id": "11a3ed22-7afe-4a9a-93b4-17b2ce9ef72b",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h4:nth-child(26) i",
+      "targets": [],
+      "value": "Priority Teachers University"
+    }, {
+      "id": "5375e2cb-b97b-41a9-8776-8a998df9fbf6",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h4:nth-child(31) i",
+      "targets": [],
+      "value": "Shelby County Office of Reentry"
     }]
   }],
   "suites": [{
