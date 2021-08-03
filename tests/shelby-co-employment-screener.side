@@ -1,0 +1,221 @@
+{
+  "id": "06c677e1-f762-49c0-8d95-5c31ef851c0a",
+  "version": "2.0",
+  "name": "shelby-co-employment-screener",
+  "url": "https://shelby-co-employment-screener.wl.r.appspot.com",
+  "tests": [{
+    "id": "425fd16d-7c14-4533-988e-6f7195ab0453",
+    "name": "one",
+    "commands": [{
+      "id": "b1c1de15-b23b-4343-a5db-79c020a3f943",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3618a36-8963-4aa0-8771-cd68394ec4a2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1682x1018",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b92a852-1f33-4e3e-ad28-a2281be95d19",
+      "comment": "",
+      "command": "click",
+      "target": "name=client_needs",
+      "targets": [
+        ["name=client_needs", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='client_needs']", "xpath:attributes"],
+        ["xpath=//form[@id='client_needs']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "780ecb8f-6456-468e-88ca-9ef2aa7ceae6",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(7)",
+      "targets": [
+        ["css=input:nth-child(7)", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='client_needs']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f5b22e5-06f0-4292-ab76-65064d5819e7",
+      "comment": "",
+      "command": "click",
+      "target": "name=zip_code",
+      "targets": [
+        ["name=zip_code", "name"],
+        ["css=#zip_code > #zip_code", "css:finder"],
+        ["xpath=//input[@id='zip_code']", "xpath:attributes"],
+        ["xpath=//form[@id='zip_code']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e071a090-fd93-4afe-8e04-7a4b9a232a51",
+      "comment": "",
+      "command": "type",
+      "target": "name=zip_code",
+      "targets": [
+        ["name=zip_code", "name"],
+        ["css=#zip_code > #zip_code", "css:finder"],
+        ["xpath=//input[@id='zip_code']", "xpath:attributes"],
+        ["xpath=//form[@id='zip_code']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "36118"
+    }, {
+      "id": "920098a0-9972-42c6-a7cd-86142336e787",
+      "comment": "",
+      "command": "click",
+      "target": "id=zip_code",
+      "targets": [
+        ["id=zip_code", "id"],
+        ["css=.q_zip_code > #zip_code", "css:finder"],
+        ["xpath=//form[@id='zip_code']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c5a933d-e144-4e1a-97a2-12846e4cd435",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(5)",
+      "targets": [
+        ["css=input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='zip_code']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b91d641-ac60-4d0a-9f14-96c248907d4b",
+      "comment": "",
+      "command": "click",
+      "target": "name=client_age_ranges",
+      "targets": [
+        ["name=client_age_ranges", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='client_age_ranges']", "xpath:attributes"],
+        ["xpath=//form[@id='client_age_ranges']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53b01c8b-062c-4a5f-ac7d-06d4e68efec8",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(7)",
+      "targets": [
+        ["css=input:nth-child(7)", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='client_age_ranges']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ffb8431a-c87a-4f4e-9397-748edf273498",
+      "comment": "",
+      "command": "click",
+      "target": "name=client_education_level",
+      "targets": [
+        ["name=client_education_level", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='client_education_level']", "xpath:attributes"],
+        ["xpath=//form[@id='client_education_level']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f9dd47f-471a-44b6-a4df-7802ffc89a80",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='client_education_level']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "684550db-db1e-4754-98e0-dd6a23efee90",
+      "comment": "",
+      "command": "click",
+      "target": "name=race",
+      "targets": [
+        ["name=race", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='race']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b96a8a3-f756-47be-859b-cb6489881b44",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(25)",
+      "targets": [
+        ["css=input:nth-child(25)", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "17e0c837-f4c0-4af3-8c2a-c14158c8ad62",
+      "comment": "",
+      "command": "click",
+      "target": "name=client_criminal_history",
+      "targets": [
+        ["name=client_criminal_history", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='client_criminal_history']", "xpath:attributes"],
+        ["xpath=//form[@id='client_criminal_history']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "96f91a94-7d0c-4dbb-b80c-eb72d091107d",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(7)",
+      "targets": [
+        ["css=input:nth-child(7)", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='client_criminal_history']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f0a2567a-2d51-417a-8819-0d39a639d371",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h4:nth-child(1) i",
+      "targets": [
+        ["css=h4:nth-child(1) i", "css:finder"],
+        ["xpath=//b/i", "xpath:position"],
+        ["xpath=//i[contains(.,'Shelby County Office of Reentry')]", "xpath:innerText"]
+      ],
+      "value": "Shelby County Office of Reentry"
+    }]
+  }],
+  "suites": [{
+    "id": "ac108099-5de3-464a-b413-040510a6a03a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["425fd16d-7c14-4533-988e-6f7195ab0453"]
+  }],
+  "urls": ["https://shelby-co-employment-screener.wl.r.appspot.com/"],
+  "plugins": []
+}
