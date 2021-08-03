@@ -152,7 +152,7 @@ class SelectionHandler {
         "client_qualifications": ""
       },
       "Tech901": {
-        "website": "tech901.org",
+        "website": "https://tech901.org",
         "services": [
           "Job training",
           "Employability/job readiness skills (e.g., making a resume)"
@@ -160,7 +160,7 @@ class SelectionHandler {
         "client_qualifications": "Adults in the Memphis area"
       },
       "The Collective Blueprint": {
-        "website": "www.thecollectiveblueprint.org",
+        "website": "https://www.thecollectiveblueprint.org",
         "services": [
           "Job training",
           "Job placement",
@@ -171,7 +171,7 @@ class SelectionHandler {
         "client_qualifications": "18-30 year olds who are / have been out of school and work "
       },
       "Greater Memphis Financial Empowerment Center & Bank on Memphis Coalition": {
-        "website": "www.gmfec.org", // ; www.bankonmemphis.org",
+        "website": "https://www.gmfec.org", // ; https://www.bankonmemphis.org",
         "services": [
           "Financial counseling",
           "Total services indicated"
@@ -192,7 +192,7 @@ class SelectionHandler {
         "client_qualifications": "Shelby County"
       },
       "DeafConnect of the Mid-South, Inc.": {
-        "website": "www.deafconnect.org",
+        "website": "https://www.deafconnect.org",
         "services": [
           "Employability/job readiness skills (e.g., making a resume)",
           "Supportive services (e.g., housing)"
@@ -200,7 +200,7 @@ class SelectionHandler {
         "client_qualifications": "D/deaf and Hard of Hearing community"
       },
       "HopeWorks": {
-        "website": "www.whyhopeworks.org",
+        "website": "https://www.whyhopeworks.org",
         "services": [
           "Job training",
           "Job placement",
@@ -211,7 +211,7 @@ class SelectionHandler {
         "client_qualifications": "Generational Poverty, Incarceration, High School Drop Outs"
       },
       "2Unique Community Salvation Foundation ": {
-        "website": "www.2unique-csf.org",
+        "website": "https://www.2unique-csf.org",
         "services": [
           "Job training",
           "Job placement",
@@ -252,7 +252,7 @@ class SelectionHandler {
         "client_qualifications": "World Relief Memphis (WRM) serves Refugees and other Office of Refugee Resettlement (ORR) eligible immigrants. (Refugees, Asylees, Cuban/Haitian Entrants, Victims of Human Trafficking, Special Immigrant Visas, Amerasians) "
       },
       "Priority Teachers University": {
-        "website": "www.priorityteachersuniversity.com",
+        "website": "https://www.priorityteachersuniversity.com",
         "services": [
           "Job training",
           "Job placement",
@@ -272,7 +272,7 @@ class SelectionHandler {
         "client_qualifications": ""
       },
       "RISE Foundation, Inc.": {
-        "website": "www.risememphis.org",
+        "website": "https://www.risememphis.org",
         "services": [
           "Financial counseling",
           "Mentorship"
@@ -280,7 +280,7 @@ class SelectionHandler {
         "client_qualifications": "under-served community in 38126 ranging from 5th grade to senior citizens "
       },
       "A Fresh Start to a New Beginning": {
-        "website": "afreshstarttoanewbeginning.org",
+        "website": "https://afreshstarttoanewbeginning.org",
         "services": [
           "Job training",
           "Job placement",
@@ -298,7 +298,7 @@ class SelectionHandler {
         "client_qualifications": "N/A "
       },
       "Greater Whitehaven Economic Redevelopment Corporation": {
-        "website": "Www.gwercmemphis.org",
+        "website": "https://www.gwercmemphis.org",
         "services": [
           "Job training",
           "Job placement",
@@ -310,7 +310,7 @@ class SelectionHandler {
         "client_qualifications": "Residents and stakeholders in 38116 and 38109"
       },
       "Persevere": {
-        "website": "www.perseverenow.org",
+        "website": "https://www.perseverenow.org",
         "services": [
           "Job training",
           "Job placement",
@@ -322,7 +322,7 @@ class SelectionHandler {
         "client_qualifications": ""
       },
       "Leadership Memphis": {
-        "website": "Www.leadershipmemphis.org", //; www.volunteermemphis.org",
+        "website": "https://www.leadershipmemphis.org", //; https://www.volunteermemphis.org",
         "services": [
           "Networking",
           "Total services indicated"
@@ -330,7 +330,7 @@ class SelectionHandler {
         "client_qualifications": "Na"
       },
       "Refuge Memphis": {
-        "website": "www.refuge-memphis.org",
+        "website": "https://www.refuge-memphis.org",
         "services": [
           "Financial counseling",
           "Mentorship"
@@ -338,7 +338,7 @@ class SelectionHandler {
         "client_qualifications": ""
       },
       "Let's Innovate Through Education (LITE Memphis)": {
-        "website": "www.litememphis.org",
+        "website": "https://www.litememphis.org",
         "services": [
           "Job training",
           "Education - high school"
@@ -355,12 +355,12 @@ class SelectionHandler {
         "client_qualifications": "Hickory Hill"
       },
       "Alzheimer's and Dementia Services of Memphis": {
-        "website": "adsmemphis.org",
+        "website": "https://adsmemphis.org",
         "services": [],
         "client_qualifications": "People with Dementia and Alzheimer's"
       },
       "Heights Community Development Corp": {
-        "website": "Heightscdc.org",
+        "website": "https://heightscdc.org",
         "services": [
           "Job training",
           "Employability/job readiness skills (e.g., making a resume)",
@@ -621,7 +621,7 @@ class SelectionHandler {
     if (tag) {
       ret += tag + ':';
     }
-    ret += (url + '">' + url + '</a>');
+    ret += (url + '" target="_blank">' + url + '</a>');
     return ret;
   }
   append_services(provider_name) {
