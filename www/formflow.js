@@ -692,15 +692,17 @@ class SelectionHandler {
     let orgs_to_be_deleted = {};
     for (let org_name of Object.keys(orgs)) {
       let org = this.provider_manual_data[org_name];
-      let client_quals = org["client_characteristics"];
-      if (client_quals) {
-        for (let qual_name of Object.keys(client_quals)) {
-          let quals = client_quals[qual_name];
-          let client_characteristic = this.client_data[qual_name];
-          if (client_characteristic) {
-            if (!quals.includes(client_characteristic)) {
+      let org_client_quals = org["client_characteristics"];
+      if (org_client_quals) {
+        for (let qual_name of Object.keys(org_client_quals)) {
+          let quals = org_client_quals[qual_name];
+          let client_quals = this.client_data[qual_name];
+          if (client_quals) {
+            if (!quals.includes(client_quals)) {
               orgs_to_be_deleted[org_name] = org_name;
             }
+          } else {
+            orgs_to_be_deleted[org_name] = org_name;
           }
         }
       }
