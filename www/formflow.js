@@ -636,6 +636,17 @@ class SelectionHandler {
     s += "</ul>"
     return s;
   }
+  make_mail_url(base_url) {
+    return this.make_link("mailto", base_url);
+/*
+    The behavior of this in Google Chrome is not what it should be.
+    let ret =  '<a href=mailto:"' + base_url + 
+              '?subject=' + encodeURIComponent("Please send me information about your programs") +
+              '&body=' + encodeURIComponent('Thank you!') +
+              '" target="_blank">' + base_url + '</a>';
+    return ret;
+*/
+  }
   load_provider(el, provider_name) {
     let provider = this.provider_data[provider_name];
     let provider_manual_data = this.provider_manual_data[provider_name];
@@ -653,7 +664,8 @@ class SelectionHandler {
       if (entry_was_added) {
         s += '<br/>';
       }
-      s += '<b>Email</b>: ' + this.make_link('mailto', provider_manual_data["email"]);
+      // NOTE: This won't work in Google Chrome if the user has more than one profile.
+      s += '<b>Email</b>: ' + this.make_mail_url(provider_manual_data["email"]);
       entry_was_added = true;
     }
     if (provider["website"]) {
