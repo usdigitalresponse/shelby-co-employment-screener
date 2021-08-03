@@ -134,7 +134,7 @@ class SelectionHandler {
     // There have been, however, manual corrections.
     this.provider_data = {
       "Shelby County Office of Reentry": {
-        "website": "https://reentry.shelbycountytn.gov/",
+        "website": "https://reentry.shelbycountytn.gov/contact",
         "services": [
           "Job training",
           "Employability/job readiness skills (e.g., making a resume)",
@@ -160,7 +160,7 @@ class SelectionHandler {
         "client_qualifications": "Adults in the Memphis area"
       },
       "The Collective Blueprint": {
-        "website": "https://www.thecollectiveblueprint.org",
+        "website": "https://changeiscollective.org/contact-us",
         "services": [
           "Job training",
           "Job placement",
@@ -171,7 +171,7 @@ class SelectionHandler {
         "client_qualifications": "18-30 year olds who are / have been out of school and work "
       },
       "Greater Memphis Financial Empowerment Center & Bank on Memphis Coalition": {
-        "website": "https://www.gmfec.org", // ; https://www.bankonmemphis.org",
+        "website": "http://www.gmfec.org/contact.html", // ; https://www.bankonmemphis.org",
         "services": [
           "Financial counseling",
           "Total services indicated"
@@ -179,7 +179,7 @@ class SelectionHandler {
         "client_qualifications": "18+ Shelby County Residents"
       },
       "Goodwill Excel Center Midsouth Inc.": {
-        "website": "https://www.goodwillmemphis.org/theexcelcenter",
+        "website": "https://www.goodwillmemphis.org/contact",
         "services": [
           "Job placement",
           "Literacy (reading and/or writing)",
@@ -192,7 +192,7 @@ class SelectionHandler {
         "client_qualifications": "Shelby County"
       },
       "DeafConnect of the Mid-South, Inc.": {
-        "website": "https://www.deafconnect.org",
+        "website": "http://www.deafconnectmidsouth.org/",
         "services": [
           "Employability/job readiness skills (e.g., making a resume)",
           "Supportive services (e.g., housing)"
@@ -200,7 +200,7 @@ class SelectionHandler {
         "client_qualifications": "D/deaf and Hard of Hearing community"
       },
       "HopeWorks": {
-        "website": "https://www.whyhopeworks.org",
+        "website": "https://www.whyhopeworks.org/contact/",
         "services": [
           "Job training",
           "Job placement",
@@ -252,7 +252,7 @@ class SelectionHandler {
         "client_qualifications": "World Relief Memphis (WRM) serves Refugees and other Office of Refugee Resettlement (ORR) eligible immigrants. (Refugees, Asylees, Cuban/Haitian Entrants, Victims of Human Trafficking, Special Immigrant Visas, Amerasians) "
       },
       "Priority Teachers University": {
-        "website": "https://www.priorityteachersuniversity.com",
+        "website": "http://www.priorityteachersuniversity.com/Contact.html",
         "services": [
           "Job training",
           "Job placement",
@@ -272,7 +272,7 @@ class SelectionHandler {
         "client_qualifications": ""
       },
       "RISE Foundation, Inc.": {
-        "website": "https://www.risememphis.org",
+        "website": "http://risememphis.org/contact/",
         "services": [
           "Financial counseling",
           "Mentorship"
@@ -280,7 +280,7 @@ class SelectionHandler {
         "client_qualifications": "under-served community in 38126 ranging from 5th grade to senior citizens "
       },
       "A Fresh Start to a New Beginning": {
-        "website": "https://afreshstarttoanewbeginning.org",
+        "website": "https://afreshstarttoanewbeginning.org/?page_id=424",
         "services": [
           "Job training",
           "Job placement",
@@ -322,7 +322,7 @@ class SelectionHandler {
         "client_qualifications": ""
       },
       "Leadership Memphis": {
-        "website": "https://www.leadershipmemphis.org", //; https://www.volunteermemphis.org",
+        "website": "https://leadershipmemphis.org/contact-us/", //; https://www.volunteermemphis.org",
         "services": [
           "Networking",
           "Total services indicated"
@@ -330,7 +330,7 @@ class SelectionHandler {
         "client_qualifications": "Na"
       },
       "Refuge Memphis": {
-        "website": "https://www.refuge-memphis.org",
+        "website": "https://refuge-memphis.org/contact/",
         "services": [
           "Financial counseling",
           "Mentorship"
@@ -338,7 +338,7 @@ class SelectionHandler {
         "client_qualifications": ""
       },
       "Let's Innovate Through Education (LITE Memphis)": {
-        "website": "https://www.litememphis.org",
+        "website": "https://litememphis.org/contact-us",
         "services": [
           "Job training",
           "Education - high school"
@@ -346,7 +346,7 @@ class SelectionHandler {
         "client_qualifications": "African American and Latinx High School Students"
       },
       "Power Center CDC": {
-        "website": "http://powercentercdc.org/",
+        "website": "http://powercentercdc.org/contact/",
         "services": [
           "Employability/job readiness skills (e.g., making a resume)",
           "Supportive services (e.g., housing)",
@@ -355,7 +355,7 @@ class SelectionHandler {
         "client_qualifications": "Hickory Hill"
       },
       "Alzheimer's and Dementia Services of Memphis": {
-        "website": "https://adsmemphis.org",
+        "website": "https://www.adsmemphis.org/contact/",
         "services": [],
         "client_qualifications": "People with Dementia and Alzheimer's"
       },
