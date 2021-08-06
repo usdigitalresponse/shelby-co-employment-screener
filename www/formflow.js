@@ -78,7 +78,7 @@ $(document).ready(function() {
 class SelectionHandler {
   constructor() {
     this.current_content_index = -1;
-    this.content_classes = [ 'q_needs', 'q_zip_code', 'q_age', 'q_education',
+    this.content_classes = [ 'intro', 'q_needs', 'q_zip_code', 'q_age', 'q_education',
                              'q_race', 'q_criminal_history',
                              'matches' ];
     this.question_form_ids = [ 'client_needs', 'client_education_level',

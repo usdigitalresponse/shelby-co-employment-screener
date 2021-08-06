@@ -33,7 +33,7 @@
           <br />
           <div class="no-print preamble">
             <div class="en_only usa-header">
-              <p><i>***PROTOTYPE*** Shelby County Employment Services Screener</i></p>
+              <p><i>Shelby County Employment Services Finder</i></p>
               <div class="target">
               </div>
               </p>
@@ -45,10 +45,10 @@
       <div class="providers">
 
       </div>
-      <div class="usa-footer">
+<!--      <div class="usa-footer">
         <i>This information is not saved or shared.</i>
       </div>    
-    </div>
+-->    </div>
   </main>
 
   <script src="./jquery.min.js"></script>
@@ -57,13 +57,26 @@
   <script src="./formflow.js"></script>
   <script src="./uswds-2.12.0/js/uswds.min.js"></script>
 
+  <div class="intro" hidden>
+    <h3>
+      Introduction 
+    </h3>
+    <p>
+      Let’s connect you to the right nonprofit organizations that help with employment.<br/><br/>      
+      We’re going to ask you a few questions to help narrow down the most relevant 
+      organizations that will best serve you. At the end of the questionnaire
+      we'll show you a list of nonprofits that can help you. You can then email or
+      call the nonprofits for more information.
+    </p>
+    <input type="button" id="next0" name="next0" value="Get started with questionnaire"/>
+  </div>
+
   <div class="q_needs usa-prose" hidden>
     <h3>
       What do you need?
     </h3>
     <p class="usa-prose" >
-      We’re going to ask you a few questions to help narrow down the 
-      most relevant non-profits.
+      Question 1 of 10
     </p>
     <form id="client_needs">
     </form>
