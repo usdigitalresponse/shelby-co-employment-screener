@@ -101,7 +101,8 @@ class SelectionHandler {
     this.client_needs = [
       "I need help finding a job",
       "I want more skill training to find a better job",
-      "I want to get my degree (for example, GED or associate)"
+      "I want to go back to school to get my diploma or GED",
+      "I want to get an Associate or Bachelor's degree"
     ]    
     this.race_types = [
       "White", "African American", "Hispanic or Latino",
@@ -583,10 +584,13 @@ class SelectionHandler {
       "I want more skill training to find a better job" : [
         'Certifications',
       ],
-      "I want to get my degree (for example, GED or associate)" : [
+      "I want to go back to school to get my diploma or GED" : [
         'Education - GED',
         'Literacy (reading and/or writing)',
         'Education - high school',
+      ],
+      "I want to get an Associate or Bachelor's degree" : [
+        'Certifications' // No nonprofits currently offer help with Associate or Bachelor's.
       ]
     }
   }
