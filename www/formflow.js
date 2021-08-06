@@ -11,13 +11,17 @@ $(document).ready(function() {
       let val;
       switch (id) {
         case 'zip_code':
-          let zip = $("input").first().val();
-          if (zip) {
-            if (selection_handler.check_zip_code(zip)) {
-              selection_handler.client_data.zip_code = zip;
-              alert_message = '';
-            } else {
-              alert_message = 'Please specify a zip code within Shelby county.'
+          if (document.getElementById('no_zip').checked) {
+            alert_message = '';
+          } else {
+            let zip = $("input").first().val();
+            if (zip) {
+              if (selection_handler.check_zip_code(zip)) {
+                selection_handler.client_data.zip_code = zip;
+                alert_message = '';
+              } else {
+                alert_message = 'Please specify a zip code within Shelby county.'
+              }
             }
           }
           break;
