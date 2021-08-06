@@ -59,7 +59,7 @@ $(document).ready(function() {
             selection_handler.client_data.race = val;
             alert_message = '';
           }
-          break; 
+          break;
         case 'gender':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
@@ -67,7 +67,21 @@ $(document).ready(function() {
             alert_message = '';
           }
           break; 
-      }
+        case 'legal_resident':
+          val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          if (val) {
+            selection_handler.client_data.legal_resident = val;
+            alert_message = '';
+          }
+          break; 
+        case 'disabilities':
+          val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          if (val) {
+            selection_handler.client_data.disabilities = val;
+            alert_message = '';
+          }
+          break; 
+        }
       if (alert_message) {
         alert(alert_message);
       } else {
@@ -83,12 +97,12 @@ class SelectionHandler {
   constructor() {
     this.current_content_index = -1;
     this.content_classes = [ 'intro', 'q_needs', 'q_zip_code', 'q_age', 'q_education',
-                             'q_race', 'q_criminal_history',
+                             'q_race', 'q_disabilities', 'q_legal_resident', 'q_criminal_history',
                              'matches' ];
     this.question_form_ids = [ 'client_needs', 'client_education_level',
                                'client_age_ranges', 'client_criminal_history',
                                'zip_code', 'race',
-                               'gender' ];
+                               'gender', 'legal_resident', 'disabilities' ];
     this.client_data = {
       needs : null,
       zip_code : null,
@@ -130,14 +144,26 @@ class SelectionHandler {
     ]    
     this.work_statuses = [
       "Unemployed",
-      "Part-time",
-      "Full-time",
+      "Part-time (less than 32  hours at one or two jobs)",
+      "Full-time(32+ hours at one job)",
       "Student",
       "Other"
     ]
     this.client_criminal_history = [
       "Yes",
       "No",
+      "Prefer not to say"
+    ]
+    this.legal_resident = [
+      "Yes",
+      "No",
+      "Prefer not to say"
+    ]
+    this.disabilities = [
+      "None",
+      "Deaf/Hard of hearing",
+      "Alzheimers/Dementia",
+      "Other",
       "Prefer not to say"
     ]
     // Data extracted from a Google sheet.
@@ -680,6 +706,12 @@ class SelectionHandler {
         break;
       case 'q_criminal_history' :
         this.append_radios('client_criminal_history', this.client_criminal_history);
+        break;
+      case 'q_legal_resident' :
+        this.append_radios('legal_resident', this.legal_resident);
+        break;
+      case 'q_disabilities' :
+        this.append_radios('disabilities', this.disabilities);
         break;
       case 'summary' :
         let el = $(".summary_div");
