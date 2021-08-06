@@ -7,60 +7,66 @@ $(document).ready(function() {
   }
   for (let id of selection_handler.question_form_ids) {
     $("#" + id).submit(function(event) {
-      let do_continue = false;
+      let alert_message = 'Please chose one item.';
       let val;
       switch (id) {
         case 'zip_code':
-          val = $("input").first().val();
-          if (val) {
-            selection_handler.client_data.zip_code = $("input").first().val();
-            do_continue = true;
+          let zip = $("input").first().val();
+          if (zip) {
+            if (selection_handler.check_zip_code(zip)) {
+              selection_handler.client_data.zip_code = zip;
+              alert_message = '';
+            } else {
+              alert_message = 'Please specify a zip code within Shelby county.'
+            }
           }
           break;
         case 'client_needs':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.client_needs = val;
-            do_continue = true;
+            alert_message = '';
           }
           break; 
         case 'client_age_ranges':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.age_range = val;
-            do_continue = true;
+            alert_message = '';
           }
           break; 
         case 'client_education_level':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.age_range = val;
-            do_continue = true;
+            alert_message = '';
           }
           break;    
         case 'client_criminal_history':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.criminal_history = val;
-            do_continue = true;
+            alert_message = '';
           }
           break;    
         case 'race':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.race = val;
-            do_continue = true;
+            alert_message = '';
           }
           break; 
         case 'gender':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.gender = val;
-            do_continue = true;
+            alert_message = '';
           }
           break; 
       }
-      if (do_continue) {
+      if (alert_message) {
+        alert(alert_message);
+      } else {
         selection_handler.handle();
       }
       event.preventDefault();
@@ -583,6 +589,69 @@ class SelectionHandler {
         'Education - high school',
       ]
     }
+  }
+  check_zip_code(zip_code) {
+    return [
+      "38002",
+      "38014",
+      "38016",
+      "38017",
+      "38018",
+      "38027",
+      "38028",
+      "38029",
+      "38053",
+      "38054",
+      "38083",
+      "38088",
+      "38101",
+      "38103",
+      "38104",
+      "38105",
+      "38106",
+      "38107",
+      "38108",
+      "38109",
+      "38111",
+      "38112",
+      "38113",
+      "38114",
+      "38115",
+      "38116",
+      "38117",
+      "38118",
+      "38119",
+      "38120",
+      "38122",
+      "38124",
+      "38125",
+      "38126",
+      "38127",
+      "38128",
+      "38130",
+      "38131",
+      "38132",
+      "38133",
+      "38134",
+      "38135",
+      "38137",
+      "38138",
+      "38139",
+      "38141",
+      "38157",
+      "38167",
+      "38168",
+      "38173",
+      "38174",
+      "38175",
+      "38177",
+      "38181",
+      "38182",
+      "38183",
+      "38184",
+      "38186",
+      "38187",
+      "38190"].includes(zip_code);
   }
   load(name) {
     switch (name) {
