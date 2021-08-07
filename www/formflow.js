@@ -111,7 +111,7 @@ class SelectionHandler {
       age_range : null,
       education_level : null,
       work_status : null,
-      disability : null,
+      disabilities : null,
       evicted : null,
       criminal_history : null,
       legal_resident : null // === 'prefer not to say'?
@@ -161,8 +161,10 @@ class SelectionHandler {
     ]
     this.disabilities = [
       "None",
-      "Deaf/Hard of hearing",
-      "Alzheimers/Dementia",
+      "D/deaf",
+      "Hard of hearing",
+      "Alzheimer's",
+      "Dementia",
       "Other",
       "Prefer not to say"
     ]
@@ -463,7 +465,7 @@ class SelectionHandler {
         "gmap_link" : "https://goo.gl/maps/6n2XZUChBm7sWwDG6",
         "email" : "Scheduling@DeafConnect.org",
         "client_characteristics" : {
-          "disability" : ["D/deaf", "Hard of hearing" ]
+          "disabilities" : ["D/deaf", "Hard of hearing" ]
         }
       },
       "HopeWorks": {
@@ -594,7 +596,7 @@ class SelectionHandler {
         "gmap_link": "https://goo.gl/maps/kFHEG5Jsb1x69smo9",
         "email" : "info@adsmemphis.org",
         "client_characteristics" : {
-          "disability" : [ "Dementia", "Alzheimer's" ]
+          "disabilities" : [ "Dementia", "Alzheimer's" ]
         }
       },
       "Heights Community Development Corp": {
