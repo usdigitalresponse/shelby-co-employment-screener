@@ -73,11 +73,18 @@ $(document).ready(function() {
             selection_handler.client_data.legal_resident = val;
             alert_message = '';
           }
-          break; 
+          break;
         case 'disabilities':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.disabilities = val;
+            alert_message = '';
+          }
+          break; 
+        case 'work_status':
+          val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          if (val) {
+            selection_handler.client_data.work_status = val;
             alert_message = '';
           }
           break; 
@@ -97,12 +104,12 @@ class SelectionHandler {
   constructor() {
     this.current_content_index = -1;
     this.content_classes = [ 'intro', 'q_needs', 'q_zip_code', 'q_age', 'q_education',
-                             'q_race', 'q_disabilities', 'q_legal_resident', 'q_criminal_history',
-                             'matches' ];
+                             'q_race', 'q_disabilities', 'q_legal_resident', 'q_work_status',
+                             'q_criminal_history', 'matches' ];
     this.question_form_ids = [ 'client_needs', 'client_education_level',
                                'client_age_ranges', 'client_criminal_history',
                                'zip_code', 'race',
-                               'gender', 'legal_resident', 'disabilities' ];
+                               'gender', 'legal_resident', 'disabilities', 'work_status' ];
     this.client_data = {
       needs : null,
       zip_code : null,
@@ -142,7 +149,7 @@ class SelectionHandler {
       "Bachelor’s degree",
       "Advanced degree (above Bachelor's)",
     ]    
-    this.work_statuses = [
+    this.work_status = [
       "Unemployed",
       "Part-time (less than 32  hours at one or two jobs)",
       "Full-time(32+ hours at one job)",
@@ -715,7 +722,10 @@ class SelectionHandler {
       case 'q_disabilities' :
         this.append_radios('disabilities', this.disabilities);
         break;
-      case 'summary' :
+      case 'q_work_status' :
+        this.append_radios('work_status', this.work_status);
+        break;
+        case 'summary' :
         let el = $(".summary_div");
         el.empty();
         el.append('<p><b>Zip code</b>: ' + this.client_data.zip_code + '</p>');
