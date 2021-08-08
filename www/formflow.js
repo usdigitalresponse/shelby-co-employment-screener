@@ -774,7 +774,8 @@ class SelectionHandler {
   load_provider(el, provider_name) {
     let provider = this.provider_data[provider_name];
     let provider_manual_data = this.provider_manual_data[provider_name];
-    let s = '<h4><b><i>' + provider_name + '</i></b></h4>';
+    let s ='<hr  align="left" style="height:2px;border:none;color:#333;background-color:#333;max-width:68ex;"/>'
+    s += '<h4><b><i>' + provider_name + '</i></b></h4>';
     s += this.append_services(provider_name);
     s += "<h5><i>Contact Information</i></h5><ul>";
     if (provider_manual_data["phone_number"]) {
@@ -837,9 +838,13 @@ class SelectionHandler {
     return Object.keys(orgs).sort();
   }
   show_matches() {
+    let title = $("#matches_title");
+    title.empty();
+    let matches = this.get_matches();
+    title.append(matches.length + " matches")
     let el = $(".matches_div");
     el.empty();
-    for (let m of this.get_matches()) {
+    for (let m of matches) {
       this.load_provider(el, m);
     }
   }
