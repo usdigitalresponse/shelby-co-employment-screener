@@ -776,40 +776,27 @@ class SelectionHandler {
     let provider_manual_data = this.provider_manual_data[provider_name];
     let s = '<h4><b><i>' + provider_name + '</i></b></h4>';
     s += this.append_services(provider_name);
-    s += "<h5><i>Contact Information</i></h5><div style=\"margin-left: 40px;\">";
-    let entry_was_added = false;
+    s += "<h5><i>Contact Information</i></h5><ul>";
     if (provider_manual_data["phone_number"]) {
-      s += '<b>Phone Number</b>: ';
+      s += '<li><b>Phone Number</b>: ';
       let pn = '1' + provider_manual_data["phone_number"].replaceAll('-', '');
-      s += '<a href="tel:' + pn + '">' + provider_manual_data["phone_number"] + '</a>';
-      entry_was_added = true;
+      s += '<a href="tel:' + pn + '">' + provider_manual_data["phone_number"] +
+           '</a></li>';
     }
     if (provider_manual_data["email"]) {
-      if (entry_was_added) {
-        s += '<br/>';
-      }
       // NOTE: This won't work in Google Chrome if the user has more than one profile.
-      s += '<b>Email</b>: ' + this.make_mail_url(provider_manual_data["email"]);
-      entry_was_added = true;
+      s += '<li><b>Email</b>: ' + this.make_mail_url(provider_manual_data["email"]) + '</li>';
     }
     if (provider["website"]) {
-      if (entry_was_added) {
-        s += '<br/>';
-      }
-      s += '<b>Website</b>: ';
-      s += this.make_link('', provider["website"]);
-      entry_was_added = true;
+      s += '<li><b>Website</b>: ';
+      s += this.make_link('', provider["website"]) + '</li>';
     }
     if (provider_manual_data["location"]) {
-      if (entry_was_added) {
-        s += '<br/>';
-      }
-      s += '<b>Location</b>: ';
+      s += '<li><b>Location</b>: ';
       s += '<a href="' + provider_manual_data["gmap_link"] + '">' +
-                provider_manual_data["location"] + '</a>';
-      entry_was_added = true;
+                provider_manual_data["location"] + '</a></li>';
     }
-    s += "<br/></div>";
+    s += "</ul></div>";
     el.append(s);
   }
   filter_orgs(orgs) {
