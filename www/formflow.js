@@ -32,21 +32,21 @@ $(document).ready(function() {
             alert_message = '';
           }
           break; 
-        case 'client_age_ranges':
+        case 'client_age':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.age_range = val;
             alert_message = '';
           }
           break; 
-        case 'client_education_level':
+        case 'client_education':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.age_range = val;
             alert_message = '';
           }
           break;    
-        case 'client_criminal_history':
+        case 'criminal_history':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.criminal_history = val;
@@ -103,11 +103,11 @@ $(document).ready(function() {
 class SelectionHandler {
   constructor() {
     this.current_content_index = -1;
-    this.content_classes = [ 'intro', 'q_needs', 'q_zip_code', 'q_age', 'q_education',
+    this.content_classes = [ 'intro', 'q_client_needs', 'q_zip_code', 'q_client_age', 'q_client_education',
                              'q_race', 'q_disabilities', 'q_legal_resident', 'q_work_status',
                              'q_criminal_history', 'matches' ];
-    this.question_form_ids = [ 'client_needs', 'client_education_level',
-                               'client_age_ranges', 'client_criminal_history',
+    this.question_form_ids = [ 'client_needs', 'client_education',
+                               'client_age', 'criminal_history',
                                'zip_code', 'race',
                                'gender', 'legal_resident', 'disabilities', 'work_status' ];
     this.client_data = {
@@ -698,14 +698,14 @@ class SelectionHandler {
   }
   load(name) {
     switch (name) {
-      case 'q_needs' :
+      case 'q_client_needs' :
         this.append_radios('client_needs', this.client_needs);
         break;
-      case 'q_age' :
-        this.append_radios('client_age_ranges', this.client_age_ranges);
+      case 'q_client_age' :
+        this.append_radios('client_age', this.client_age_ranges);
         break;
-      case 'q_education' :
-        this.append_radios('client_education_level', this.education_levels);
+      case 'q_client_education' :
+        this.append_radios('client_education', this.education_levels);
         break;
       case 'q_race' :
         this.append_radios('race', this.race_types);
@@ -714,7 +714,7 @@ class SelectionHandler {
         this.append_radios('gender', this.gender_types);
         break;
       case 'q_criminal_history' :
-        this.append_radios('client_criminal_history', this.client_criminal_history);
+        this.append_radios('criminal_history', this.client_criminal_history);
         break;
       case 'q_legal_resident' :
         this.append_radios('legal_resident', this.legal_resident);
