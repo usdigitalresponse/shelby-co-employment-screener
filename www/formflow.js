@@ -697,6 +697,9 @@ class SelectionHandler {
       "38190"].includes(zip_code);
   }
   load(name) {
+    if (!(['summary', 'matches'].includes(name))) {
+      this.add_question_count(name + '_count');
+    }
     switch (name) {
       case 'q_client_needs' :
         this.append_radios('client_needs', this.client_needs);
@@ -867,6 +870,13 @@ class SelectionHandler {
     targetElem.append(next_elem);
     targetElem.show();
     next_elem.show();
+  }
+  add_question_count(div_id) {
+    let str = '<p>' + 'Question ' + this.current_content_index +
+            ' of ' + (this.content_classes.length - 2) + '</p>';
+    let el = $("#" + div_id);
+    el.empty();
+    el.append(str);
   }
   append_radios(id, vals) {
     let el = $("#" + id);
