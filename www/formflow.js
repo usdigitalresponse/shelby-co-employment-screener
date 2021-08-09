@@ -790,7 +790,7 @@ class SelectionHandler {
   load_provider(el, provider_name) {
     let provider = this.provider_data[provider_name];
     let provider_manual_data = this.provider_manual_data[provider_name];
-    let s ='<hr  align="left" style="height:2px;border:none;color:#333;background-color:#333;max-width:68ex;"/>'
+    let s ='<hr align="left" style="height:2px;border:none;color:#518846;background-color:#518846;max-width:68ex;"/>'
     s += '<h4><b><i>' + provider_name + '</i></b></h4>';
     s += this.append_services(provider_name);
     s += "<h5><i>Contact Information</i></h5><ul>";
@@ -898,7 +898,7 @@ class SelectionHandler {
         '" value="' + the_name + 
         '" /><span>&nbsp;&nbsp;</span>' + val + '</label><br/>';
     }
-    s += '<p> </p><input type="submit" value="Next">';
+    s += '<p> </p><p style="color: #518846;"><input type="submit" value="Next"></p>';
     el.append(s);
   }
 }
