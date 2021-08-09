@@ -28,7 +28,8 @@ $(document).ready(function() {
         case 'client_needs':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
-            selection_handler.client_data.client_needs = val;
+            // Hack: remove extra spaces added to make radio button display look better. See append_radios().
+            selection_handler.client_data.client_needs = val.substring(2);
             alert_message = '';
           }
           break; 
@@ -888,14 +889,16 @@ class SelectionHandler {
   append_radios(id, vals) {
     let el = $("#" + id);
     el.empty();
+    let s = '';
     for (let i = 0; i < vals.length; i++) {
       let val = vals[i];
       let re = /\W/g;
       let the_name = val.replace(re, '_').substring(0, 20).toLowerCase();
-      el.append('<label><input type="radio" name="' + id + 
+      s += '<label style="font-weight:normal"><input type="radio" name="' + id + 
         '" value="' + the_name + 
-        '" />' + val + '</label><br/>');
+        '" /><span>&nbsp;&nbsp;</span>' + val + '</label><br/>';
     }
-    el.append('<p> </p><input type="submit" value="Next">');
+    s += '<p> </p><input type="submit" value="Next">';
+    el.append(s);
   }
 }
