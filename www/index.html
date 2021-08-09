@@ -23,6 +23,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <style>
+    h2, h3 { margin-top: .2em; }
+  </style>
 </head>
 
 <body>
@@ -83,17 +86,18 @@
 
   <div class="q_zip_code" hidden>
     <div id="q_zip_code_count"></div>
-    <h3>
+    <h3 style="margin-bottom:0">
       What is your ZIP code? 
     </h3>
     <form id="zip_code">
       <label for="zip_code"></label><br>
       <input type="number" id="zip_code" name="zip_code" maxlength="5"><br>
+      <p> </p>
       <input type="checkbox" name="no_zip" id="no_zip"
           value="I do not have a permanent home">
           I do not have a permanent home
       </input>
-      <br/>
+      <p> </p>
       <input type="submit" value="Next">
     </form>
   </div>

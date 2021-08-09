@@ -104,7 +104,7 @@ class SelectionHandler {
   constructor() {
     this.current_content_index = -1;
     this.content_classes = [ 'intro', 'q_client_needs', 'q_zip_code', 'q_client_age', 'q_client_education',
-                             'q_race', 'q_disabilities',  'q_work_status', 'q_legal_resident',
+                             'q_race', 'q_work_status', 'q_disabilities',  'q_legal_resident',
                              'q_criminal_history', 'matches' ];
     this.question_form_ids = [ 'client_needs', 'client_education',
                                'client_age', 'criminal_history',
@@ -121,7 +121,7 @@ class SelectionHandler {
       disabilities : null,
       evicted : null,
       criminal_history : null,
-      legal_resident : null // === 'prefer not to say'?
+      legal_resident : null
     } 
     this.client_needs = [
       "I need help finding a job",
@@ -896,6 +896,6 @@ class SelectionHandler {
         '" value="' + the_name + 
         '" />' + val + '</label><br/>');
     }
-    el.append('<input type="submit" value="Next">');
+    el.append('<p> </p><input type="submit" value="Next">');
   }
 }
