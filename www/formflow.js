@@ -629,6 +629,7 @@ class SelectionHandler {
         'Certifications'
       ]
     }
+    // this.dump_counts(); // uncomment if providers are added.
   }
   check_zip_code(zip_code) {
     return [
@@ -692,6 +693,23 @@ class SelectionHandler {
       "38186",
       "38187",
       "38190"].includes(zip_code);
+  }
+  dump_counts() {
+    let contact_counts = { 'phone_number' : 0, 'location' : 0, 'email' : 0 };
+    let manual_data = this.provider_manual_data;
+    Object.keys(manual_data).forEach(function (key) { 
+      var value = manual_data[key];
+      for (let k of ['phone_number', 'location', 'email']) {
+        if (value[k]) {
+          contact_counts[k] = contact_counts[k] + 1;
+        }
+      }
+    })
+    let str = 'Total providers: ' + Object.keys(manual_data).length + ', ';
+    Object.keys(contact_counts).forEach(function (key) { 
+      str += key + ': ' + contact_counts[key] + ', ';
+    })
+    console.log(str);
   }
   load(name) {
     if (!(['summary', 'matches'].includes(name))) {
