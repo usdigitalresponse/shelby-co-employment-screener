@@ -104,7 +104,7 @@ class SelectionHandler {
   constructor() {
     this.current_content_index = -1;
     this.content_classes = [ 'intro', 'q_client_needs', 'q_zip_code', 'q_client_age', 'q_client_education',
-                             'q_race', 'q_disabilities', 'q_legal_resident', 'q_work_status',
+                             'q_race', 'q_disabilities',  'q_work_status', 'q_legal_resident',
                              'q_criminal_history', 'matches' ];
     this.question_form_ids = [ 'client_needs', 'client_education',
                                'client_age', 'criminal_history',
@@ -167,11 +167,11 @@ class SelectionHandler {
       "Prefer not to say"
     ]
     this.disabilities = [
-      "None",
       "D/deaf",
       "Hard of hearing",
-      "Other",
-      "Prefer not to say"
+      "My disability is not listed",
+      "I prefer not to say",
+      "I do not have a disability"
     ]
     // Data extracted from a Google sheet.
     // See Google Scripts in utilities/ directory.
