@@ -36,56 +36,56 @@ $(document).ready(function() {
         case 'client_age':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
-            selection_handler.client_data.age_range = val;
+            selection_handler.client_data.age_range = val.substring(2);
             alert_message = '';
           }
           break; 
         case 'client_education':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
-            selection_handler.client_data.age_range = val;
+            selection_handler.client_data.age_range = val.substring(2);
             alert_message = '';
           }
           break;    
         case 'criminal_history':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
-            selection_handler.client_data.criminal_history = val;
+            selection_handler.client_data.criminal_history = val.substring(2);
             alert_message = '';
           }
           break;    
         case 'race':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
-            selection_handler.client_data.race = val;
+            selection_handler.client_data.race = val.substring(2);
             alert_message = '';
           }
           break;
         case 'gender':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
-            selection_handler.client_data.gender = val;
+            selection_handler.client_data.gender = val.substring(2);
             alert_message = '';
           }
           break; 
         case 'legal_resident':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
-            selection_handler.client_data.legal_resident = val;
+            selection_handler.client_data.legal_resident = val.substring(2);
             alert_message = '';
           }
           break;
         case 'disabilities':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
-            selection_handler.client_data.disabilities = val;
+            selection_handler.client_data.disabilities = val.substring(2);
             alert_message = '';
           }
           break; 
         case 'work_status':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
-            selection_handler.client_data.work_status = val;
+            selection_handler.client_data.work_status = val.substring(2);
             alert_message = '';
           }
           break; 
