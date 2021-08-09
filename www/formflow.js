@@ -170,8 +170,6 @@ class SelectionHandler {
       "None",
       "D/deaf",
       "Hard of hearing",
-      "Alzheimer's",
-      "Dementia",
       "Other",
       "Prefer not to say"
     ]
@@ -192,8 +190,7 @@ class SelectionHandler {
       "Shelby County Division of Community Services": {
         "website": "https://shelbycountytn.gov/16/Community-Services",
         "services": [
-          "Supportive services (e.g., housing)",
-          "Total services indicated"
+          "Supportive services (e.g., housing)"
         ],
         "client_qualifications": ""
       },
@@ -219,8 +216,7 @@ class SelectionHandler {
       "Greater Memphis Financial Empowerment Center & Bank on Memphis Coalition": {
         "website": "http://www.gmfec.org/contact.html", // ; https://www.bankonmemphis.org",
         "services": [
-          "Financial counseling",
-          "Total services indicated"
+          "Financial counseling"
         ],
         "client_qualifications": "18+ Shelby County Residents"
       },
@@ -282,8 +278,7 @@ class SelectionHandler {
       "Kingdom Community Builders": {
         "website": "https://www.facebook.com/KingdomCommunityBuilders",
         "services": [
-          "Literacy (reading and/or writing)",
-          "Total services indicated"
+          "Literacy (reading and/or writing)"
         ],
         "client_qualifications": "We serve a particular African-American community in Memphis"
       },
@@ -370,8 +365,7 @@ class SelectionHandler {
       "Leadership Memphis": {
         "website": "https://leadershipmemphis.org/contact-us/", //; https://www.volunteermemphis.org",
         "services": [
-          "Networking",
-          "Total services indicated"
+          "Networking"
         ],
         "client_qualifications": "Na"
       },
@@ -621,6 +615,7 @@ class SelectionHandler {
         'Certifications',
       ],
       "I want more skill training to find a better job" : [
+        'Literacy (reading and/or writing)',
         'Certifications',
       ],
       "I want to go back to school to get my diploma or GED" : [
@@ -628,8 +623,10 @@ class SelectionHandler {
         'Literacy (reading and/or writing)',
         'Education - high school',
       ],
+       // No nonprofits currently offer help with Associate or Bachelor's.
       "I want to get an Associate or Bachelor's degree" : [
-        'Certifications' // No nonprofits currently offer help with Associate or Bachelor's.
+        'Literacy (reading and/or writing)',
+        'Certifications'
       ]
     }
   }
