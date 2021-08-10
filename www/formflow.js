@@ -222,7 +222,7 @@ class SelectionHandler {
         "client_qualifications": "18+ Shelby County Residents"
       },
       "Goodwill Excel Center Midsouth Inc.": {
-        "website": "https://www.goodwillmemphis.org/contact",
+        "website": "https://www.goodwillmemphis.org/theexcelcenter",
         "services": [
           "Job placement",
           "Literacy (reading and/or writing)",
