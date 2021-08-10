@@ -131,7 +131,7 @@ class SelectionHandler {
       "I want to get an Associate or Bachelor's degree"
     ]    
     this.race_types = [
-      "White", "African American", "Hispanic or Latino",
+      "African American", "White", "Hispanic or Latino",
       "American Indian or Alaskan Native", "Chinese", "Vietnamese", 
       "Filipino", "Korean", "Asian Indian", "Japanese", "Other Asian", 
       "Some other race"
