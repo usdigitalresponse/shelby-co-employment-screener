@@ -764,28 +764,41 @@ class SelectionHandler {
     ret += (url + '" target="_blank">' + url + '</a>');
     return ret;
   }
-  append_services(provider_name) {
-    let s = "<h5><i>Services</i></h5><ul>";
+  get_services(provider_name) {
+    let ret = []
     for (let service of this.services_by_needs[this.client_data.client_needs]) {
       for (let org_service of this.provider_data[provider_name].services) {
         if (service === org_service) {
-          s += "<li>" + service + "</li>";
+          ret.push(service);
         }
       }
+    }
+    return ret;
+  }
+  append_services(provider_name) {
+    let s = "<h5><i>Services</i></h5><ul>";
+    for (let service of this.get_services(provider_name)) {
+      s += "<li>" + service + "</li>";
     }
     s += "</ul>"
     return s;
   }
-  make_mail_url(base_url) {
-    return this.make_link("mailto", base_url);
-/*
-    The behavior of this in Google Chrome is not what it should be.
-    let ret =  '<a href=mailto:"' + base_url + 
-              '?subject=' + encodeURIComponent("Please send me information about your programs") +
-              '&body=' + encodeURIComponent('Thank you!') +
-              '" target="_blank">' + base_url + '</a>';
-    return ret;
-*/
+  make_mail_url(provider_name, base_url) {
+    let services = this.get_services(provider_name);
+    let plural = '';
+    if (services.length > 1) {
+      plural = 's';
+    }
+    let body = 'I would like to find out how to sign up' +
+               ' for the following program' + plural + ':\r\n\r\n';
+    for (let service of services) {
+      body += service + '\r\n';
+    }
+    body += '\r\nThank you!\r\n'
+    return '<a href="mailto:' + base_url + '?subject=' +
+            encodeURIComponent('How do I sign up for your program' + plural + '?') +
+            '&body=' + encodeURIComponent(body) +
+            '" target="_blank">' + base_url + '</a>';
   }
   load_provider(el, provider_name) {
     let provider = this.provider_data[provider_name];
@@ -802,7 +815,8 @@ class SelectionHandler {
     }
     if (provider_manual_data["email"]) {
       // NOTE: This won't work in Google Chrome if the user has more than one profile.
-      s += '<li><b>Email</b>: ' + this.make_mail_url(provider_manual_data["email"]) + '</li>';
+      s += '<li><b>Email</b>: ' + this.make_mail_url(provider_name,
+                                    provider_manual_data["email"]) + '</li>';
     }
     if (provider["website"]) {
       s += '<li><b>Website</b>: ';
