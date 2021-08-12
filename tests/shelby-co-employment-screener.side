@@ -1184,6 +1184,133 @@
       ],
       "value": "Shelby County Office of Reentry"
     }]
+  }, {
+    "id": "bf94761d-41d7-47ae-8eea-143392e2611b",
+    "name": "zip_alert",
+    "commands": [{
+      "id": "e9508a2f-b0ac-4fdb-b009-df231c031954",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2afc3f08-20da-40e2-98b7-5c6363ec8478",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1680x995",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c81ad85c-c670-4733-b16d-4f0cb50ab140",
+      "comment": "",
+      "command": "click",
+      "target": "id=next0",
+      "targets": [
+        ["id=next0", "id"],
+        ["name=next0", "name"],
+        ["css=#next0", "css:finder"],
+        ["xpath=//input[@id='next0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c3b74cb-47bf-439b-b171-b36d9ddc3f4a",
+      "comment": "",
+      "command": "click",
+      "target": "name=client_needs",
+      "targets": [
+        ["name=client_needs", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='client_needs']", "xpath:attributes"],
+        ["xpath=//form[@id='client_needs']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a2604109-07fa-41f0-af19-659c7f3f1aec",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(10) > input",
+      "targets": [
+        ["css=p:nth-child(10) > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='client_needs']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e66e83ee-6432-4dc3-9a12-18f66bfff05a",
+      "comment": "",
+      "command": "click",
+      "target": "name=zip_code",
+      "targets": [
+        ["name=zip_code", "name"],
+        ["css=#zip_code > #zip_code", "css:finder"],
+        ["xpath=//input[@id='zip_code']", "xpath:attributes"],
+        ["xpath=//form[@id='zip_code']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "442891a6-a0e9-4929-9da9-7345cb52b99c",
+      "comment": "",
+      "command": "type",
+      "target": "name=zip_code",
+      "targets": [
+        ["name=zip_code", "name"],
+        ["css=#zip_code > #zip_code", "css:finder"],
+        ["xpath=//input[@id='zip_code']", "xpath:attributes"],
+        ["xpath=//form[@id='zip_code']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "11111"
+    }, {
+      "id": "a9760814-1143-4584-b18e-c53edf9df254",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(1)",
+      "targets": [
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='zip_code']/p[3]/input", "xpath:idRelative"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "117db2fa-3159-4089-a4b5-c171bcb43b8b",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Please specify a zip code within Shelby county.",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b66fc24-844a-4cc5-9520-b061ff33e5b3",
+      "comment": "",
+      "command": "click",
+      "target": "id=no_zip",
+      "targets": [
+        ["id=no_zip", "id"],
+        ["name=no_zip", "name"],
+        ["css=#no_zip", "css:finder"],
+        ["xpath=//input[@id='no_zip']", "xpath:attributes"],
+        ["xpath=//form[@id='zip_code']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6626775-d056-4b74-b8cd-398ba8292e09",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(1)",
+      "targets": [
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='zip_code']/p[3]/input", "xpath:idRelative"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "ac108099-5de3-464a-b413-040510a6a03a",
