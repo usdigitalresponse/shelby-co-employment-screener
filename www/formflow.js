@@ -880,7 +880,6 @@ class SelectionHandler {
   }
   handle() {
     let targetElem = $(".target");
-    targetElem.hide();
     targetElem.empty();
     if (this.current_content_index > -1) {
       let prev_elem = $('.' + this.content_classes[this.current_content_index]);
@@ -890,7 +889,6 @@ class SelectionHandler {
     let next_elem = $('.' + current_content);
     this.load(this.content_classes[this.current_content_index], next_elem);
     targetElem.append(next_elem);
-    targetElem.show();
     next_elem.show();
   }
   add_question_count(div_id) {
