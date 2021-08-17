@@ -472,6 +472,7 @@ class SelectionHandler {
       },
       "Goodwill Excel Center Midsouth Inc.": {
         "phone_number" : "901-323-6221",
+        "email" : "info@excelcentermemphis.org",
         "location" : "6895 Stage Road, Memphis, TN 38133",
         "gmap_link" : "https://goo.gl/maps/mknsLfa5qPEQYdoH9"
       },
