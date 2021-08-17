@@ -82,7 +82,14 @@ $(document).ready(function() {
             alert_message = '';
           }
           break; 
-        case 'work_status':
+        case 'english_lang':
+          val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
+          if (val) {
+            selection_handler.client_data.english_lang = val.substring(2);
+            alert_message = '';
+          }
+          break; 
+          case 'work_status':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.work_status = val.substring(2);
@@ -105,12 +112,14 @@ class SelectionHandler {
   constructor() {
     this.current_content_index = -1;
     this.content_classes = [ 'intro', 'q_client_needs', 'q_zip_code', 'q_client_age', 'q_client_education',
-                             'q_race', 'q_work_status', 'q_disabilities',  'q_legal_resident',
+                             'q_race', 'q_work_status', 'q_english_lang',
+                             'q_disabilities',  'q_legal_resident',
                              'q_criminal_history', 'matches' ];
     this.question_form_ids = [ 'client_needs', 'client_education',
                                'client_age', 'criminal_history',
                                'zip_code', 'race',
-                               'gender', 'legal_resident', 'disabilities', 'work_status' ];
+                               'gender', 'legal_resident', 'disabilities', 'work_status',
+                               'english_lang' ];
     this.client_data = {
       needs : null,
       zip_code : null,
@@ -122,7 +131,8 @@ class SelectionHandler {
       disabilities : null,
       evicted : null,
       criminal_history : null,
-      legal_resident : null
+      legal_resident : null,
+      english_lang : null
     } 
     this.client_needs = [
       "I need help finding a job",
@@ -166,6 +176,10 @@ class SelectionHandler {
       "Yes",
       "No",
       "Prefer not to say"
+    ]
+    this.english_lang = [
+      "Yes",
+      "No"
     ]
     this.disabilities = [
       "D/deaf",
@@ -507,7 +521,8 @@ class SelectionHandler {
         "gmap_link": "https://goo.gl/maps/1ZwTYKFw6pPdPvQS6",
         "email" : "",
         "client_characteristics" : {
-          "legal_resident" : [ "No" ]
+          "legal_resident" : [ "No" ],
+          "english_lang" : [ "No"]
         }
       },
       "Priority Teachers University": {
@@ -741,6 +756,9 @@ class SelectionHandler {
       case 'q_disabilities' :
         this.append_radios('disabilities', this.disabilities);
         break;
+      case 'q_english_lang' :
+        this.append_radios('english_lang', this.english_lang);
+        break;
       case 'q_work_status' :
         this.append_radios('work_status', this.work_status);
         break;
@@ -853,6 +871,18 @@ class SelectionHandler {
       delete orgs[o];
     }
   }
+  add_language_orgs(orgs) {
+    if (this.client_data.english_lang === "No") {
+      for (let org_name of Object.keys(this.provider_manual_data)) {
+        let provider_characteristics = this.provider_manual_data[org_name].client_characteristics;
+        if (provider_characteristics &&
+            provider_characteristics['english_lang'] &&
+            provider_characteristics['english_lang'].includes("No")) {
+              orgs[org_name] = org_name;
+        }
+      }
+    }
+  }
   get_matches() {
     let orgs = {};
     for (let service of this.services_by_needs[this.client_data.client_needs]) {
@@ -865,6 +895,7 @@ class SelectionHandler {
       }
     }
     this.filter_orgs(orgs);
+    this.add_language_orgs(orgs);
     return Object.keys(orgs).sort();
   }
   show_matches() {
