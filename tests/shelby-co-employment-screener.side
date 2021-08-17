@@ -2,7 +2,7 @@
   "id": "06c677e1-f762-49c0-8d95-5c31ef851c0a",
   "version": "2.0",
   "name": "shelby-co-employment-screener",
-  "url": "https://shelby-co-employment-screener.wl.r.appspot.com",
+  "url": "https://shelby-co-e-screener-dev.wl.r.appspot.com",
   "tests": [{
     "id": "b5f72167-bf0e-44fe-a54e-05ac804792e9",
     "name": "basic",
@@ -1320,6 +1320,6 @@
     "timeout": 300,
     "tests": []
   }],
-  "urls": ["https://shelby-co-employment-screener.wl.r.appspot.com/"],
+  "urls": ["https://shelby-co-employment-screener.wl.r.appspot.com/", "https://shelby-co-e-screener-dev.wl.r.appspot.com/"],
   "plugins": []
 }
