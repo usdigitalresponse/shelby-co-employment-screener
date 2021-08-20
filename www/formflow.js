@@ -796,7 +796,7 @@ class SelectionHandler {
   }
   append_services(provider_name) {
     let s = "<h5><i>Services</i></h5><ul>";
-    for (let service of this.get_services(provider_name)) {
+    for (let service of this.get_services(provider_name).sort()) {
       s += "<li>" + service + "</li>";
     }
     s += "</ul>"
