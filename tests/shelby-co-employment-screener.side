@@ -130,6 +130,398 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "778d289e-f846-413b-9ae1-d6a463411abe",
+    "name": "happy path",
+    "commands": [{
+      "id": "734b52b5-9d2b-460a-af8f-1d2a8a419eaa",
+      "comment": "",
+      "command": "open",
+      "target": "https://arboreal-stone-323314.wm.r.appspot.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cad5136c-de7b-43ab-8257-a485748ae6ff",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1380x782",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bbc3a17a-7f65-4b78-bf87-be3e9a31382b",
+      "comment": "",
+      "command": "click",
+      "target": "id=next0",
+      "targets": [
+        ["id=next0", "id"],
+        ["name=next0", "name"],
+        ["css=#next0", "css:finder"],
+        ["xpath=//input[@id='next0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "105ac159-a16b-49c0-8216-6bebf718fe2a",
+      "comment": "",
+      "command": "click",
+      "target": "name=client_needs",
+      "targets": [
+        ["name=client_needs", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='client_needs']", "xpath:attributes"],
+        ["xpath=//form[@id='client_needs']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87b36299-9a4b-402a-998c-eb9cac880f24",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(10) > input",
+      "targets": [
+        ["css=p:nth-child(10) > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='client_needs']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28392cf9-8eed-43fa-a560-78d08fda126d",
+      "comment": "",
+      "command": "click",
+      "target": "name=zip_code",
+      "targets": [
+        ["name=zip_code", "name"],
+        ["css=#zip_code > #zip_code", "css:finder"],
+        ["xpath=//input[@id='zip_code']", "xpath:attributes"],
+        ["xpath=//form[@id='zip_code']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23b7e3ac-2ca4-4a3a-b6ed-0d6210ff0b23",
+      "comment": "",
+      "command": "type",
+      "target": "name=zip_code",
+      "targets": [
+        ["name=zip_code", "name"],
+        ["css=#zip_code > #zip_code", "css:finder"],
+        ["xpath=//input[@id='zip_code']", "xpath:attributes"],
+        ["xpath=//form[@id='zip_code']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "38002"
+    }, {
+      "id": "c73001f3-cb48-4dbd-8119-48b6a026e404",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(1)",
+      "targets": [
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='zip_code']/p[3]/input", "xpath:idRelative"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3fed7558-61f9-429d-afcd-85b550fc1d1c",
+      "comment": "",
+      "command": "click",
+      "target": "name=client_age",
+      "targets": [
+        ["name=client_age", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='client_age']", "xpath:attributes"],
+        ["xpath=//form[@id='client_age']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "af7a0716-e63d-4b41-adb0-4306c125ddd7",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='client_age']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3a3bfb8-38b9-44c5-baf2-f0343982f372",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='client_age']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4da90840-c1eb-483b-994c-67b8cbcbe80c",
+      "comment": "",
+      "command": "click",
+      "target": "name=client_education",
+      "targets": [
+        ["name=client_education", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='client_education']", "xpath:attributes"],
+        ["xpath=//form[@id='client_education']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5cea003-6bea-47b1-beec-578a727dc153",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='client_education']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c360a4a7-6bc4-48d1-ac9d-d36b9ed6c68e",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='client_education']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "653f77cd-d737-4023-8dc2-688a24a55d25",
+      "comment": "",
+      "command": "click",
+      "target": "name=race",
+      "targets": [
+        ["name=race", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='race']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c6b6197-f335-4e26-93d4-ff239d087357",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fad922ec-431a-4bbb-a3f2-5099769a51f4",
+      "comment": "",
+      "command": "click",
+      "target": "name=work_status",
+      "targets": [
+        ["name=work_status", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='work_status']", "xpath:attributes"],
+        ["xpath=//form[@id='work_status']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f949c26-62e9-489f-b747-49aa0f127632",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='work_status']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4cf66d3-b84a-4fcf-94c6-a1fb6f259009",
+      "comment": "",
+      "command": "click",
+      "target": "name=english_lang",
+      "targets": [
+        ["name=english_lang", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='english_lang']", "xpath:attributes"],
+        ["xpath=//form[@id='english_lang']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "19601582-88c1-4036-892f-ff2c987cd960",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='english_lang']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7036d0c6-9002-4d95-a284-c765a7202d39",
+      "comment": "",
+      "command": "click",
+      "target": "css=label:nth-child(9) > input",
+      "targets": [
+        ["css=label:nth-child(9) > input", "css:finder"],
+        ["xpath=(//input[@name='disabilities'])[5]", "xpath:attributes"],
+        ["xpath=//form[@id='disabilities']/label[5]/input", "xpath:idRelative"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e180f1a-63da-42db-9dae-0216be10aff0",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='disabilities']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61579c8d-c683-4d6b-b15c-2c9b0d4b68e0",
+      "comment": "",
+      "command": "click",
+      "target": "name=legal_resident",
+      "targets": [
+        ["name=legal_resident", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='legal_resident']", "xpath:attributes"],
+        ["xpath=//form[@id='legal_resident']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f35bc27e-84c2-4b6a-907b-de08f3f15f0f",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='legal_resident']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "15ace6c8-26d6-4e7d-a468-1d2407b1a638",
+      "comment": "",
+      "command": "click",
+      "target": "css=label:nth-child(3) > input",
+      "targets": [
+        ["css=label:nth-child(3) > input", "css:finder"],
+        ["xpath=(//input[@name='criminal_history'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='criminal_history']/label[2]/input", "xpath:idRelative"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "232418b0-5207-4429-8ce1-9361638d6063",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='criminal_history']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "14dc3597-a111-4351-b68d-4787be379fe2",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='criminal_history']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f44e2370-b761-48ad-b3ae-cbf8389ea21d",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h4:nth-child(2) i",
+      "targets": [
+        ["css=h4:nth-child(2) i", "css:finder"],
+        ["xpath=//b/i", "xpath:position"],
+        ["xpath=//i[contains(.,'Goodwill Excel Center Midsouth Inc.')]", "xpath:innerText"]
+      ],
+      "value": "Goodwill Excel Center Midsouth Inc."
+    }, {
+      "id": "14f41031-bd85-4657-be71-6e5e85f38d5f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=ul:nth-child(4) > li:nth-child(1)",
+      "targets": [
+        ["css=ul:nth-child(4) > li:nth-child(1)", "css:finder"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'Job placement')]", "xpath:innerText"]
+      ],
+      "value": "Job placement"
+    }, {
+      "id": "238181bb-8320-498d-a6bf-540ba35c597c",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=ul:nth-child(4) > li:nth-child(3)",
+      "targets": [
+        ["css=ul:nth-child(4) > li:nth-child(3)", "css:finder"],
+        ["xpath=//li[3]", "xpath:position"],
+        ["xpath=//li[contains(.,'Certifications')]", "xpath:innerText"]
+      ],
+      "value": "Certifications"
+    }, {
+      "id": "c31e2c22-243c-454f-b7eb-5e443f7b122f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h4:nth-child(20) i",
+      "targets": [
+        ["css=h4:nth-child(20) i", "css:finder"],
+        ["xpath=//h4[4]/b/i", "xpath:position"],
+        ["xpath=//i[contains(.,'Priority Teachers University')]", "xpath:innerText"]
+      ],
+      "value": "Priority Teachers University"
+    }, {
+      "id": "b39609a2-c3d0-48b1-848d-a7d9ddd87eb3",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=ul:nth-child(22) > li:nth-child(1)",
+      "targets": [
+        ["css=ul:nth-child(22) > li:nth-child(1)", "css:finder"],
+        ["xpath=//ul[7]/li", "xpath:position"]
+      ],
+      "value": "Job training"
+    }, {
+      "id": "84e44554-4b0f-4621-b810-2021d8e40209",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=ul:nth-child(22) > li:nth-child(3)",
+      "targets": [
+        ["css=ul:nth-child(22) > li:nth-child(3)", "css:finder"],
+        ["xpath=//ul[7]/li[3]", "xpath:position"]
+      ],
+      "value": "Employability/job readiness skills (e.g., making a resume)"
+    }]
   }],
   "suites": [{
     "id": "ac108099-5de3-464a-b413-040510a6a03a",
