@@ -802,6 +802,37 @@ class SelectionHandler {
     s += "</ul>"
     return s;
   }
+  email_to_user() {
+    let s = '';
+    for (let provider_name of this.get_matches()) {
+      let provider = this.provider_data[provider_name];
+      s += provider_name + '\r\nServices:\r\n';
+      for (let service of this.get_services(provider_name).sort()) {
+        s += service + "\r\n";
+      }
+      let provider_manual_data = this.provider_manual_data[provider_name];
+      s += "Contact Information:\r\n";
+      if (provider_manual_data["phone_number"]) {
+        s += provider_manual_data["phone_number"] + '\r\n';
+      }
+      if (provider_manual_data["email"]) {
+        s += provider_manual_data["email"] + '\r\n';
+      }
+      if (provider["website"]) {
+        s +=  provider["website"] + '\r\n';
+      }
+      if (provider_manual_data["location"]) {
+        s += provider_manual_data["location"] + '\r\n';
+      }
+      s += '\r\n';
+    }
+    return '<p>To email this information to yourself, click on ' +
+            '<a href="mailto:?subject=' +
+            encodeURIComponent('Organizations with employment services') +
+            '&body=' + encodeURIComponent(s) +
+            '" target="_blank">this link</a> ' +
+            ' and enter your email address in the "To:" line</p>';
+  }
   make_mail_url(provider_name, base_url) {
     let services = this.get_services(provider_name);
     let plural = '';
@@ -903,6 +934,7 @@ class SelectionHandler {
     let title = $("#matches_title");
     title.empty();
     let matches = this.get_matches();
+    // title.append(this.email_to_user());
     title.append(matches.length + " matches")
     let el = $(".matches_div");
     el.empty();
