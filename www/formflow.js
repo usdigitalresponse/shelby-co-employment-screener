@@ -110,7 +110,7 @@ $(document).ready(function() {
 
 class SelectionHandler {
   constructor() {
-    this.demo_new_features = window.location.href.includes('_demo_new_features');
+    this.demo_new_features = window.location.href.includes('-demo-new-features');
     this.current_content_index = -1;
     this.content_classes = [ 'intro', 'q_client_needs', 'q_zip_code', 'q_client_age', 'q_client_education',
                              'q_race', 'q_work_status', 'q_english_lang',
