@@ -806,32 +806,35 @@ class SelectionHandler {
     let s = '';
     for (let provider_name of this.get_matches()) {
       let provider = this.provider_data[provider_name];
-      s += provider_name + '\r\nServices:\r\n';
+      s += '-'.repeat(60) + '\r\n';
+      s += provider_name + '\r\n';
+      s += '-'.repeat(60) + '\r\n';
+      s += 'Services:\r\n';
       for (let service of this.get_services(provider_name).sort()) {
-        s += service + "\r\n";
+        s += ' '.repeat(5) + service + "\r\n";
       }
       let provider_manual_data = this.provider_manual_data[provider_name];
       s += "Contact Information:\r\n";
       if (provider_manual_data["phone_number"]) {
-        s += provider_manual_data["phone_number"] + '\r\n';
+        s += ' '.repeat(5) + provider_manual_data["phone_number"] + '\r\n';
       }
       if (provider_manual_data["email"]) {
-        s += provider_manual_data["email"] + '\r\n';
+        s += ' '.repeat(5) + provider_manual_data["email"] + '\r\n';
       }
       if (provider["website"]) {
-        s +=  provider["website"] + '\r\n';
+        s += ' '.repeat(5) + provider["website"] + '\r\n';
       }
       if (provider_manual_data["location"]) {
-        s += provider_manual_data["location"] + '\r\n';
+        s += ' '.repeat(5) + provider_manual_data["location"] + '\r\n';
       }
       s += '\r\n';
     }
-    return '<p>To email this information to yourself, click on ' +
+    return '<div class="usa-prose"><p><i>To email this information to yourself, click on ' +
             '<a href="mailto:?subject=' +
             encodeURIComponent('Organizations with employment services') +
             '&body=' + encodeURIComponent(s) +
             '" target="_blank">this link</a> ' +
-            ' and enter your email address in the "To:" line</p>';
+            ' and enter your email address in the "To:" line.</i></p></div>';
   }
   make_mail_url(provider_name, base_url) {
     let services = this.get_services(provider_name);
@@ -842,7 +845,7 @@ class SelectionHandler {
     let body = 'I would like to find out how to sign up' +
                ' for the following program' + plural + ':\r\n\r\n';
     for (let service of services) {
-      body += service + '\r\n';
+      body += ' '.repeat(5) + service + '\r\n';
     }
     body += '\r\nThank you!\r\n'
     return '<a href="mailto:' + base_url + '?subject=' +
@@ -934,8 +937,8 @@ class SelectionHandler {
     let title = $("#matches_title");
     title.empty();
     let matches = this.get_matches();
-    // title.append(this.email_to_user());
     title.append(matches.length + " matches")
+//    title.append(this.email_to_user()); // TODO
     let el = $(".matches_div");
     el.empty();
     for (let m of matches) {
