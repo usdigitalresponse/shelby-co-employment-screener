@@ -509,6 +509,19 @@
         ["xpath=//ul[7]/li[3]", "xpath:position"]
       ],
       "value": "Job training"
+    }, {
+      "id": "f84035d3-4bce-4f27-bf55-b46da117267f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=matches_title",
+      "targets": [
+        ["id=matches_title", "id"],
+        ["css=#matches_title", "css:finder"],
+        ["xpath=//h3[@id='matches_title']", "xpath:attributes"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'4 matches')]", "xpath:innerText"]
+      ],
+      "value": "4 matches"
     }]
   }, {
     "id": "77fc7d17-67e3-41b8-8f5e-6672217cc455",
@@ -848,6 +861,26 @@
         ["xpath=//i[contains(.,'Greater Whitehaven Economic Redevelopment Corporation')]", "xpath:innerText"]
       ],
       "value": "Greater Whitehaven Economic Redevelopment Corporation"
+    }, {
+      "id": "8dbcfc6a-159c-4b87-9433-23385125ce48",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=matches_title",
+      "targets": [
+        ["id=matches_title", "id"],
+        ["css=#matches_title", "css:finder"],
+        ["xpath=//h3[@id='matches_title']", "xpath:attributes"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'5 matches')]", "xpath:innerText"]
+      ],
+      "value": "5 matches"
+    }, {
+      "id": "ba1bdbab-ad61-413d-8b1a-9f8aebca86dc",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "4a34f9aa-a227-4177-a8c1-deb879301fdb",
@@ -1164,6 +1197,19 @@
         ["xpath=//i[contains(.,'Shelby County Office of Reentry')]", "xpath:innerText"]
       ],
       "value": "Shelby County Office of Reentry"
+    }, {
+      "id": "e91a8498-5208-4578-b5df-d5918cd2f75d",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=matches_title",
+      "targets": [
+        ["id=matches_title", "id"],
+        ["css=#matches_title", "css:finder"],
+        ["xpath=//h3[@id='matches_title']", "xpath:attributes"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'7 matches')]", "xpath:innerText"]
+      ],
+      "value": "7 matches"
     }]
   }, {
     "id": "fd55d779-ab1b-4832-abf7-a1be29b38e8b",
@@ -1501,6 +1547,19 @@
         ["xpath=//i[contains(.,'World Relief Memphis')]", "xpath:innerText"]
       ],
       "value": "World Relief Memphis"
+    }, {
+      "id": "4eefd33b-e834-4464-b40a-c0401c288e96",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=matches_title",
+      "targets": [
+        ["id=matches_title", "id"],
+        ["css=#matches_title", "css:finder"],
+        ["xpath=//h3[@id='matches_title']", "xpath:attributes"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'5 matches')]", "xpath:innerText"]
+      ],
+      "value": "5 matches"
     }]
   }, {
     "id": "12d0494f-45b3-4ce8-951a-2807e9534af8",
@@ -1798,6 +1857,19 @@
         ["xpath=//p[2]/input", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "10bd7ada-eae2-41c0-ade8-43ff6dcf2e8a",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=matches_title",
+      "targets": [
+        ["id=matches_title", "id"],
+        ["css=#matches_title", "css:finder"],
+        ["xpath=//h3[@id='matches_title']", "xpath:attributes"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'4 matches')]", "xpath:innerText"]
+      ],
+      "value": "4 matches"
     }]
   }],
   "suites": [{
