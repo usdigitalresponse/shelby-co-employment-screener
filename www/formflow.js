@@ -110,6 +110,7 @@ $(document).ready(function() {
 
 class SelectionHandler {
   constructor() {
+    this.demo_new_features = window.location.href.includes('_demo_new_features');
     this.current_content_index = -1;
     this.content_classes = [ 'intro', 'q_client_needs', 'q_zip_code', 'q_client_age', 'q_client_education',
                              'q_race', 'q_work_status', 'q_english_lang',
@@ -733,6 +734,9 @@ class SelectionHandler {
       this.add_question_count(name + '_count');
     }
     switch (name) {
+      case 'intro' :
+        this.add_211()
+        break;
       case 'q_client_needs' :
         this.append_radios('client_needs', this.client_needs);
         break;
@@ -763,7 +767,7 @@ class SelectionHandler {
       case 'q_work_status' :
         this.append_radios('work_status', this.work_status);
         break;
-        case 'summary' :
+      case 'summary' :
         let el = $(".summary_div");
         el.empty();
         el.append('<p><b>Zip code</b>: ' + this.client_data.zip_code + '</p>');
@@ -774,6 +778,15 @@ class SelectionHandler {
         this.show_matches();
         break;
       } 
+  }
+  add_211() {
+    if (this.demo_new_features) {
+      let href_211 = $(".href_211");
+      href_211.empty();
+      href_211.append(
+        '<br/><a href="tel:211">📞To talk to someone for help, tap here.</a><br/>'
+      );
+    }
   }
   make_link(tag, url) {
     let ret = '<a href="';
@@ -937,8 +950,10 @@ class SelectionHandler {
     let title = $("#matches_title");
     title.empty();
     let matches = this.get_matches();
-    title.append(matches.length + " matches")
-//    title.append(this.email_to_user()); // TODO
+    title.append(matches.length + " matches");
+    if (this.demo_new_features) {
+      title.append(this.email_to_user());
+    }
     let el = $(".matches_div");
     el.empty();
     for (let m of matches) {
