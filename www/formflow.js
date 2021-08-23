@@ -952,7 +952,9 @@ class SelectionHandler {
     let matches = this.get_matches();
     title.append(matches.length + " matches");
     if (this.demo_new_features) {
-      title.append(this.email_to_user());
+      let email_self = $("#email_self");
+      email_self.empty();
+      email_self.append(this.email_to_user());
     }
     let el = $(".matches_div");
     el.empty();
