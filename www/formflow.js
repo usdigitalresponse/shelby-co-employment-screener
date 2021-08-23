@@ -524,6 +524,13 @@ class SelectionHandler {
         "email" : "",
         "client_characteristics" : {
           "legal_resident" : [ "No" ],
+        },
+              // client_characteristics are exclusive.
+              // E.g., age_range === Younger than 18 AND education_level === whatever will filter down providers.
+              // inclusive_characteristics are, well, inclusive.
+              // E.g., if client has english_lang === No, this provider will be included
+              // regardless of other client_characteristics.
+        "inclusive_characteristics" : {
           "english_lang" : [ "No"]
         }
       },
@@ -922,7 +929,7 @@ class SelectionHandler {
   add_language_orgs(orgs) {
     if (this.client_data.english_lang === "No") {
       for (let org_name of Object.keys(this.provider_manual_data)) {
-        let provider_characteristics = this.provider_manual_data[org_name].client_characteristics;
+        let provider_characteristics = this.provider_manual_data[org_name].inclusive_characteristics;
         if (provider_characteristics &&
             provider_characteristics['english_lang'] &&
             provider_characteristics['english_lang'].includes("No")) {

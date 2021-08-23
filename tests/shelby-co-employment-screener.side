@@ -2,7 +2,7 @@
   "id": "06c677e1-f762-49c0-8d95-5c31ef851c0a",
   "version": "2.0",
   "name": "shelby-co-employment-screener",
-  "url": "https://arboreal-stone-323314.wm.r.appspot.com/",
+  "url": "https://shelby-co-demo-new-features.wn.r.appspot.com",
   "tests": [{
     "id": "bf94761d-41d7-47ae-8eea-143392e2611b",
     "name": "zip_alert",
@@ -1858,6 +1858,17 @@
       ],
       "value": ""
     }, {
+      "id": "69d232f8-151d-47a6-8be6-8c42adefd9a3",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h4:nth-child(26) i",
+      "targets": [
+        ["css=h4:nth-child(26) i", "css:finder"],
+        ["xpath=//h4[5]/b/i", "xpath:position"],
+        ["xpath=//i[contains(.,'World Relief Memphis')]", "xpath:innerText"]
+      ],
+      "value": "World Relief Memphis"
+    }, {
       "id": "10bd7ada-eae2-41c0-ade8-43ff6dcf2e8a",
       "comment": "",
       "command": "verifyText",
@@ -1869,7 +1880,7 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'4 matches')]", "xpath:innerText"]
       ],
-      "value": "4 matches"
+      "value": "5 matches"
     }]
   }],
   "suites": [{
@@ -1880,6 +1891,6 @@
     "timeout": 300,
     "tests": []
   }],
-  "urls": ["https://shelby-co-employment-screener.wl.r.appspot.com/", "https://shelby-co-e-screener-dev.wl.r.appspot.com/", "https://arboreal-stone-323314.wm.r.appspot.com/"],
+  "urls": ["https://shelby-co-employment-screener.wl.r.appspot.com/", "https://shelby-co-e-screener-dev.wl.r.appspot.com/", "https://arboreal-stone-323314.wm.r.appspot.com/", "https://shelby-co-demo-new-features.wn.r.appspot.com/"],
   "plugins": []
 }
