@@ -654,7 +654,7 @@ class SelectionHandler {
         'Certifications'
       ]
     }
-    // this.dump_counts(); // uncomment if providers are added.
+    this.dump_counts(); // get provider statistics.
   }
   check_zip_code(zip_code) {
     return [
@@ -721,6 +721,7 @@ class SelectionHandler {
   }
   dump_counts() {
     let contact_counts = { 'phone_number' : 0, 'location' : 0, 'email' : 0 };
+    let no_email_providers = [];
     let manual_data = this.provider_manual_data;
     Object.keys(manual_data).forEach(function (key) { 
       var value = manual_data[key];
@@ -729,12 +730,18 @@ class SelectionHandler {
           contact_counts[k] = contact_counts[k] + 1;
         }
       }
+      if (!manual_data[key]['email']) {
+        no_email_providers.push(key);
+      }
     })
     let str = 'Total providers: ' + Object.keys(manual_data).length + ', ';
     Object.keys(contact_counts).forEach(function (key) { 
       str += key + ': ' + contact_counts[key] + ', ';
     })
     console.log(str);
+    for (let p of no_email_providers) {
+      console.log(p);
+    }
   }
   load(name) {
     if (!(['summary', 'matches'].includes(name))) {
