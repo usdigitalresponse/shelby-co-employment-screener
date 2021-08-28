@@ -1,0 +1,14 @@
+{
+  "name": "express",
+  "version": "4.17.1",
+  "description": "Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
