@@ -1,3 +1,3 @@
 # Website to match people with employment service providers in Shelby County, TN
 
-Currently just a static site. Deploy to the cloud of your choice.
+How To documents : https://drive.google.com/drive/u/0/folders/1CTML_seSxTZap4ZGo3_Fw-RiZOs-9Lue
