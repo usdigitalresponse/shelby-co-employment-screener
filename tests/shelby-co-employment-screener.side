@@ -2,7 +2,7 @@
   "id": "06c677e1-f762-49c0-8d95-5c31ef851c0a",
   "version": "2.0",
   "name": "shelby-co-employment-screener",
-  "url": "https://shelby-co-demo-new-features.wn.r.appspot.com",
+  "url": "https://shelby-co-e-screener-dev.wl.r.appspot.com/",
   "tests": [{
     "id": "bf94761d-41d7-47ae-8eea-143392e2611b",
     "name": "zip_alert",
