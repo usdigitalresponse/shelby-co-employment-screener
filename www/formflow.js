@@ -383,7 +383,7 @@ class SelectionHandler {
         "phone_number": "901-341-0220",
         "location": "5340 Quince Rd, Suite A, Memphis, TN 38119",
         "gmap_link": "https://goo.gl/maps/1ZwTYKFw6pPdPvQS6",
-        "email" : "",
+        "email" : "cwilliams@wr.org",
         "client_characteristics" : {
           "legal_resident" : [ "No" ],
         },
