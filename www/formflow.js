@@ -232,7 +232,7 @@ class SelectionHandler {
         "phone_number": "901-881-2677",
         "location": "1350 Concourse Ave. Suite 375, Memphis, TN  38104",
         "gmap_link": "https://goo.gl/maps/BQD4MD8iPXkVA2ws9",
-        "email" : "",
+        "email" : "info@tech901.org",
         "client_characteristics" : {
           "age_range" : [ "18-30", "Older than 30" ]
         }
@@ -337,7 +337,7 @@ class SelectionHandler {
         "phone_number" : "901-489-2386",
         "location" : "Hickory Ridge Mall, C. D. Corporation 3743 S. Hickory Ridge Mall, Suite 494 Memphis, TN 38115",
         "gmap_link" : "https://goo.gl/maps/GkfpfKmG2hNR4dTEA",
-        "email" : "",
+        "email" : "Thisis2unique@gmail.com",
         "client_characteristics" : {
           "age_range" : [ "Younger than 18" ],
           "education_level" : [ "No high school diploma or equivalent (for example: no GED)" ]
