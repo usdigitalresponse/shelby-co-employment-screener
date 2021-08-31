@@ -3,8 +3,12 @@
   "version": "4.17.1",
   "description": "Express",
   "main": "app.js",
+  "private": true,
   "scripts": {
     "start": "node app.js"
+  },
+  "engines": {
+    "node": ">=10"
   },
   "author": "chris.keith@gmail.com",
   "license": "MIT",
