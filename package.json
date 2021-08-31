@@ -1,17 +1,16 @@
 {
   "name": "express",
-  "version": "4.17.1",
   "description": "Express",
-  "main": "app.js",
+  "version": "4.17.1",
   "private": true,
+  "license": "Apache-2.0",
+  "author": "chris.keith@gmail.com",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
     "start": "node app.js"
   },
-  "engines": {
-    "node": ">=10"
-  },
-  "author": "chris.keith@gmail.com",
-  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
   }

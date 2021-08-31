@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express')
 const path = require('path')
 const app = express()
@@ -13,3 +15,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
+module.exports = app;
