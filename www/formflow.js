@@ -466,7 +466,7 @@ class SelectionHandler {
         "phone_number": "901-725-0460",
         "location": "1680 Jackson Avenue, Memphis, Tennessee 38107",
         "gmap_link": "https://goo.gl/maps/c2iVqP7pBXv6Z57r6",
-        "email" : ""
+        "email" : "engage@bldgmemphis.org"
       },
       "Greater Whitehaven Economic Redevelopment Corporation": {
         "website": "https://www.gwercmemphis.org",
