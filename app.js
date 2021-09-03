@@ -6,14 +6,14 @@ const app = express()
 
 app.use(express.static(path.join(__dirname, 'www')))
 
-const port = 443
+const PORT = process.env.PORT || 8080
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'www/index.html'))
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(PORT, () => {
+  console.log(`App listening at http://localhost:${PORT}`)
 })
 
-module.exports = app;
+module.exports = app
