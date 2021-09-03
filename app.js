@@ -6,7 +6,7 @@ const app = express()
 
 app.use(express.static(path.join(__dirname, 'www')))
 
-const port = 80
+const port = 443
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'www/index.html'))
