@@ -1,6 +1,6 @@
 $(document).ready(function() {
   let selection_handler = new SelectionHandler();
-  for (let i of [0, 1, 4]) {
+  for (let i of [0, 1, 2, 3]) {
     $('#next' + i).click(function() {
       selection_handler.handle();
     });
@@ -95,8 +95,19 @@ $(document).ready(function() {
             selection_handler.client_data.work_status = val.substring(2);
             alert_message = '';
           }
+          break;
+        case 'send_emails_form':
+          alert_message = '';
           break; 
-        case 'send_email_form':
+        case 'personal_info':
+          if (!selection_handler.check_client_data()) {
+            alert_message = 'Please provide your name. You must also provide at least an email or phone number.';
+          } else {
+            alert_message = '';
+          }
+          break;
+        case 'verify_email_sending':
+          selection_handler.send_provider_emails();
           alert_message = '';
           break; 
         }
@@ -139,7 +150,12 @@ class SelectionHandler {
       criminal_history : null,
       legal_resident : null,
       english_lang : null
-    } 
+    }
+    this.client_id_data = {
+      name : null,
+      email : null,
+      phone : null
+    }
     this.client_needs = [
       "I need help finding a job",
       "I want more skill training to find a better job",
@@ -703,7 +719,7 @@ class SelectionHandler {
     }
   }
   load(name) {
-    if (!(['summary', 'matches', 'send_emails_form',
+    if (!(['matches', 'send_emails_form',
            'personal_info', 'verify_email_sending'].includes(name))) {
       this.add_question_count(name + '_count');
     }
@@ -741,25 +757,46 @@ class SelectionHandler {
       case 'q_work_status' :
         this.append_radios('work_status', this.work_status);
         break;
-      case 'summary' :
-        let el = $(".summary_div");
-        el.empty();
-        el.append('<p><b>Zip code</b>: ' + this.client_data.zip_code + '</p>');
-        el.append('<p><b>Race</b>: ' + this.client_data.race + '</p>');
-        el.append('<p><b>Gender</b>: ' + this.client_data.gender + '</p>');
-        break;
       case 'matches' :
         this.show_matches();
         break;
       case 'personal_info' :
         this.show_personal_info();
         break;  
-      } 
+      case 'verify_email_sending' :
+        this.verify_email_sending();
+        break; 
+    } 
   }
   show_personal_info() {
-    let el = $('#personal_info');
+    let el = $('.personal_info_div');
     el.empty();
-    el.append('form to come...');
+    let html ='<label for="client_name">Name:&nbsp;&nbsp;</label>' +
+              '<input type="text" id="client_name"><br>' +
+              '<label for="client_email">Email:&nbsp;&nbsp;</label>' +
+              '<input type="text" id="client_email"><br>' +
+              '<label for="client_phone">Phone:</label>' +
+              '<input type="text" id="client_phone">'
+    el.append(html);
+  }
+  verify_email_sending() {
+    let el = $('.verify_email_sending_div');
+    el.empty();
+    el.append('<b>Not implemented yet!</b>');
+  }
+  check_client_data() {
+    this.client_id_data.name = $("#client_name").val();
+    if (!this.client_id_data.name) {
+      return false;
+    }
+    this.client_id_data.email = $("#client_email").val();
+    this.client_id_data.phone = $("#client_phone").val();
+    if (!(this.client_id_data.email || this.client_id_data.phone)) {
+      return false;
+    }
+    return true;
+  }
+  send_provider_emails() {
   }
   add_211() {
     if (this.demo_new_features) {
@@ -960,7 +997,7 @@ class SelectionHandler {
     }
     let current_content = this.content_classes[++this.current_content_index];
     let next_elem = $('.' + current_content);
-    this.load(this.content_classes[this.current_content_index], next_elem);
+    this.load(this.content_classes[this.current_content_index]);
     targetElem.append(next_elem);
     next_elem.show();
   }
