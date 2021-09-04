@@ -1891,6 +1891,6 @@
     "timeout": 300,
     "tests": []
   }],
-  "urls": ["https://shelby-co-employment-screener.wl.r.appspot.com/", "https://arboreal-stone-323314.wm.r.appspot.com/", "https://shelby-co-demo-new-features.wn.r.appspot.com/", "http://localhost/", "https://shelby-co-screener-dev.wl.r.appspot.com/"],
+  "urls": ["https://shelby-co-employment-screener.wl.r.appspot.com/", "https://arboreal-stone-323314.wm.r.appspot.com/", "https://shelby-co-demo-new-features.wn.r.appspot.com/", "http://localhost:8080/", "https://shelby-co-screener-dev.wl.r.appspot.com/", "http://localhost:8080/"],
   "plugins": []
 }

@@ -1,6 +1,6 @@
 $(document).ready(function() {
   let selection_handler = new SelectionHandler();
-  for (let i = 0; i < 5; i++) {
+  for (let i of [0, 1, 4]) {
     $('#next' + i).click(function() {
       selection_handler.handle();
     });
@@ -89,12 +89,15 @@ $(document).ready(function() {
             alert_message = '';
           }
           break; 
-          case 'work_status':
+        case 'work_status':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
             selection_handler.client_data.work_status = val.substring(2);
             alert_message = '';
           }
+          break; 
+        case 'send_email_form':
+          alert_message = '';
           break; 
         }
       if (alert_message) {
@@ -110,17 +113,19 @@ $(document).ready(function() {
 
 class SelectionHandler {
   constructor() {
-    this.demo_new_features = window.location.href.includes('-demo-new-features');
+    this.demo_new_features = window.location.href.includes('-demo-new-features') ||
+                             window.location.href.includes('localhost:8080') ||
+                             window.location.href.includes('/shelby-co-employment-screener/www/index.html');
     this.current_content_index = -1;
     this.content_classes = [ 'intro', 'q_client_needs', 'q_zip_code', 'q_client_age', 'q_client_education',
                              'q_race', 'q_work_status', 'q_english_lang',
                              'q_disabilities',  'q_legal_resident',
-                             'q_criminal_history', 'matches' ];
+                             'q_criminal_history', 'matches', 'personal_info', 'verify_email_sending' ];
     this.question_form_ids = [ 'client_needs', 'client_education',
                                'client_age', 'criminal_history',
                                'zip_code', 'race',
                                'gender', 'legal_resident', 'disabilities', 'work_status',
-                               'english_lang' ];
+                               'english_lang', 'personal_info', 'verify_email_sending' ];
     this.client_data = {
       needs : null,
       zip_code : null,
@@ -698,7 +703,8 @@ class SelectionHandler {
     }
   }
   load(name) {
-    if (!(['summary', 'matches'].includes(name))) {
+    if (!(['summary', 'matches', 'send_emails_form',
+           'personal_info', 'verify_email_sending'].includes(name))) {
       this.add_question_count(name + '_count');
     }
     switch (name) {
@@ -745,7 +751,15 @@ class SelectionHandler {
       case 'matches' :
         this.show_matches();
         break;
+      case 'personal_info' :
+        this.show_personal_info();
+        break;  
       } 
+  }
+  show_personal_info() {
+    let el = $('#personal_info');
+    el.empty();
+    el.append('form to come...');
   }
   add_211() {
     if (this.demo_new_features) {
@@ -834,10 +848,13 @@ class SelectionHandler {
             '&body=' + encodeURIComponent(body) +
             '" target="_blank">' + base_url + '</a>';
   }
+  get_small_separator() {
+    return '<hr align="left" style="height:2px;border:none;color:#518846;background-color:#518846;max-width:68ex;"/>';
+  }
   load_provider(el, provider_name) {
     let provider = this.provider_data[provider_name];
     let provider_manual_data = this.provider_data[provider_name];
-    let s ='<hr align="left" style="height:2px;border:none;color:#518846;background-color:#518846;max-width:68ex;"/>'
+    let s = this.get_small_separator();
     s += '<h4><b><i>' + provider_name + '</i></b></h4>';
     s += this.append_services(provider_name);
     s += "<h5><i>Contact Information</i></h5><ul>";
@@ -914,6 +931,11 @@ class SelectionHandler {
     this.add_language_orgs(orgs);
     return Object.keys(orgs).sort();
   }
+  load_send_email_div() {
+    if (!this.demo_new_features) {
+      $('.send_emails').hide();
+    }
+  }
   show_matches() {
     let title = $("#matches_title");
     title.empty();
@@ -927,6 +949,7 @@ class SelectionHandler {
     for (let m of matches) {
       this.load_provider(el, m);
     }
+    this.load_send_email_div();
   }
   handle() {
     let targetElem = $(".target");
