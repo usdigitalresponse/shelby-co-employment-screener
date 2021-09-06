@@ -43,7 +43,7 @@ $(document).ready(function() {
         case 'client_education':
           val = $('input[name=' + id + ']:checked', '#' + id).parent().text();
           if (val) {
-            selection_handler.client_data.age_range = val.substring(2);
+            selection_handler.client_data.education_level = val.substring(2);
             alert_message = '';
           }
           break;    
@@ -146,7 +146,6 @@ class SelectionHandler {
       education_level : null,
       work_status : null,
       disabilities : null,
-      evicted : null,
       criminal_history : null,
       legal_resident : null,
       english_lang : null
@@ -776,15 +775,46 @@ class SelectionHandler {
               '<label for="client_email">Email:&nbsp;&nbsp;</label>' +
               '<input type="email" id="client_email"><br>' +
               '<label for="client_phone">Phone:</label>' +
-              '<input type="text" id="client_phone">' +
+              '<input type="tel" id="client_phone">' +
               '<br/>' +
               '<input style="color: #518846;" type="submit" value="Verify emails"/>';
     el.append(html);
   }
   verify_email_sending() {
-    let el = $('.verify_email_sending_div');
+    let html = '<p><b>Not implemented yet!</b></p>' +
+              '<p>An email will be sent to the following organizations:</p>' +
+              '<ul>'
+    let matches = this.get_matches();
+    for (let m of matches) {
+      html += '<li>' + m + '</li>';
+    }
+    html += '</ul><p>Containing the following information:</p><ul>'
+    html += '<li>Name: ' + this.client_id_data.name + '</li>'
+    let ph = 'Not provided'
+    if (this.client_id_data.phone) {
+      ph = this.client_id_data.phone;
+    }
+    html += '<li>Phone: ' + ph + '</li>'
+    let zip = 'Not provided'
+    if (this.client_data.zip) {
+      zip = this.client_data.zip_code
+    }
+    html += '<li>Zip code: ' + zip + '</li>'
+    html += '<li>Race: ' + this.client_data.race + '</li>'
+    html += '<li>Age: ' + this.client_data.age_range + '</li>'
+    html += '<li>Education: ' + this.client_data.education_level + '</li>'
+    html += '<li>Employment status: ' + this.client_data.work_status + '</li>'
+    html += '<li>Disabled status: ' + this.client_data.disabilities + '</li>'
+    html += '<li>Criminal history: ' + this.client_data.criminal_history + '</li>'
+    html += '<li>Legal resident: ' + this.client_data.legal_resident + '</li>'
+    html += '<li>English language: ' + this.client_data.english_lang + '</li>'
+    html += '</ul>'
+    html += '<i>? Do we add a checkbox here that says:</i>'
+    html += '<br/>Save your data (excluding name, phone number and email) for later analysis?'
+    html += '<br/><i>(... and edit the disclaimer in the footers?)</i>'
+    let el = $('#verify_email_sending');
     el.empty();
-    el.append('<b>Not implemented yet!</b>');
+    el.append(html);
   }
   check_client_data() {
     this.client_id_data.name = $("#client_name").val();
