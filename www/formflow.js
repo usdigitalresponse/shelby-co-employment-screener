@@ -1,6 +1,6 @@
 $(document).ready(function() {
   let selection_handler = new SelectionHandler();
-  for (let i of [0, 1, 2, 3]) {
+  for (let i of [0, 2, 3]) {
     $('#next' + i).click(function() {
       selection_handler.handle();
     });
@@ -136,7 +136,7 @@ class SelectionHandler {
                                'client_age', 'criminal_history',
                                'zip_code', 'race',
                                'gender', 'legal_resident', 'disabilities', 'work_status',
-                               'english_lang', 'personal_info', 'verify_email_sending' ];
+                               'english_lang', 'send_emails_form', 'personal_info', 'verify_email_sending' ];
     this.client_data = {
       needs : null,
       zip_code : null,
@@ -769,14 +769,16 @@ class SelectionHandler {
     } 
   }
   show_personal_info() {
-    let el = $('.personal_info_div');
+    let el = $('#personal_info');
     el.empty();
     let html ='<label for="client_name">Name:&nbsp;&nbsp;</label>' +
               '<input type="text" id="client_name"><br>' +
               '<label for="client_email">Email:&nbsp;&nbsp;</label>' +
-              '<input type="text" id="client_email"><br>' +
+              '<input type="email" id="client_email"><br>' +
               '<label for="client_phone">Phone:</label>' +
-              '<input type="text" id="client_phone">'
+              '<input type="text" id="client_phone">' +
+              '<br/>' +
+              '<input style="color: #518846;" type="submit" value="Verify emails"/>';
     el.append(html);
   }
   verify_email_sending() {
@@ -803,7 +805,7 @@ class SelectionHandler {
       let href_211 = $(".href_211");
       href_211.empty();
       href_211.append(
-        '<br/><a href="tel:211">📞To talk to someone for help, tap here.</a><br/>'
+        '<br/><a href="tel:211">📞To talk to someone for help, tap (or click) here.</a><br/>'
       );
     }
   }
@@ -861,7 +863,7 @@ class SelectionHandler {
       }
       s += '\r\n';
     }
-    return '<div class="usa-prose"><p><i>To email this information to yourself, click on ' +
+    return '<div class="usa-prose"><p><i>To email this information to yourself, tap (or click) on ' +
             '<a href="mailto:?subject=' +
             encodeURIComponent('Organizations with employment services') +
             '&body=' + encodeURIComponent(s) +
@@ -969,8 +971,15 @@ class SelectionHandler {
     return Object.keys(orgs).sort();
   }
   load_send_email_div() {
-    if (!this.demo_new_features) {
-      $('.send_emails').hide();
+    if (this.demo_new_features) {
+      let html = this.get_small_separator() +
+                'If you are willing to provide your contact information ' + 
+                'to these organizations:' +
+                '<br/>' +
+                '<input style="color: #518846;" type="submit" value="Please tap (or click) here"/>'
+      let the_form = $('#send_emails_form');
+      the_form.empty();
+      the_form.append(html);
     }
   }
   show_matches() {
