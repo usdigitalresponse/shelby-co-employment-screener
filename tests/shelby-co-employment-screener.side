@@ -1182,13 +1182,6 @@
         ["xpath=//i[contains(.,'Shelby County Office of Reentry')]", "xpath:innerText"]
       ],
       "value": "Shelby County Office of Reentry"
-    }, {
-      "id": "1946357b-b437-46ff-81e8-86979c01c263",
-      "comment": "",
-      "command": "close",
-      "target": "",
-      "targets": [],
-      "value": ""
     }]
   }, {
     "id": "fd55d779-ab1b-4832-abf7-a1be29b38e8b",

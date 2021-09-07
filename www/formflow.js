@@ -786,7 +786,9 @@ class SelectionHandler {
               '<ul>'
     let matches = this.get_matches();
     for (let m of matches) {
-      html += '<li>' + m + '</li>';
+      if (this.provider_data[m].email) {
+        html += '<li>' + m + '</li>';
+      }
     }
     html += '</ul><p>Containing the following information:</p><ul>'
     html += '<li>Name: ' + this.client_id_data.name + '</li>'
