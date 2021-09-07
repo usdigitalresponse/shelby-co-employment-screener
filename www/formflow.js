@@ -106,7 +106,7 @@ $(document).ready(function() {
             alert_message = '';
           }
           break;
-        case 'verify_email_sending':
+        case 'verify_email_sending_form':
           selection_handler.send_provider_emails();
           alert_message = '';
           break; 
@@ -136,7 +136,7 @@ class SelectionHandler {
                                'client_age', 'criminal_history',
                                'zip_code', 'race',
                                'gender', 'legal_resident', 'disabilities', 'work_status',
-                               'english_lang', 'send_emails_form', 'personal_info', 'verify_email_sending' ];
+                               'english_lang', 'send_emails_form', 'personal_info', 'verify_email_sending_form' ];
     this.client_data = {
       needs : null,
       zip_code : null,
@@ -814,9 +814,14 @@ class SelectionHandler {
     html += '<i>? Do we add a checkbox here that says:</i>'
     html += '<br/>Save your data (excluding name, phone number and email) for later analysis?'
     html += '<br/><i>(... and edit the disclaimer in the footers?)</i>'
-    let el = $('#verify_email_sending');
+    let el = $('.verify_email_sending_class');
     el.empty();
     el.append(html);
+
+    html = '<p> </p><p style="color: #518846;"><input type="submit" value="Send emails"></p>';
+    let the_form = $('#verify_email_sending_form');
+    the_form.empty();
+    the_form.append(html);
   }
   check_client_data() {
     this.client_id_data.name = $("#client_name").val();
@@ -831,6 +836,20 @@ class SelectionHandler {
     return true;
   }
   send_provider_emails() {
+    let provider_array = [];
+    let matches = this.get_matches();
+    for (let m of matches) {
+      if (this.provider_data[m].email) {
+        provider_array.push(this.provider_data[m].email);
+      }
+    }
+    let data = { client_data : this.client_data,
+                 client_id_data : this.client_id_data,
+                 providers: provider_array };
+    console.log(JSON.stringify(data))
+    $.post( "sendemails", data, function( data ) {
+      $( ".result" ).html( "Emails sent." )
+    });
   }
   add_211() {
     if (this.demo_new_features) {
