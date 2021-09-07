@@ -714,7 +714,7 @@ class SelectionHandler {
     })
     console.log(str);
     for (let p of no_email_providers) {
-      console.log(p);
+      console.log(p + ': no email');
     }
   }
   load(name) {
@@ -811,9 +811,8 @@ class SelectionHandler {
     html += '<li>Legal resident: ' + this.client_data.legal_resident + '</li>'
     html += '<li>English language: ' + this.client_data.english_lang + '</li>'
     html += '</ul>'
-    html += '<i>? Do we add a checkbox here that says:</i>'
-    html += '<br/>Save your data (excluding name, phone number and email) for later analysis?'
-    html += '<br/><i>(... and edit the disclaimer in the footers?)</i>'
+    html += '<i>We will save your demographic data for analysis. ' +
+            'We will <b>not</b>, however, save your contact information (name, phone number and email address).'
     let el = $('.verify_email_sending_class');
     el.empty();
     el.append(html);
@@ -846,7 +845,6 @@ class SelectionHandler {
     let data = { client_data : this.client_data,
                  client_id_data : this.client_id_data,
                  providers: provider_array };
-    console.log(JSON.stringify(data))
     $.post( "sendemails", data, function( data ) {
       $( ".result" ).html( "Emails sent." )
     });
