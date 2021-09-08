@@ -850,7 +850,7 @@ class SelectionHandler {
                  client_id_data : this.client_id_data,
                  providers: provider_array };
     $.post( "sendemails", data, function( data ) {
-      $( ".result" ).html( "Emails sent." )
+      $(".target").html("Message from server:<br/>" + JSON.stringify(data))
     });
   }
   add_211() {

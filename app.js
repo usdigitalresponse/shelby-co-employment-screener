@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
 app.post('/sendemails', (req, res) => {
   (new ProviderEmailer(req.body)).sendEmails();
   (new ClientDataSaver(req.body)).doSave();
+  res.send('Not implemented yet, but emails will be sent and client data saved.')
 })
 
 app.listen(PORT, () => {
