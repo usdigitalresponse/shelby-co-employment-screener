@@ -780,6 +780,29 @@ class SelectionHandler {
               '<input style="color: #518846;" type="submit" value="Verify emails"/>';
     el.append(html);
   }
+  build_client_html(client_data, client_id_data) {
+    let html = '<ul><li>Name: ' + client_id_data.name + '</li>'
+    let ph = '<i>Not provided</i>'
+    if (client_id_data.phone) {
+      ph = client_id_data.phone;
+    }
+    html += '<li>Phone: ' + ph + '</li>'
+    let zip = '<i>Not provided</i>'
+    if (client_data.zip_code) {
+      zip = client_data.zip_code
+    }
+    html += '<li>Zip code: ' + zip + '</li>'
+    html += '<li>Race: ' + client_data.race + '</li>'
+    html += '<li>Age: ' + client_data.age_range + '</li>'
+    html += '<li>Education: ' + client_data.education_level + '</li>'
+    html += '<li>Employment status: ' + client_data.work_status + '</li>'
+    html += '<li>Disabled status: ' + client_data.disabilities + '</li>'
+    html += '<li>Criminal history: ' + client_data.criminal_history + '</li>'
+    html += '<li>Legal resident: ' + client_data.legal_resident + '</li>'
+    html += '<li>English language: ' + client_data.english_lang + '</li>'
+    html += '</ul>'
+    return html;
+  }
   verify_email_sending() {
     let html = '<p><b>Not implemented yet!</b></p>' +
               '<p>An email will be sent to the following organizations:</p>' +
@@ -790,28 +813,9 @@ class SelectionHandler {
         html += '<li>' + m + '</li>';
       }
     }
-    html += '</ul><p>Containing the following information:</p><ul>'
-    html += '<li>Name: ' + this.client_id_data.name + '</li>'
-    let ph = 'Not provided'
-    if (this.client_id_data.phone) {
-      ph = this.client_id_data.phone;
-    }
-    html += '<li>Phone: ' + ph + '</li>'
-    let zip = 'Not provided'
-    if (this.client_data.zip) {
-      zip = this.client_data.zip_code
-    }
-    html += '<li>Zip code: ' + zip + '</li>'
-    html += '<li>Race: ' + this.client_data.race + '</li>'
-    html += '<li>Age: ' + this.client_data.age_range + '</li>'
-    html += '<li>Education: ' + this.client_data.education_level + '</li>'
-    html += '<li>Employment status: ' + this.client_data.work_status + '</li>'
-    html += '<li>Disabled status: ' + this.client_data.disabilities + '</li>'
-    html += '<li>Criminal history: ' + this.client_data.criminal_history + '</li>'
-    html += '<li>Legal resident: ' + this.client_data.legal_resident + '</li>'
-    html += '<li>English language: ' + this.client_data.english_lang + '</li>'
-    html += '</ul>'
-    html += '<i>We will save your demographic data (for example, age) for analysis. ' +
+    html += '</ul><p>Containing the following information:</p>'
+    html += this.build_client_html(this.client_data, this.client_id_data);
+    html += '<i>We will save your demographic data (for example, age) for analysis.<br/>' +
             'We will <b>not</b>, however, save your contact information (name, phone number and email address).'
     let el = $('.verify_email_sending_class');
     el.empty();
@@ -839,7 +843,7 @@ class SelectionHandler {
     let matches = this.get_matches();
     for (let m of matches) {
       if (this.provider_data[m].email) {
-        provider_array.push(this.provider_data[m].email);
+        provider_array.push(this.provider_data[m]);
       }
     }
     let data = { client_data : this.client_data,
