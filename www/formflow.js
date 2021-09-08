@@ -811,7 +811,7 @@ class SelectionHandler {
     html += '<li>Legal resident: ' + this.client_data.legal_resident + '</li>'
     html += '<li>English language: ' + this.client_data.english_lang + '</li>'
     html += '</ul>'
-    html += '<i>We will save your demographic data for analysis. ' +
+    html += '<i>We will save your demographic data (for example, age) for analysis. ' +
             'We will <b>not</b>, however, save your contact information (name, phone number and email address).'
     let el = $('.verify_email_sending_class');
     el.empty();
