@@ -85,7 +85,7 @@ class ClientDataSaver {
   }
   doSave() {
     // UTC, must convert to Memphis timezone when sending out.
-    let now = (new Date()).toISOString()
+    let now = new Date()
     for (let provider of this.form_data.providers) {
       let zip = 'Not provided' 
       if (this.form_data.client_data.zip_code) {
