@@ -21,9 +21,21 @@ app.get('/', (req, res) => {
 })
 
 app.post('/sendemails', (req, res) => {
-  (new ProviderEmailer(req.body)).sendEmails()
-  let c = (new ClientDataSaver(req.body)).doSave()
-  res.send('<i>[Not implemented yet]</i><br/>' + c + ' emails sent.')
+  try {
+    let c = new ProviderEmailer(req.body).sendEmails()
+    new ClientDataSaver(req.body).doSave()
+    let send_emails = req.baseUrl.includes('arboreal-stone-323314.wm.r.appspot.com') ||
+                      req.baseUrl.includes('shelby-co-emp-screener-prod');
+    let ret;
+    if (send_emails) {
+      ret = '[Not implemented yet.]'
+    } else {
+      ret = '[Emails not sent. You are using a non-production site.]'    
+    }
+    res.send('<i>' + ret + '</i><br/><span>' + c + ' emails.' + '</span>');
+  } catch (e) {
+    res.send(JSON.stringify(e))
+  }
 })
 
 app.listen(PORT, () => {
