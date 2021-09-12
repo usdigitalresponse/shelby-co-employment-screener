@@ -128,6 +128,8 @@ class SelectionHandler {
                              window.location.href.includes('shelby-co-emp-screener-demo') ||
                              window.location.href.includes('localhost:8080') ||
                              window.location.href.includes('/shelby-co-employment-screener/www/index.html');
+    this.is_production =     window.location.href.includes('arboreal-stone-323314.wm.r.appspot.com') ||
+                             window.location.href.includes('shelby-co-emp-screener-prod');
     this.current_content_index = -1;
     this.content_classes = [ 'intro', 'q_client_needs', 'q_zip_code', 'q_client_age', 'q_client_education',
                              'q_race', 'q_work_status', 'q_english_lang',
@@ -855,11 +857,15 @@ class SelectionHandler {
     });
   }
   add_211() {
-    if (this.demo_new_features) {
-      let href_211 = $(".href_211");
-      href_211.empty();
+    let href_211 = $(".href_211");
+    href_211.empty();
+    if (this.is_production) {
       href_211.append(
         '<br/><a href="tel:211">📞To talk to someone for help, tap (or click) here.</a><br/>'
+      );
+    } else {
+      href_211.append(
+        '<br/><i>[In production, this link will be enabled.]</i><br/>📞To talk to someone for help, tap (or click) here.<br/>'
       );
     }
   }
