@@ -125,6 +125,7 @@ $(document).ready(function() {
 class SelectionHandler {
   constructor() {
     this.demo_new_features = window.location.href.includes('-demo-new-features') ||
+                             window.location.href.includes('shelby-co-emp-screener-demo') ||
                              window.location.href.includes('localhost:8080') ||
                              window.location.href.includes('/shelby-co-employment-screener/www/index.html');
     this.current_content_index = -1;
