@@ -124,12 +124,7 @@ $(document).ready(function() {
 
 class SelectionHandler {
   constructor() {
-    this.demo_new_features = window.location.href.includes('-demo-new-features') ||
-                             window.location.href.includes('shelby-co-emp-screener-demo') ||
-                             window.location.href.includes('localhost:8080') ||
-                             window.location.href.includes('/shelby-co-employment-screener/www/index.html');
-    this.is_production =     window.location.href.includes('arboreal-stone-323314.wm.r.appspot.com') ||
-                             window.location.href.includes('shelby-co-emp-screener-prod');
+    this.is_production = window.location.href.includes('shelby-co-emp-screener-prod');
     this.current_content_index = -1;
     this.content_classes = [ 'intro', 'q_client_needs', 'q_zip_code', 'q_client_age', 'q_client_education',
                              'q_race', 'q_work_status', 'q_english_lang',
@@ -1031,16 +1026,14 @@ class SelectionHandler {
     return Object.keys(orgs).sort();
   }
   load_send_email_div() {
-    if (this.demo_new_features) {
-      let html = this.get_small_separator() +
-                'If you are willing to provide your contact information ' + 
-                'to these organizations:' +
-                '<br/>' +
-                '<input style="color: #518846;" type="submit" value="Please tap (or click) here"/>'
-      let the_form = $('#send_emails_form');
-      the_form.empty();
-      the_form.append(html);
-    }
+    let html = this.get_small_separator() +
+              'If you are willing to provide your contact information ' + 
+              'to these organizations:' +
+              '<br/>' +
+              '<input style="color: #518846;" type="submit" value="Please tap (or click) here"/>'
+    let the_form = $('#send_emails_form');
+    the_form.empty();
+    the_form.append(html);
   }
   show_matches() {
     let title = $("#matches_title");

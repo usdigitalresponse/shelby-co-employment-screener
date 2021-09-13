@@ -24,8 +24,7 @@ app.post('/sendemails', (req, res) => {
   try {
     let c = new ProviderEmailer(req.body).sendEmails()
     new ClientDataSaver(req.body).doSave()
-    let send_emails = req.baseUrl.includes('arboreal-stone-323314.wm.r.appspot.com') ||
-                      req.baseUrl.includes('shelby-co-emp-screener-prod');
+    let send_emails = req.baseUrl.includes('shelby-co-emp-screener-prod');
     let ret;
     if (send_emails) {
       ret = '[Not implemented yet.]'
