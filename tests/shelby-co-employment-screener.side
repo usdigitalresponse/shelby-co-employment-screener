@@ -2,7 +2,7 @@
   "id": "06c677e1-f762-49c0-8d95-5c31ef851c0a",
   "version": "2.0",
   "name": "shelby-co-employment-screener",
-  "url": "http://localhost:8080/",
+  "url": "https://shelby-co-emp-screener-prod.wm.r.appspot.com/",
   "tests": [{
     "id": "bf94761d-41d7-47ae-8eea-143392e2611b",
     "name": "zip_alert",
@@ -2355,6 +2355,6 @@
     "timeout": 300,
     "tests": []
   }],
-  "urls": ["https://shelby-co-emp-screener-test.wl.r.appspot.com/", "https://shelby-co-emp-screener-demo.wl.r.appspot.com/", "https://shelby-co-emp-screener-prod.wl.r.appspot.com/", "https://arboreal-stone-323314.wm.r.appspot.com/", "http://localhost:8080/"],
+  "urls": ["https://shelby-co-emp-screener-demo.wl.r.appspot.com/", "https://shelby-co-emp-screener-prod.wm.r.appspot.com/", "http://localhost:8080/"],
   "plugins": []
 }
