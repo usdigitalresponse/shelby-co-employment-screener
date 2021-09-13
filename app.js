@@ -24,12 +24,13 @@ app.post('/sendemails', (req, res) => {
   try {
     let c = new ProviderEmailer(req.body).sendEmails()
     new ClientDataSaver(req.body).doSave()
-    let send_emails = req.baseUrl.includes('shelby-co-emp-screener-prod');
+    let host = req.get('host');
+    let send_emails = host.includes('shelby-co-emp-screener-prod');
     let ret;
     if (send_emails) {
       ret = '[Not implemented yet.]'
     } else {
-      ret = '[Emails not sent. You are using a non-production site.]'    
+      ret = '[Emails not sent. You are using a non-production site: ' + host + ']'    
     }
     res.send('<i>' + ret + '</i><br/><span>' + c + ' emails.' + '</span>');
   } catch (e) {
