@@ -2,7 +2,7 @@
   "id": "06c677e1-f762-49c0-8d95-5c31ef851c0a",
   "version": "2.0",
   "name": "shelby-co-employment-screener",
-  "url": "https://shelby-co-emp-screener-prod.wm.r.appspot.com/",
+  "url": "http://localhost:8080/",
   "tests": [{
     "id": "bf94761d-41d7-47ae-8eea-143392e2611b",
     "name": "zip_alert",
@@ -1351,15 +1351,15 @@
       ],
       "value": ""
     }, {
-      "id": "148f1d61-5d0e-4b57-9711-a0a5eba3231e",
+      "id": "43d1ca89-cc48-4b04-aaf1-48742e4379a4",
       "comment": "",
       "command": "click",
-      "target": "css=label:nth-child(23) > input",
+      "target": "css=label:nth-child(11) > input",
       "targets": [
-        ["css=label:nth-child(23) > input", "css:finder"],
-        ["xpath=(//input[@name='race'])[12]", "xpath:attributes"],
-        ["xpath=//form[@id='race']/label[12]/input", "xpath:idRelative"],
-        ["xpath=//label[12]/input", "xpath:position"]
+        ["css=label:nth-child(11) > input", "css:finder"],
+        ["xpath=(//input[@name='race'])[6]", "xpath:attributes"],
+        ["xpath=//form[@id='race']/label[6]/input", "xpath:idRelative"],
+        ["xpath=//label[6]/input", "xpath:position"]
       ],
       "value": ""
     }, {

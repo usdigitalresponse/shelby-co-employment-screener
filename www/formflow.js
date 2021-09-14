@@ -161,9 +161,8 @@ class SelectionHandler {
     ]    
     this.race_types = [
       "African American", "White", "Hispanic or Latino",
-      "American Indian or Alaskan Native", "Chinese", "Vietnamese", 
-      "Filipino", "Korean", "Asian Indian", "Japanese", "Other Asian", 
-      "Some other race"
+      "American Indian or Alaskan Native", "Asian American", "Asian", 
+      "African", "Some other race", "Prefer not to say"
     ]    
     this.gender_types = [
       "Male", "Female", "Non-binary"
@@ -398,7 +397,7 @@ class SelectionHandler {
           "Supportive services (e.g., housing)"
         ],
         "client_qualifications": "World Relief Memphis (WRM) serves Refugees and other Office of Refugee Resettlement (ORR) eligible immigrants. (Refugees, Asylees, Cuban/Haitian Entrants, Victims of Human Trafficking, Special Immigrant Visas, Amerasians) ",
-        "phone_number": "901-341-0220",
+        "phone_number": "901-341-0224",
         "location": "5340 Quince Rd, Suite A, Memphis, TN 38119",
         "gmap_link": "https://goo.gl/maps/1ZwTYKFw6pPdPvQS6",
         "email" : "cwilliams@wr.org",
