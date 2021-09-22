@@ -20,14 +20,16 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'www/index.html'))
 })
 
+function isProduction(req) {
+  return req.get('host').includes('shelby-co-emp-screener-prod');
+}
+
 app.post('/sendemails', (req, res) => {
   try {
     let c = new ProviderEmailer(req.body).sendEmails()
     new ClientDataSaver(req.body).doSave()
-    let host = req.get('host');
-    let send_emails = host.includes('shelby-co-emp-screener-prod');
     let ret;
-    if (send_emails) {
+    if (isProduction(req)) {
       ret = '[Not implemented yet.]'
     } else {
       ret = '[Emails not sent. You are using a non-production site: ' + host + ']'    
@@ -41,6 +43,33 @@ app.post('/sendemails', (req, res) => {
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`)
 })
+
+app.get('/listBuckets', function(req, res) {
+  if (isProduction(req)) {
+    res.send('Not available.')
+  } else {
+    listBuckets(function(data) {
+      res.send(data);
+    })
+  }
+})
+
+const listBuckets = async function(resolve) {
+  let ret = 'Buckets:<br/>';
+  try {
+    const {Storage} = require('@google-cloud/storage');
+    const storage = new Storage();
+    const results = await storage.getBuckets();
+    const [buckets] = results;
+    buckets.forEach(bucket => {
+      ret += bucket.name
+      ret += '<br/>';
+    });
+} catch (err) {
+    ret = 'ERROR:' + err;
+  }
+  resolve(ret);
+}
 
 class ProviderEmailer {
   constructor(form_data) {
