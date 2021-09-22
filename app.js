@@ -32,7 +32,7 @@ app.post('/sendemails', (req, res) => {
     if (isProduction(req)) {
       ret = '[Not implemented yet.]'
     } else {
-      ret = '[Emails not sent. You are using a non-production site: ' + host + ']'    
+      ret = '[Emails not sent. You are using a non-production site: ' + req.get("host") + ']'    
     }
     res.send('<i>' + ret + '</i><br/><span>' + c + ' emails.' + '</span>');
   } catch (e) {
