@@ -2,6 +2,7 @@
 
 const express = require('express')
 const path = require('path')
+const db = require('./firestore')
 const app = express()
 
 app.use(express.static(path.join(__dirname, 'www')))
@@ -124,8 +125,9 @@ class ClientDataSaver {
   constructor(form_data) {
     this.form_data = form_data
   }
-  saveRecord(rec) {
-    console.log(JSON.stringify(rec))
+  async saveRecord(rec) {
+    const book = await db.create(rec);
+    console.log('Saved: ' + JSON.stringify(book))
   }
   doSave() {
     // UTC, must convert to Memphis timezone when sending out.
@@ -135,20 +137,24 @@ class ClientDataSaver {
       if (this.form_data.client_data.zip_code) {
         zip = this.form_data.client_data.zip_code
       }
-      let record = {
-        'timestamp' : now,
-        'provider' : provider.name,
-        'zip_code' : zip,
-        'race' :  this.form_data.client_data.race,
-        'age_range' : this.form_data.client_data.age_range,
-        'education_level' : this.form_data.client_data.education_level,
-        'employment_status' : this.form_data.client_data.work_status,
-        'disabilities' : this.form_data.client_data.disabilities,
-        'criminal_history' : this.form_data.client_data.criminal_history,
-        'legal_resident' : this.form_data.client_data.legal_resident,
-        'english_lang' : this.form_data.client_data.english_lang
+      if (!provider.name) {
+        console.log('No provider name: ' + JSON.stringify(provider))
+      } else {
+        let record = {
+          'timestamp' : now,
+          'provider' : provider.name,
+          'zip_code' : zip,
+          'race' :  this.form_data.client_data.race,
+          'age_range' : this.form_data.client_data.age_range,
+          'education_level' : this.form_data.client_data.education_level,
+          'employment_status' : this.form_data.client_data.work_status,
+          'disabilities' : this.form_data.client_data.disabilities,
+          'criminal_history' : this.form_data.client_data.criminal_history,
+          'legal_resident' : this.form_data.client_data.legal_resident,
+          'english_lang' : this.form_data.client_data.english_lang
+        }
+        this.saveRecord(record)
       }
-      this.saveRecord(record)
     }
   }
 }

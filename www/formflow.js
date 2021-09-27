@@ -840,7 +840,9 @@ class SelectionHandler {
     let matches = this.get_matches();
     for (let m of matches) {
       if (this.provider_data[m].email) {
-        provider_array.push(this.provider_data[m]);
+        let provider = this.provider_data[m];
+        provider['name'] = m;
+        provider_array.push(provider);
       }
     }
     let data = { client_data : this.client_data,
