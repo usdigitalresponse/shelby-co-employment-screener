@@ -2355,6 +2355,6 @@
     "timeout": 300,
     "tests": []
   }],
-  "urls": ["https://shelby-co-emp-screener-demo.wl.r.appspot.com/", "https://shelby-co-emp-screener-prod.wm.r.appspot.com/", "http://localhost:8080/"],
+  "urls": ["https://shelby-co-emp-screener-demo.wl.r.appspot.com/", "http://localhost:8080/"],
   "plugins": []
 }
