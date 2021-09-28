@@ -857,11 +857,11 @@ class SelectionHandler {
     href_211.empty();
     if (this.is_production) {
       href_211.append(
-        '<br/><a href="tel:211">📞To talk to someone for help, tap (or click) here.</a><br/>'
+        '<br/><a href="tel:211">📞To talk to someone for help, tap here.</a><br/>'
       );
     } else {
       href_211.append(
-        '<br/><i>[In production, this link will be enabled.]</i><br/>📞To talk to someone for help, tap (or click) here.<br/>'
+        '<br/><i>[In production, this link will be enabled.]</i><br/>📞To talk to someone for help, tap here.<br/>'
       );
     }
   }
@@ -919,7 +919,7 @@ class SelectionHandler {
       }
       s += '\r\n';
     }
-    return '<div class="usa-prose"><p><i>To email this information to yourself, tap (or click) on ' +
+    return '<div class="usa-prose"><p><i>To email this information to yourself, tap on ' +
             '<a href="mailto:?subject=' +
             encodeURIComponent('Organizations with employment services') +
             '&body=' + encodeURIComponent(s) +
@@ -961,8 +961,10 @@ class SelectionHandler {
     }
     if (provider_manual_data["email"]) {
       // NOTE: This won't work in Google Chrome if the user has more than one profile.
-      s += '<li><b>Email</b>: ' + this.make_mail_url(provider_name,
-                                    provider_manual_data["email"]) + '</li>';
+// TODO: Enable when final production deploy happens
+//      let email_link = this.make_mail_url(provider_name, provider_manual_data["email"])
+      let email_link = '<i>email to come</i>'
+      s += '<li><b>Email</b>: ' + email_link + '</li>';
     }
     if (provider["website"]) {
       s += '<li><b>Website</b>: ';
@@ -1044,6 +1046,8 @@ class SelectionHandler {
     let email_self = $("#email_self");
     email_self.empty();
     email_self.append(this.email_to_user());
+    email_self.append('<br/><div class="usa-prose"><p><i>To call any organization, tap on their phone number. ' +
+                      'If there is no phone number, tap on their website and fill out their contact form.</i></p></div>');
     let el = $(".matches_div");
     el.empty();
     for (let m of matches) {
