@@ -41,6 +41,16 @@ app.post('/sendemails', (req, res) => {
   }
 })
 
+app.get('/dboverview', (req, res) => {
+  try {
+    new ClientDataSaver(req.body).overview(function resolve(data) {
+      res.send(data);
+    });
+  } catch (e) {
+    res.send(JSON.stringify(e))
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`)
 })
@@ -126,8 +136,27 @@ class ClientDataSaver {
     this.form_data = form_data
   }
   async saveRecord(rec) {
-    const book = await db.create(rec);
+    const book = await db.create(rec)
     console.log('Saved: ' + JSON.stringify(book))
+  }
+  async overview(resolve) {
+    const snapshot = await db.getSnapshot() 
+    let s = 'Total records: ' + snapshot.size + '<br/><br/>'
+    snapshot.forEach(function toCSV(doc) {
+      doc = doc.data()
+      s += doc.timestamp + ',' +
+            doc.provider + ',' +
+            doc.zip_code + ',' +
+            doc.race + ',' +
+            doc.age_range + ',' +
+            doc.education_level + ',' +
+            doc.employment_status + ',' +
+            doc.disabilities + ',' +
+            doc.criminal_history + ',' +
+            doc.legal_resident + ',' +
+            doc.english_lang + ',' + '<br/>'  
+    });  
+    resolve(s)
   }
   doSave() {
     // UTC, must convert to Memphis timezone when sending out.

@@ -21,6 +21,14 @@ async function create(data) {
   return await update(null, data);
 }
 
+async function getSnapshot() {
+  const snapshot = await db
+    .collection(collection)
+    .get();
+  return snapshot;
+}
+
 module.exports = {
-  create
+  create,
+  getSnapshot
 };
