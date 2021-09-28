@@ -141,26 +141,28 @@ class ClientDataSaver {
   }
   async overview(resolve) {
     const snapshot = await db.getSnapshot() 
-    let s = 'Total records: ' + snapshot.size + '<br/><br/>'
+    let s = 'Total records: ' + snapshot.size + '<br/><br/>' +
+        'date,provider,zip code,race,age range,education level,employment status,disabilities,criminal history,legal resident,english lang,id<br/>'
     snapshot.forEach(function toCSV(doc) {
-      doc = doc.data()
-      s += doc.timestamp + ',' +
-            doc.provider + ',' +
-            doc.zip_code + ',' +
-            doc.race + ',' +
-            doc.age_range + ',' +
-            doc.education_level + ',' +
-            doc.employment_status + ',' +
-            doc.disabilities + ',' +
-            doc.criminal_history + ',' +
-            doc.legal_resident + ',' +
-            doc.english_lang + ',' + '<br/>'  
+      let rec = doc.data()
+      s += rec.the_date + ',' +
+            rec.provider + ',' +
+            rec.zip_code + ',' +
+            rec.race + ',' +
+            rec.age_range + ',' +
+            rec.education_level + ',' +
+            rec.employment_status + ',' +
+            rec.disabilities + ',' +
+            rec.criminal_history + ',' +
+            rec.legal_resident + ',' +
+            rec.english_lang + ',' +  
+            doc.id + '<br/>'  
     });  
     resolve(s)
   }
   doSave() {
-    // UTC, must convert to Memphis timezone when sending out.
-    let now = new Date()
+    // UTC, but probably not an issue because it's only the date portion.
+    let the_date = new Date().toDateString();
     for (let provider of this.form_data.providers) {
       let zip = 'Not provided' 
       if (this.form_data.client_data.zip_code) {
@@ -170,7 +172,7 @@ class ClientDataSaver {
         console.log('No provider name: ' + JSON.stringify(provider))
       } else {
         let record = {
-          'timestamp' : now,
+          'the_date' : the_date,
           'provider' : provider.name,
           'zip_code' : zip,
           'race' :  this.form_data.client_data.race,
