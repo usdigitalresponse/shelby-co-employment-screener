@@ -1069,8 +1069,9 @@ class SelectionHandler {
     next_elem.show();
   }
   add_question_count(div_id) {
+  const NON_QUESTION_SCREENS = 4;
     let str = '<p>' + 'Question ' + this.current_content_index +
-            ' of ' + (this.content_classes.length - 2) + '</p>';
+            ' of ' + (this.content_classes.length - NON_QUESTION_SCREENS) + '</p>';
     let el = $("#" + div_id);
     el.empty();
     el.append(str);
