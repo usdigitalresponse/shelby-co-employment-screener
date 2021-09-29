@@ -3,6 +3,7 @@
 const express = require('express')
 const path = require('path')
 const db = require('./firestore')
+const stringify = require('csv-stringify/lib/sync')
 const app = express()
 
 app.use(express.static(path.join(__dirname, 'www')))
@@ -145,25 +146,28 @@ class ClientDataSaver {
         'timestamp,provider,zip code,race,age range,education level,employment status,disabilities,criminal history,legal resident,english lang,id<br/>'
     snapshot.forEach(function toCSV(doc) {
       let rec = doc.data()
-      let d
+      let ts
       if (rec.timestamp) {
-        d = new Date(rec.timestamp).toDateString()
+        ts = new Date(rec.timestamp).toDateString()
       } else {
-        d = 'unknown timestamp'
-      } 
-      s += d + ',' +
-            rec.provider + ',' +
-            rec.zip_code + ',' +
-            rec.race + ',' +
-            rec.age_range + ',' +
-            rec.education_level + ',' +
-            rec.employment_status + ',' +
-            rec.disabilities + ',' +
-            rec.criminal_history + ',' +
-            rec.legal_resident + ',' +
-            rec.english_lang + ',' +  
-            doc.id + '<br/>'  
-    });  
+        ts = 'unknown timestamp'
+      }
+      let arr = [
+        ts,
+        rec.provider,
+        rec.zip_code,
+        rec.race,
+        rec.age_range,
+        rec.education_level,
+        rec.employment_status,
+        rec.disabilities,
+        rec.criminal_history,
+        rec.legal_resident,
+        rec.english_lang,
+        doc.id
+      ]
+      s += stringify([arr]).replace('\n', '') + '<br/>'
+    })
     resolve(s)
   }
   doSave() {
