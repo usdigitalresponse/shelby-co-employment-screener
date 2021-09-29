@@ -142,10 +142,16 @@ class ClientDataSaver {
   async overview(resolve) {
     const snapshot = await db.getSnapshot() 
     let s = 'Total records: ' + snapshot.size + '<br/><br/>' +
-        'date,provider,zip code,race,age range,education level,employment status,disabilities,criminal history,legal resident,english lang,id<br/>'
+        'timestamp,provider,zip code,race,age range,education level,employment status,disabilities,criminal history,legal resident,english lang,id<br/>'
     snapshot.forEach(function toCSV(doc) {
       let rec = doc.data()
-      s += rec.the_date + ',' +
+      let d
+      if (rec.timestamp) {
+        d = new Date(rec.timestamp).toDateString()
+      } else {
+        d = 'unknown timestamp'
+      } 
+      s += d + ',' +
             rec.provider + ',' +
             rec.zip_code + ',' +
             rec.race + ',' +
@@ -161,8 +167,7 @@ class ClientDataSaver {
     resolve(s)
   }
   doSave() {
-    // UTC, but probably not an issue because it's only the date portion.
-    let the_date = new Date().toDateString();
+    let now = new Date().getTime()
     for (let provider of this.form_data.providers) {
       let zip = 'Not provided' 
       if (this.form_data.client_data.zip_code) {
@@ -172,7 +177,7 @@ class ClientDataSaver {
         console.log('No provider name: ' + JSON.stringify(provider))
       } else {
         let record = {
-          'the_date' : the_date,
+          'timestamp' : now,
           'provider' : provider.name,
           'zip_code' : zip,
           'race' :  this.form_data.client_data.race,
