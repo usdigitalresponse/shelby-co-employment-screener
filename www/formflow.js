@@ -926,23 +926,6 @@ class SelectionHandler {
             '" target="_blank">this link</a> ' +
             ' and enter your email address in the "To:" line.</i></p></div>';
   }
-  make_mail_url(provider_name, base_url) {
-    let services = this.get_services(provider_name);
-    let plural = '';
-    if (services.length > 1) {
-      plural = 's';
-    }
-    let body = 'I would like to find out how to sign up' +
-               ' for the following program' + plural + ':\r\n\r\n';
-    for (let service of services) {
-      body += ' '.repeat(5) + service + '\r\n';
-    }
-    body += '\r\nThank you!\r\n'
-    return '<a href="mailto:' + base_url + '?subject=' +
-            encodeURIComponent('How do I sign up for your program' + plural + '?') +
-            '&body=' + encodeURIComponent(body) +
-            '" target="_blank">' + base_url + '</a>';
-  }
   get_small_separator() {
     return '<hr align="left" style="height:2px;border:none;color:#518846;background-color:#518846;max-width:68ex;"/>';
   }
@@ -961,10 +944,7 @@ class SelectionHandler {
     }
     if (provider_manual_data["email"]) {
       // NOTE: This won't work in Google Chrome if the user has more than one profile.
-// TODO: Enable when final production deploy happens
-//      let email_link = this.make_mail_url(provider_name, provider_manual_data["email"])
-      let email_link = '<i>email to come</i>'
-      s += '<li><b>Email</b>: ' + email_link + '</li>';
+      s += '<li><b>Email</b>: ' + provider_manual_data["email"] + '</li>';
     }
     if (provider["website"]) {
       s += '<li><b>Website</b>: ';
