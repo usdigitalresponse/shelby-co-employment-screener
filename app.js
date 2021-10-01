@@ -105,10 +105,11 @@ class Emailer {
     const auth = new google.auth.GoogleAuth({
       scopes: [
         'https://mail.google.com/',
-        'https://www.googleapis.com/auth/gmail.modify',
+        'https://www.googleapis.com/auth/gmail.addons.current.action.compose',
         'https://www.googleapis.com/auth/gmail.compose',
+        'https://www.googleapis.com/auth/gmail.modify',
         'https://www.googleapis.com/auth/gmail.send',
-      ],
+     ],
     });
     const authClient = await auth.getClient();
     google.options({auth: authClient});
