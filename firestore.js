@@ -24,6 +24,7 @@ async function create(data) {
 async function getSnapshot() {
   const snapshot = await db
     .collection(collection)
+    .orderBy('timestamp')
     .get();
   return snapshot;
 }

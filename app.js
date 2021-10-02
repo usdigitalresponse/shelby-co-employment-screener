@@ -206,25 +206,25 @@ class ClientDataSaver {
       let ts
       if (rec.timestamp) {
         ts = new Date(rec.timestamp).toDateString()
-      } else {
-        ts = 'unknown timestamp'
+        if (ts !== 'Invalid Date') {
+          let arr = [
+            ts,
+            rec.provider,
+            rec.zip_code,
+            rec.race,
+            rec.age_range,
+            rec.education_level,
+            rec.employment_status,
+            rec.disabilities,
+            rec.criminal_history,
+            rec.legal_resident,
+            rec.english_lang,
+            doc.id
+          ]
+          s += stringify([arr]).replace('\n', '') + '<br/>'
+        }
       }
-      let arr = [
-        ts,
-        rec.provider,
-        rec.zip_code,
-        rec.race,
-        rec.age_range,
-        rec.education_level,
-        rec.employment_status,
-        rec.disabilities,
-        rec.criminal_history,
-        rec.legal_resident,
-        rec.english_lang,
-        doc.id
-      ]
-      s += stringify([arr]).replace('\n', '') + '<br/>'
-    })
+  })
     resolve(s)
   }
   doSave() {
