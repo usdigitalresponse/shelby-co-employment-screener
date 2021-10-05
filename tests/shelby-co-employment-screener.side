@@ -298,31 +298,6 @@
       ],
       "value": ""
     }, {
-      "id": "653f77cd-d737-4023-8dc2-688a24a55d25",
-      "comment": "",
-      "command": "click",
-      "target": "name=race",
-      "targets": [
-        ["name=race", "name"],
-        ["css=label:nth-child(1) > input", "css:finder"],
-        ["xpath=//input[@name='race']", "xpath:attributes"],
-        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "8c6b6197-f335-4e26-93d4-ff239d087357",
-      "comment": "",
-      "command": "click",
-      "target": "css=p > input",
-      "targets": [
-        ["css=p > input", "css:finder"],
-        ["xpath=//input[@value='Next']", "xpath:attributes"],
-        ["xpath=//form[@id='race']/p[2]/input", "xpath:idRelative"],
-        ["xpath=//p[2]/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "fad922ec-431a-4bbb-a3f2-5099769a51f4",
       "comment": "",
       "command": "click",
@@ -418,6 +393,31 @@
         ["css=p > input", "css:finder"],
         ["xpath=//input[@value='Next']", "xpath:attributes"],
         ["xpath=//form[@id='legal_resident']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "653f77cd-d737-4023-8dc2-688a24a55d25",
+      "comment": "",
+      "command": "click",
+      "target": "name=race",
+      "targets": [
+        ["name=race", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='race']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c6b6197-f335-4e26-93d4-ff239d087357",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/p[2]/input", "xpath:idRelative"],
         ["xpath=//p[2]/input", "xpath:position"]
       ],
       "value": ""
@@ -658,31 +658,6 @@
       ],
       "value": ""
     }, {
-      "id": "2c7cc6a4-2d31-4b39-9b95-cf4025edc549",
-      "comment": "",
-      "command": "click",
-      "target": "name=race",
-      "targets": [
-        ["name=race", "name"],
-        ["css=label:nth-child(1) > input", "css:finder"],
-        ["xpath=//input[@name='race']", "xpath:attributes"],
-        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "5ff513b7-c9c5-4d20-ab7c-e26f715ed1f8",
-      "comment": "",
-      "command": "click",
-      "target": "css=p > input",
-      "targets": [
-        ["css=p > input", "css:finder"],
-        ["xpath=//input[@value='Next']", "xpath:attributes"],
-        ["xpath=//form[@id='race']/p[2]/input", "xpath:idRelative"],
-        ["xpath=//p[2]/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "27212215-e11a-48d2-baf9-fe1cb3e4bc1b",
       "comment": "",
       "command": "click",
@@ -802,6 +777,31 @@
         ["css=p > input", "css:finder"],
         ["xpath=//input[@value='Next']", "xpath:attributes"],
         ["xpath=//form[@id='legal_resident']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c7cc6a4-2d31-4b39-9b95-cf4025edc549",
+      "comment": "",
+      "command": "click",
+      "target": "name=race",
+      "targets": [
+        ["name=race", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='race']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ff513b7-c9c5-4d20-ab7c-e26f715ed1f8",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/p[2]/input", "xpath:idRelative"],
         ["xpath=//p[2]/input", "xpath:position"]
       ],
       "value": ""
@@ -1010,31 +1010,6 @@
       ],
       "value": ""
     }, {
-      "id": "9b61d8c1-0bb9-4548-9bfe-53f66dfb949f",
-      "comment": "",
-      "command": "click",
-      "target": "name=race",
-      "targets": [
-        ["name=race", "name"],
-        ["css=label:nth-child(1) > input", "css:finder"],
-        ["xpath=//input[@name='race']", "xpath:attributes"],
-        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "6c2e1e37-895e-4bdf-98f8-4c5911ef2416",
-      "comment": "",
-      "command": "click",
-      "target": "css=p > input",
-      "targets": [
-        ["css=p > input", "css:finder"],
-        ["xpath=//input[@value='Next']", "xpath:attributes"],
-        ["xpath=//form[@id='race']/p[2]/input", "xpath:idRelative"],
-        ["xpath=//p[2]/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "6f632150-f7de-48d8-b04b-462688e8e071",
       "comment": "",
       "command": "click",
@@ -1130,6 +1105,31 @@
         ["css=p > input", "css:finder"],
         ["xpath=//input[@value='Next']", "xpath:attributes"],
         ["xpath=//form[@id='legal_resident']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b61d8c1-0bb9-4548-9bfe-53f66dfb949f",
+      "comment": "",
+      "command": "click",
+      "target": "name=race",
+      "targets": [
+        ["name=race", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='race']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c2e1e37-895e-4bdf-98f8-4c5911ef2416",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/p[2]/input", "xpath:idRelative"],
         ["xpath=//p[2]/input", "xpath:position"]
       ],
       "value": ""
@@ -1326,31 +1326,6 @@
       ],
       "value": ""
     }, {
-      "id": "fd8f71f6-2827-4915-8a11-fdd9b425dd91",
-      "comment": "",
-      "command": "click",
-      "target": "css=p > input",
-      "targets": [
-        ["css=p > input", "css:finder"],
-        ["xpath=//input[@value='Next']", "xpath:attributes"],
-        ["xpath=//form[@id='client_education']/p[2]/input", "xpath:idRelative"],
-        ["xpath=//p[2]/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "dca1d787-de8b-4e76-b763-91e12a703f1f",
-      "comment": "",
-      "command": "click",
-      "target": "name=race",
-      "targets": [
-        ["name=race", "name"],
-        ["css=label:nth-child(1) > input", "css:finder"],
-        ["xpath=//input[@name='race']", "xpath:attributes"],
-        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "43d1ca89-cc48-4b04-aaf1-48742e4379a4",
       "comment": "",
       "command": "click",
@@ -1363,14 +1338,14 @@
       ],
       "value": ""
     }, {
-      "id": "bddc4f9a-a9a0-4bd9-aec8-5ee41c1e78fa",
+      "id": "fd8f71f6-2827-4915-8a11-fdd9b425dd91",
       "comment": "",
       "command": "click",
       "target": "css=p > input",
       "targets": [
         ["css=p > input", "css:finder"],
         ["xpath=//input[@value='Next']", "xpath:attributes"],
-        ["xpath=//form[@id='race']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//form[@id='client_education']/p[2]/input", "xpath:idRelative"],
         ["xpath=//p[2]/input", "xpath:position"]
       ],
       "value": ""
@@ -1481,6 +1456,31 @@
         ["css=p > input", "css:finder"],
         ["xpath=//input[@value='Next']", "xpath:attributes"],
         ["xpath=//form[@id='legal_resident']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dca1d787-de8b-4e76-b763-91e12a703f1f",
+      "comment": "",
+      "command": "click",
+      "target": "name=race",
+      "targets": [
+        ["name=race", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='race']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bddc4f9a-a9a0-4bd9-aec8-5ee41c1e78fa",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/p[2]/input", "xpath:idRelative"],
         ["xpath=//p[2]/input", "xpath:position"]
       ],
       "value": ""
@@ -1697,30 +1697,6 @@
       ],
       "value": ""
     }, {
-      "id": "5ac25397-6035-4ab6-8ec2-bf9d588aa438",
-      "comment": "",
-      "command": "click",
-      "target": "css=label:nth-child(3) > input",
-      "targets": [
-        ["css=label:nth-child(3) > input", "css:finder"],
-        ["xpath=(//input[@name='work_status'])[2]", "xpath:attributes"],
-        ["xpath=//form[@id='work_status']/label[2]/input", "xpath:idRelative"],
-        ["xpath=//label[2]/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "e9b983bc-0f40-4080-9995-160f5a105de6",
-      "comment": "",
-      "command": "click",
-      "target": "css=p > input",
-      "targets": [
-        ["css=p > input", "css:finder"],
-        ["xpath=//input[@value='Next']", "xpath:attributes"],
-        ["xpath=//form[@id='work_status']/p[2]/input", "xpath:idRelative"],
-        ["xpath=//p[2]/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "3a57037f-ef61-4e77-8284-73903a5bc9e5",
       "comment": "",
       "command": "click",
@@ -1802,6 +1778,30 @@
         ["css=p > input", "css:finder"],
         ["xpath=//input[@value='Next']", "xpath:attributes"],
         ["xpath=//form[@id='legal_resident']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ac25397-6035-4ab6-8ec2-bf9d588aa438",
+      "comment": "",
+      "command": "click",
+      "target": "css=label:nth-child(3) > input",
+      "targets": [
+        ["css=label:nth-child(3) > input", "css:finder"],
+        ["xpath=(//input[@name='work_status'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='work_status']/label[2]/input", "xpath:idRelative"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9b983bc-0f40-4080-9995-160f5a105de6",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='work_status']/p[2]/input", "xpath:idRelative"],
         ["xpath=//p[2]/input", "xpath:position"]
       ],
       "value": ""
@@ -2022,31 +2022,6 @@
       ],
       "value": ""
     }, {
-      "id": "ff81ea1f-ed42-4b27-a1fb-5c2e56b5aea3",
-      "comment": "",
-      "command": "click",
-      "target": "name=race",
-      "targets": [
-        ["name=race", "name"],
-        ["css=label:nth-child(1) > input", "css:finder"],
-        ["xpath=//input[@name='race']", "xpath:attributes"],
-        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "a09249d2-7a31-49fb-8248-a28fe145e6df",
-      "comment": "",
-      "command": "click",
-      "target": "css=p > input",
-      "targets": [
-        ["css=p > input", "css:finder"],
-        ["xpath=//input[@value='Next']", "xpath:attributes"],
-        ["xpath=//form[@id='race']/p[2]/input", "xpath:idRelative"],
-        ["xpath=//p[2]/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "2b21e71b-a44d-4c33-bba7-fb78041385f4",
       "comment": "",
       "command": "click",
@@ -2142,6 +2117,31 @@
         ["css=p > input", "css:finder"],
         ["xpath=//input[@value='Next']", "xpath:attributes"],
         ["xpath=//form[@id='legal_resident']/p[2]/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff81ea1f-ed42-4b27-a1fb-5c2e56b5aea3",
+      "comment": "",
+      "command": "click",
+      "target": "name=race",
+      "targets": [
+        ["name=race", "name"],
+        ["css=label:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='race']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a09249d2-7a31-49fb-8248-a28fe145e6df",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > input",
+      "targets": [
+        ["css=p > input", "css:finder"],
+        ["xpath=//input[@value='Next']", "xpath:attributes"],
+        ["xpath=//form[@id='race']/p[2]/input", "xpath:idRelative"],
         ["xpath=//p[2]/input", "xpath:position"]
       ],
       "value": ""

@@ -126,10 +126,12 @@ class SelectionHandler {
   constructor() {
     this.is_production = window.location.href.includes('shelby-co-emp-screener-prod');
     this.current_content_index = -1;
-    this.content_classes = [ 'intro', 'q_client_needs', 'q_zip_code', 'q_client_age', 'q_client_education',
-                             'q_race', 'q_work_status', 'q_english_lang',
-                             'q_disabilities',  'q_legal_resident',
-                             'q_criminal_history', 'matches', 'personal_info', 'verify_email_sending' ];
+    this.content_classes = [ 'intro', 'q_client_needs', 'q_zip_code',
+                             'q_client_age', 'q_client_education',
+                             'q_work_status', 'q_english_lang',
+                             'q_disabilities',  'q_legal_resident', 
+                             'q_race', 'q_criminal_history',
+                             'matches', 'personal_info', 'verify_email_sending' ];
     this.question_form_ids = [ 'client_needs', 'client_education',
                                'client_age', 'criminal_history',
                                'zip_code', 'race',
