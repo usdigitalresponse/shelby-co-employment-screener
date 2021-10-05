@@ -190,6 +190,7 @@ class SelectionHandler {
     this.client_criminal_history = [
       "Yes",
       "No",
+      "Exonerated",
       "Prefer not to say"
     ]
     this.legal_resident = [
@@ -226,7 +227,7 @@ class SelectionHandler {
         "gmap_link": "",
         "email" : '',
         "client_characteristics" : {
-          "criminal_history" : [ "Yes", "Prefer not to say" ]
+          "criminal_history" : [ "Yes", "Exonerated", "Prefer not to say" ]
         }
       },
       "Shelby County Division of Community Services": {
@@ -338,7 +339,7 @@ class SelectionHandler {
         "gmap_link": "https://goo.gl/maps/TTUpwBfe2BFApKCFA",
         "email" : "",
         "client_characteristics" : {
-          "criminal_history" : [ "Yes", "Prefer not to say" ]
+          "criminal_history" : [ "Yes", "Exonerated", "Prefer not to say" ]
         }
       },
       "2Unique Community Salvation Foundation ": {
@@ -475,7 +476,7 @@ class SelectionHandler {
         "gmap_link" : "",
         "email": "afreshstarttoanewbeginning@yahoo.com",
         "client_characteristics" : {
-          "criminal_history" : [ "Yes", "Prefer not to say" ]
+          "criminal_history" : [ "Yes", "Exonerated", "Prefer not to say" ]
         }
       },
       "BLDG Memphis": {
