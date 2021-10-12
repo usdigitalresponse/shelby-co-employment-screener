@@ -274,7 +274,7 @@ class SelectionHandler {
         "email" : "apply@thememphiscollective.org",
         "client_characteristics" : {
           "age_range" : [ "18-30" ] ,
-          "work_status" : [ "Unemployed" ]
+          "work_status" : [ "Unemployed", "Other" ]
         }
       },
       "Greater Memphis Financial Empowerment Center & Bank on Memphis Coalition": {
@@ -405,7 +405,7 @@ class SelectionHandler {
         "gmap_link": "https://goo.gl/maps/1ZwTYKFw6pPdPvQS6",
         "email" : "cwilliams@wr.org",
         "client_characteristics" : {
-          "legal_resident" : [ "No" ],
+          "legal_resident" : [ "No", "Prefer not to say" ],
         },
               // client_characteristics are exclusive.
               // E.g., age_range === Younger than 18 AND education_level === whatever will filter down providers.
