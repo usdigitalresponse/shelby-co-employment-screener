@@ -56,7 +56,18 @@ app.get('/dboverview', (req, res) => {
   }
 })
  
-app.get('/testemail', (req, res) => {
+app.get('/dbdelete', (req, res) => {
+  try {
+    let cds = new ClientDataSaver(req.body)
+    cds.delete(req.query, function resolve(data) {
+      res.send(data)
+    });
+  } catch (e) {
+    res.send(JSON.stringify(e))
+  }
+})
+
+ app.get('/testemail', (req, res) => {
   try {
     new Emailer().sendEmail('chris.keith@gmail.com', 'chris.keith@gmail.com',
                             'workforce.midsouth@gmail.com', 'test body');
@@ -252,6 +263,15 @@ class ClientDataSaver {
         }
         this.saveRecord(record)
       }
+    }
+  }
+  async delete(req_query, resolve) {
+    if (req_query['id']) {
+      await db.deleteRec(req_query['id'])
+      const snapshot = await db.getSnapshot()
+      resolve('<span>Total records:</span> ' + snapshot.size + '<br/><br/>')
+    } else {
+      resolve('Missing id')
     }
   }
 }

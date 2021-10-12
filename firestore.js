@@ -29,7 +29,13 @@ async function getSnapshot() {
   return snapshot;
 }
 
+async function deleteRec(id) {
+  let ref = db.collection(collection).doc(id);
+  return await db.recursiveDelete(ref);
+}
+
 module.exports = {
   create,
-  getSnapshot
+  getSnapshot,
+  deleteRec
 };
