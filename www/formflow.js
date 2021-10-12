@@ -858,15 +858,7 @@ class SelectionHandler {
   add_211() {
     let href_211 = $(".href_211");
     href_211.empty();
-    if (this.is_production) {
-      href_211.append(
-        '<br/><a href="tel:211">📞To talk to someone for help, tap here.</a><br/>'
-      );
-    } else {
-      href_211.append(
-        '<br/><i>[In production, this link will be enabled.]</i><br/>📞To talk to someone for help, tap here.<br/>'
-      );
-    }
+    href_211.append('<br/>📞To talk to someone for help, call 211.<br/>');
   }
   make_link(tag, url) {
     let ret = '<a href="';
