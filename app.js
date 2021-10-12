@@ -199,7 +199,7 @@ class ClientDataSaver {
   }
   async overview(resolve) {
     const snapshot = await db.getSnapshot()
-    let s = 'Total records: ' + snapshot.size + '<br/><br/>' +
+    let s = '<span>Total records:</span> ' + snapshot.size + '<br/><br/>' +
         'timestamp,provider,zip code,race,age range,education level,employment status,disabilities,criminal history,legal resident,english lang,id<br/>'
     snapshot.forEach(function toCSV(doc) {
       let rec = doc.data()

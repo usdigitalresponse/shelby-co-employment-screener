@@ -2346,6 +2346,46 @@
       ],
       "value": "5 emails."
     }]
+  }, {
+    "id": "d5e6f622-6b32-4ca6-839a-5f9af48222e0",
+    "name": "database is up",
+    "commands": [{
+      "id": "3e574275-94e1-4902-89e4-790b58d6d300",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/dboverview",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8752a275-6c58-437b-9b88-c3292366f429",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1180",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2bbb0621-5e94-427d-b912-909b908f2e3d",
+      "comment": "",
+      "command": "click",
+      "target": "css=span",
+      "targets": [
+        ["css=span", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Total records:')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b5382a48-9f84-4f09-9301-9b223016dd1b",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=span",
+      "targets": [
+        ["css=span", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Total records:')]", "xpath:innerText"]
+      ],
+      "value": "Total records:"
+    }]
   }],
   "suites": [{
     "id": "ac108099-5de3-464a-b413-040510a6a03a",
