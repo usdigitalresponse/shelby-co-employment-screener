@@ -2353,7 +2353,7 @@
       "id": "3e574275-94e1-4902-89e4-790b58d6d300",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:8080/dboverview",
+      "target": "dboverview",
       "targets": [],
       "value": ""
     }, {
