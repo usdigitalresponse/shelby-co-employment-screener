@@ -838,6 +838,42 @@ class SelectionHandler {
     }
     return true;
   }
+  open_email(provider_array) {
+    let provider_emails = '';
+    for (let m of provider_array) {
+      if (provider_emails) {
+        provider_emails += ',';
+      }
+      provider_emails += m.email;
+    }
+    let id_data = this.client_id_data;
+    let cl_data = this.client_data;
+    let ph = id_data.phone ? id_data.phone : 'Not provided';
+    let em = id_data.email ? id_data.email : 'Not provided';
+    let zip = cl_data.zip_code ? cl_data.zip_code : 'Not provided';
+    let spaces = ' '.repeat(5);
+    let body = 'I would like to sign up for employment services that you offer. ' + 
+          'Here is my information:\r\n\r\n' +
+          spaces + 'Name: ' + id_data.name + '\r\n' +
+          spaces + 'Email: ' + em + '\r\n' +
+          spaces + 'Phone: ' + ph + '\r\n' +
+          spaces + 'Zip code: ' + zip + '\r\n' +
+          spaces + 'Race: ' + cl_data.race + '\r\n' +
+          spaces + 'Age: ' + cl_data.age_range + '\r\n' +
+          spaces + 'Education: ' + cl_data.education_level + '\r\n' +
+          spaces + 'Employment status: ' + cl_data.work_status + '\r\n' +
+          spaces + 'Disabled status: ' + cl_data.disabilities + '\r\n' +
+          spaces + 'Criminal history: ' + cl_data.criminal_history + '\r\n' +
+          spaces + 'Legal resident: ' + cl_data.legal_resident + '\r\n' +
+          spaces + 'English language: ' + cl_data.english_lang + '\r\n\r\n' +
+          'Thank you.';
+    let url = 'mailto:' + this.client_id_data.email + 
+                '?bcc=' + provider_emails + '&subject=' +
+            encodeURIComponent('How do I sign up for your employment services?') +
+            '&body=' + encodeURIComponent(body);
+    let winRef = window.open(url, '_blank');
+    console.log(winRef);
+  }
   send_provider_emails() {
     let provider_array = [];
     let matches = this.get_matches();
@@ -852,8 +888,9 @@ class SelectionHandler {
                  client_id_data : this.client_id_data,
                  providers: provider_array };
     $.post( "sendemails", data, function( data ) {
-      $(".target").html("Message from server:<br/>" + JSON.stringify(data))
+      $(".target").html("Thank you for sharing your anonymous data.")
     });
+    this.open_email(provider_array);
   }
   add_211() {
     let href_211 = $(".href_211");
