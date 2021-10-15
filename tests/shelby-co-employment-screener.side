@@ -2335,16 +2335,15 @@
       ],
       "value": ""
     }, {
-      "id": "dfe52aa7-8234-4cbf-9b5a-964b8eaa711b",
+      "id": "94241726-fa1e-41cf-bf57-ce9070d8b03d",
       "comment": "",
       "command": "verifyText",
-      "target": "css=span",
+      "target": "css=.target",
       "targets": [
-        ["css=span", "css:finder"],
-        ["xpath=//span", "xpath:position"],
-        ["xpath=//span[contains(.,'5 emails.')]", "xpath:innerText"]
+        ["css=.target", "css:finder"],
+        ["xpath=//div/div/div/div/div/div", "xpath:position"]
       ],
-      "value": "5 emails."
+      "value": "Thank you for sharing your anonymous data."
     }]
   }, {
     "id": "d5e6f622-6b32-4ca6-839a-5f9af48222e0",
