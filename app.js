@@ -210,8 +210,8 @@ class ClientDataSaver {
   }
   async overview(resolve) {
     const snapshot = await db.getSnapshot()
-    let s = '<span>Total records:</span> ' + snapshot.size + '<br/><br/>' +
-        'timestamp,provider,zip code,race,age range,education level,employment status,disabilities,criminal history,legal resident,english lang,id<br/>'
+    let s = ''
+    let c = 0
     snapshot.forEach(function toCSV(doc) {
       let rec = doc.data()
       let ts
@@ -233,9 +233,14 @@ class ClientDataSaver {
             doc.id
           ]
           s += stringify([arr]).replace('\n', '') + '<br/>'
+          c += 1
         }
       }
-  })
+    })
+    s = '<span>Total records:</span> ' + c + '<br/><br/>' +
+        'timestamp,provider,zip code,race,age range,education level,employment status,disabilities,' +
+        'criminal history,legal resident,english lang,id<br/>' +
+        s
     resolve(s)
   }
   doSave() {
