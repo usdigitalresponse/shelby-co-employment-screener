@@ -31,7 +31,7 @@ function isProduction(req) {
 }
  
 app.post('/sendemails', (req, res) => {
-  if (isProduction()) {
+  if (isProduction(req)) {
     res.send('Disabled')
   } else {
     try {
@@ -54,14 +54,14 @@ app.get('/dbquery', (req, res) => {
   try {
     new ClientDataSaver(req.body).overview(function resolve(data) {
       res.send(data);
-    }, req.query);
+    }, req);
   } catch (e) {
     res.send(JSON.stringify(e))
   }
 })
  
 app.get('/dbdelete', (req, res) => {
-  if (isProduction()) {
+  if (isProduction(req)) {
     res.send('Disabled')
   } else {
     try {
@@ -76,7 +76,7 @@ app.get('/dbdelete', (req, res) => {
 })
 
  app.get('/testemail', (req, res) => {
-  if (isProduction()) {
+  if (isProduction(req)) {
     res.send('Disabled')
   } else {
     try {
@@ -233,7 +233,8 @@ class ClientDataSaver {
     let monthInt = parseInt(substrs[1])
     return ((monthInt > 0) && (monthInt < 13))  
   }
-  async overview(resolve, req_query) {
+  async overview(resolve, http_req) {
+    let req_query = http_req.query
     let snapshot
     if (req_query && req_query['month']) {
       if (!this.checkDate(req_query['month'])) {
@@ -271,11 +272,13 @@ class ClientDataSaver {
         }
       }
     })
-    s = '<span>Total records:</span> ' + c + '<br/><br/>' +
-        'timestamp,provider,zip code,race,age range,education level,employment status,disabilities,' +
-        'criminal history,legal resident,english lang,id<br/>' +
-        s
-    resolve(s)
+    let title = '<span>Total records:</span> ' + c + '<br/><br/>'
+    if (!isProduction(http_req)) {
+      title += '<strong>Demonstration data only</strong><br/><br/>'
+    }
+    title += 'timestamp,provider,zip code,race,age range,education level,employment status,disabilities,' +
+        'criminal history,legal resident,english lang,id<br/>'
+    resolve(title + s)
   }
   doSave() {
     let now = new Date().getTime()
