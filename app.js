@@ -50,7 +50,7 @@ app.get('/dboverview', (req, res) => {
   try {
     new ClientDataSaver(req.body).overview(function resolve(data) {
       res.send(data);
-    });
+    }, req.query);
   } catch (e) {
     res.send(JSON.stringify(e))
   }
@@ -208,8 +208,26 @@ class ClientDataSaver {
     const book = await db.create(rec)
     console.log('Saved: ' + JSON.stringify(book))
   }
-  async overview(resolve) {
-    const snapshot = await db.getSnapshot()
+  checkDate(monthYear) {
+    let re = /\d\d\d\d-\d\d/
+    if (!monthYear.match(re)) {
+      return false
+    }
+    let substrs = monthYear.split('-')
+    let monthInt = parseInt(substrs[1])
+    return ((monthInt > 0) && (monthInt < 13))  
+  }
+  async overview(resolve, req_query) {
+    let snapshot
+    if (req_query && req_query['month']) {
+      if (!this.checkDate(req_query['month'])) {
+        resolve(req_query['month'] + ': must be in YYYY-MM format. Months are 01 to 12.')
+        return
+      }
+      snapshot = await db.getSnapshotForMonth(req_query['month'])
+    } else {
+      snapshot = await db.getSnapshot()
+    }
     let s = ''
     let c = 0
     snapshot.forEach(function toCSV(doc) {

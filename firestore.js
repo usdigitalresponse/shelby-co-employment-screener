@@ -29,6 +29,31 @@ async function getSnapshot() {
   return snapshot;
 }
 
+async function getSnapshotForMonth(monthYear) {
+  let substrs = monthYear.split('-')
+  let nextMonthInt = parseInt(substrs[1]) + 1
+  let nextMonth
+  if (nextMonthInt === 13) {
+    nextMonth = '01'
+    substrs[0] = (parseInt(substrs[0]) + 1).toString()
+  } else {
+    nextMonth = nextMonthInt.toString()
+    if (nextMonth.length === 1) {
+      nextMonth = '0' + nextMonth
+    }
+  }
+  let endDate = substrs[0] + '-' + nextMonth + '-01T00:00:00'
+  let startD = new Date(monthYear + '-01T00:00:00').getTime()
+  let endD = new Date(endDate).getTime()
+  const snapshot = await db
+    .collection(collection)
+    .where("timestamp", ">=", startD)
+    .where("timestamp", "<", endD)
+    .orderBy('timestamp')
+    .get();
+  return snapshot;
+}
+
 async function deleteRec(id) {
   let ref = db.collection(collection).doc(id);
   return await db.recursiveDelete(ref);
@@ -37,5 +62,6 @@ async function deleteRec(id) {
 module.exports = {
   create,
   getSnapshot,
+  getSnapshotForMonth,
   deleteRec
 };
