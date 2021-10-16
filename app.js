@@ -27,26 +27,30 @@ app.get('/', (req, res) => {
 })
  
 function isProduction(req) {
-  return req.get('host').includes('shelby-co-emp-screener-prod');
+  return req.get('host').includes('shelby-co-emp-screener-prod'); // TODO: add test for final domain name
 }
  
 app.post('/sendemails', (req, res) => {
-  try {
-    let c = new ProviderEmailer(req.body).sendEmails()
-    new ClientDataSaver(req.body).doSave()
-    let ret;
-    if (isProduction(req)) {
-      ret = '[Not implemented yet.]'
-    } else {
-      ret = '[Emails not sent. You are using a non-production site: ' + req.get("host") + ']'    
+  if (isProduction()) {
+    res.send('Disabled')
+  } else {
+    try {
+      let c = new ProviderEmailer(req.body).sendEmails()
+      new ClientDataSaver(req.body).doSave()
+      let ret;
+      if (isProduction(req)) {
+        ret = '[Not implemented yet.]'
+      } else {
+        ret = '[Emails not sent. You are using a non-production site: ' + req.get("host") + ']'    
+      }
+      res.send('<i>' + ret + '</i><br/><span>' + c + ' emails.' + '</span>');
+    } catch (e) {
+      res.send(JSON.stringify(e))
     }
-    res.send('<i>' + ret + '</i><br/><span>' + c + ' emails.' + '</span>');
-  } catch (e) {
-    res.send(JSON.stringify(e))
   }
 })
  
-app.get('/dboverview', (req, res) => {
+app.get('/dbquery', (req, res) => {
   try {
     new ClientDataSaver(req.body).overview(function resolve(data) {
       res.send(data);
@@ -57,23 +61,31 @@ app.get('/dboverview', (req, res) => {
 })
  
 app.get('/dbdelete', (req, res) => {
-  try {
-    let cds = new ClientDataSaver(req.body)
-    cds.delete(req.query, function resolve(data) {
-      res.send(data)
-    });
-  } catch (e) {
-    res.send(JSON.stringify(e))
+  if (isProduction()) {
+    res.send('Disabled')
+  } else {
+    try {
+      let cds = new ClientDataSaver(req.body)
+      cds.delete(req.query, function resolve(data) {
+        res.send(data)
+      });
+    } catch (e) {
+      res.send(JSON.stringify(e))
+    }
   }
 })
 
  app.get('/testemail', (req, res) => {
-  try {
-    new Emailer().sendEmail('chris.keith@gmail.com', 'chris.keith@gmail.com',
-                            'workforce.midsouth@gmail.com', 'test body');
-    res.send('new Emailer(); done');
-  } catch (e) {
-    res.send(JSON.stringify(e))
+  if (isProduction()) {
+    res.send('Disabled')
+  } else {
+    try {
+      new Emailer().sendEmail('chris.keith@gmail.com', 'chris.keith@gmail.com',
+                              'workforce.midsouth@gmail.com', 'test body');
+      res.send('new Emailer(); done');
+    } catch (e) {
+      res.send(JSON.stringify(e))
+    }
   }
 })
  
@@ -92,20 +104,24 @@ app.get('/listBuckets', function(req, res) {
 })
  
 const listBuckets = async function(resolve) {
-  let ret = 'Buckets:<br/>';
-  try {
-    const {Storage} = require('@google-cloud/storage');
-    const storage = new Storage();
-    const results = await storage.getBuckets();
-    const [buckets] = results;
-    buckets.forEach(bucket => {
-      ret += bucket.name
-      ret += '<br/>';
-    });
-} catch (err) {
-    ret = 'ERROR:' + err;
+  if (isProduction()) {
+    res.send('Disabled')
+  } else {
+    let ret = 'Buckets:<br/>';
+    try {
+      const {Storage} = require('@google-cloud/storage');
+      const storage = new Storage();
+      const results = await storage.getBuckets();
+      const [buckets] = results;
+      buckets.forEach(bucket => {
+        ret += bucket.name
+        ret += '<br/>';
+      });
+    } catch (err) {
+      ret = 'ERROR:' + err;
+    }
+    resolve(ret);
   }
-  resolve(ret);
 }
  
 class Emailer {
