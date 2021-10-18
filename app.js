@@ -27,7 +27,8 @@ app.get('/', (req, res) => {
 })
  
 function isProduction(req) {
-  return req.get('host').includes('shelby-co-emp-screener-prod'); // TODO: add test for final domain name
+  const h = req.get('host').toLowerCase()
+  return h.includes('shelby-co-emp-screener-prod') || h.includes('nextstep901')
 }
  
 app.post('/sendemails', (req, res) => {
@@ -99,12 +100,12 @@ app.get('/listBuckets', function(req, res) {
   } else {
     listBuckets(function(data) {
       res.send(data);
-    })
+    }, req)
   }
 })
  
-const listBuckets = async function(resolve) {
-  if (isProduction()) {
+const listBuckets = async function(resolve, req) {
+  if (isProduction(req)) {
     res.send('Disabled')
   } else {
     let ret = 'Buckets:<br/>';
