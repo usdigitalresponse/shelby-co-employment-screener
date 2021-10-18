@@ -457,7 +457,7 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'4 matches')]", "xpath:innerText"]
       ],
-      "value": "6 matches"
+      "value": "7 matches"
     }, {
       "id": "17ec16d8-5608-48b5-97ca-6a18b1c632a6",
       "comment": "",
@@ -481,24 +481,24 @@
       ],
       "value": "Employability/job readiness skills (e.g., making a resume)"
     }, {
-      "id": "645c5b89-32b6-449f-badd-a96f12cee2e7",
+      "id": "cb1238ed-c460-4989-9f96-d8320f9eaa33",
       "comment": "",
       "command": "verifyText",
-      "target": "css=h4:nth-child(32) i",
+      "target": "css=h4:nth-child(38) i",
       "targets": [
-        ["css=h4:nth-child(32) i", "css:finder"],
-        ["xpath=//h4[6]/b/i", "xpath:position"],
+        ["css=h4:nth-child(38) i", "css:finder"],
+        ["xpath=//h4[7]/b/i", "xpath:position"],
         ["xpath=//i[contains(.,'Priority Teachers University')]", "xpath:innerText"]
       ],
       "value": "Priority Teachers University"
     }, {
-      "id": "6e48d8b5-c148-4468-9cbb-634654bd6178",
+      "id": "c23f6096-f773-491a-9b0f-62a4f91e33d7",
       "comment": "",
       "command": "verifyText",
-      "target": "css=ul:nth-child(34) > li:nth-child(1)",
+      "target": "css=ul:nth-child(40) > li:nth-child(1)",
       "targets": [
-        ["css=ul:nth-child(34) > li:nth-child(1)", "css:finder"],
-        ["xpath=//ul[11]/li", "xpath:position"]
+        ["css=ul:nth-child(40) > li:nth-child(1)", "css:finder"],
+        ["xpath=//ul[13]/li", "xpath:position"]
       ],
       "value": "Employability/job readiness skills (e.g., making a resume)"
     }]
@@ -830,17 +830,6 @@
       ],
       "value": ""
     }, {
-      "id": "513ca690-5cfe-400a-9327-8ee90fce522c",
-      "comment": "",
-      "command": "verifyText",
-      "target": "css=h4:nth-child(14) i",
-      "targets": [
-        ["css=h4:nth-child(14) i", "css:finder"],
-        ["xpath=//h4[3]/b/i", "xpath:position"],
-        ["xpath=//i[contains(.,'Greater Whitehaven Economic Redevelopment Corporation')]", "xpath:innerText"]
-      ],
-      "value": "Greater Whitehaven Economic Redevelopment Corporation"
-    }, {
       "id": "8dbcfc6a-159c-4b87-9433-23385125ce48",
       "comment": "",
       "command": "verifyText",
@@ -852,7 +841,18 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'5 matches')]", "xpath:innerText"]
       ],
-      "value": "7 matches"
+      "value": "8 matches"
+    }, {
+      "id": "c0ef5a46-067b-4147-abc8-e8c3579c4ec9",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h4:nth-child(44) i",
+      "targets": [
+        ["css=h4:nth-child(44) i", "css:finder"],
+        ["xpath=//h4[8]/b/i", "xpath:position"],
+        ["xpath=//i[contains(.,'Priority Teachers University')]", "xpath:innerText"]
+      ],
+      "value": "Priority Teachers University"
     }]
   }, {
     "id": "4a34f9aa-a227-4177-a8c1-deb879301fdb",
@@ -1170,15 +1170,15 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'7 matches')]", "xpath:innerText"]
       ],
-      "value": "9 matches"
+      "value": "10 matches"
     }, {
-      "id": "6a77d8c5-0a87-4edf-82e3-d767401282c1",
+      "id": "3eaa3b87-d1bc-477d-b4fb-34c03e414ab8",
       "comment": "",
       "command": "verifyText",
-      "target": "css=h4:nth-child(50) i",
+      "target": "css=h4:nth-child(56) i",
       "targets": [
-        ["css=h4:nth-child(50) i", "css:finder"],
-        ["xpath=//h4[9]/b/i", "xpath:position"],
+        ["css=h4:nth-child(56) i", "css:finder"],
+        ["xpath=//h4[10]/b/i", "xpath:position"],
         ["xpath=//i[contains(.,'Shelby County Office of Reentry')]", "xpath:innerText"]
       ],
       "value": "Shelby County Office of Reentry"
@@ -1520,15 +1520,15 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'5 matches')]", "xpath:innerText"]
       ],
-      "value": "4 matches"
+      "value": "5 matches"
     }, {
-      "id": "8ec6c702-8e9b-442f-bf65-ffb02f5f322d",
+      "id": "dd902bea-de22-47ce-a450-214d364e5699",
       "comment": "",
       "command": "verifyText",
-      "target": "css=h4:nth-child(20) i",
+      "target": "css=h4:nth-child(26) i",
       "targets": [
-        ["css=h4:nth-child(20) i", "css:finder"],
-        ["xpath=//h4[4]/b/i", "xpath:position"],
+        ["css=h4:nth-child(26) i", "css:finder"],
+        ["xpath=//h4[5]/b/i", "xpath:position"],
         ["xpath=//i[contains(.,'World Relief Memphis')]", "xpath:innerText"]
       ],
       "value": "World Relief Memphis"
@@ -1841,12 +1841,12 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'4 matches')]", "xpath:innerText"]
       ],
-      "value": "4 matches"
+      "value": "5 matches"
     }, {
       "id": "d6dd6bb5-98db-4a12-9ebc-95ea6a784f20",
       "comment": "",
       "command": "verifyText",
-      "target": "css=h4:nth-child(20) i",
+      "target": "css=h4:nth-child(26) i",
       "targets": [
         ["css=h4:nth-child(20) i", "css:finder"],
         ["xpath=//h4[4]/b/i", "xpath:position"],
@@ -2181,7 +2181,7 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'4 matches')]", "xpath:innerText"]
       ],
-      "value": "6 matches"
+      "value": "7 matches"
     }, {
       "id": "7b9f162b-799f-4857-a1b3-67e14ce4cd41",
       "comment": "",
@@ -2208,7 +2208,7 @@
       "id": "0d1db9fb-44aa-4ec9-aff8-9aac84a93e85",
       "comment": "",
       "command": "verifyText",
-      "target": "css=h4:nth-child(32) i",
+      "target": "css=h4:nth-child(38) i",
       "targets": [
         ["css=h4:nth-child(32) i", "css:finder"],
         ["xpath=//h4[6]/b/i", "xpath:position"],
@@ -2219,7 +2219,7 @@
       "id": "87b91e6f-9fec-4a43-b566-a3a630c7ac83",
       "comment": "",
       "command": "verifyText",
-      "target": "css=ul:nth-child(34) > li:nth-child(1)",
+      "target": "css=ul:nth-child(40) > li:nth-child(1)",
       "targets": [
         ["css=ul:nth-child(34) > li:nth-child(1)", "css:finder"],
         ["xpath=//ul[11]/li", "xpath:position"]
@@ -2312,13 +2312,13 @@
       ],
       "value": "2Unique Community Salvation Foundation"
     }, {
-      "id": "326dc706-56d3-4602-aaed-360df4263a8e",
+      "id": "69e3af08-3eef-433b-8c16-6d44471f3704",
       "comment": "",
       "command": "verifyText",
-      "target": "css=ul:nth-child(3) > li:nth-child(5)",
+      "target": "css=ul:nth-child(3) > li:nth-child(6)",
       "targets": [
-        ["css=ul:nth-child(3) > li:nth-child(5)", "css:finder"],
-        ["xpath=//li[5]", "xpath:position"],
+        ["css=ul:nth-child(3) > li:nth-child(6)", "css:finder"],
+        ["xpath=//li[6]", "xpath:position"],
         ["xpath=//li[contains(.,'Priority Teachers University')]", "xpath:innerText"]
       ],
       "value": "Priority Teachers University"

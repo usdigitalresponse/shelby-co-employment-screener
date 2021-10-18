@@ -606,16 +606,18 @@ class SelectionHandler {
         "email" : "info@heightscdc.org"
       },
       "Binghampton Development Corporation": {
-        "website": "https://www.bdcmemphis.org/",
+        "website": "https://www.bdcmemphis.org/hub",
         "services": [
-/*          "Job training",
-          'Job placement', */
-        ],
+          'Job training',
+          'Job placement',
+          'Employability/job readiness skills (e.g., making a resume)',
+          'Certifications',
+          ],
         "client_qualifications": "",
-        "phone_number": "901-347-0504",
-        "location": "280 Tillman St. Memphis, TN 38112",
-        "gmap_link": "https://goo.gl/maps/33ikw4CHuG7rMLHB8",
-        "email" : ""
+        "phone_number": "901-860-5238",
+        "location": "2690 Yale Ave, Memphis TN 38112",
+        "gmap_link": "https://goo.gl/maps/vsw4Eq57Jsdyb9me9",
+        "email" : "hub@bdcmemphis.org"
       },
     }
     this.services_by_needs = {
