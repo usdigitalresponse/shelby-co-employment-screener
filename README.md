@@ -5,5 +5,3 @@ How To documents : https://drive.google.com/drive/u/0/folders/1CTML_seSxTZap4ZGo
 If you want to contribute, please follow the [USDR Code of Conduct](https://github.com/usdigitalresponse/shelby-co-employment-screener/blob/master/CODE_OF_CONDUCT.md).
 
 Licensed under [Apache 2.0](https://github.com/usdigitalresponse/shelby-co-employment-screener/blob/master/LICENSE).
-
--
