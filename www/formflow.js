@@ -860,6 +860,7 @@ class SelectionHandler {
       }
       provider_emails += m.email;
     }
+    provider_emails += (',NextStep901@shelbycountytn.gov')
     let id_data = this.client_id_data;
     let cl_data = this.client_data;
     let ph = id_data.phone ? id_data.phone : 'Not provided';
