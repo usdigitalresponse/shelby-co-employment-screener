@@ -940,6 +940,14 @@ class SelectionHandler {
     return s;
   }
   email_to_user() {
+    return '<div class="usa-prose"><p>Click on a phone number to call an organization. ' +
+      'Some organizations have a contact form on their website.</p>' +
+      '<p>To email this information to yourself, click on ' +
+      '<a href="' + this.get_email_self_url() +
+      '" target="_blank">*this link*.</a> ' +
+      ' You must enter your email address on the "To:" line.</p></div>';
+  }
+  get_email_self_url() {
     let s = '';
     for (let provider_name of this.get_matches()) {
       let provider = this.provider_data[provider_name];
@@ -966,12 +974,9 @@ class SelectionHandler {
       }
       s += '\r\n';
     }
-    return '<div class="usa-prose"><p><i>To email this information to yourself, click on ' +
-            '<a href="mailto:?subject=' +
-            encodeURIComponent('Organizations with employment services') +
-            '&body=' + encodeURIComponent(s) +
-            '" target="_blank">*this link*</a> ' +
-            ' and enter your email address in the "To:" line.</i></p></div>';
+    return 'mailto:?subject=' +
+      encodeURIComponent('Organizations with employment services') +
+      '&body=' + encodeURIComponent(s);
   }
   get_small_separator() {
     return '<hr align="left" style="height:2px;border:none;color:#518846;background-color:#518846;max-width:68ex;"/>';
@@ -1055,32 +1060,28 @@ class SelectionHandler {
     this.add_language_orgs(orgs);
     return Object.keys(orgs).sort();
   }
-  load_send_email_div() {
-    let html = this.get_small_separator() +
-              'If you are willing to provide your contact information ' + 
-              'to these organizations:' +
-              '<br/>' +
-              '<input style="color: #518846;" type="submit" value="Please click here"/>'
-    let the_form = $('#send_emails_form');
+  load_form(form_name, html) {
+    let the_form = $('#' + form_name);
     the_form.empty();
     the_form.append(html);
+  }
+  load_send_email_form() {
+    let html = '<input style="color: #518846;" type="submit" ' + 
+              'value="Provide my contact information to these organizations."/>'
+    this.load_form('send_emails_form', html);
   }
   show_matches() {
     let title = $("#matches_title");
     title.empty();
     let matches = this.get_matches();
     title.append(matches.length + " matches");
-    let email_self = $("#email_self");
-    email_self.empty();
-    email_self.append(this.email_to_user());
-    email_self.append('<br/><div class="usa-prose"><p><i>To call any organization, click on their phone number. ' +
-                      'If there is no phone number, click on their website and fill out their contact form.</i></p></div>');
+    this.load_form('email_self_form', this.email_to_user());
     let el = $(".matches_div");
     el.empty();
     for (let m of matches) {
       this.load_provider(el, m);
     }
-    this.load_send_email_div();
+    this.load_send_email_form();
   }
   handle() {
     let targetElem = $(".target");
