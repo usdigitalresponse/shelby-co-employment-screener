@@ -110,10 +110,14 @@ $(document).ready(function() {
           selection_handler.send_provider_emails();
           alert_message = '';
           break; 
-        }
+        case 'email_self_form':
+          selection_handler.send_self_email();
+          alert_message = '';
+          break; 
+      }
       if (alert_message) {
         alert(alert_message);
-      } else {
+      } else if (id !== 'email_self_form') {
         selection_handler.handle();
       }
       event.preventDefault();
@@ -136,7 +140,8 @@ class SelectionHandler {
                                'client_age', 'criminal_history',
                                'zip_code', 'race',
                                'gender', 'legal_resident', 'disabilities', 'work_status',
-                               'english_lang', 'send_emails_form', 'personal_info', 'verify_email_sending_form' ];
+                               'english_lang', 'send_emails_form', 'personal_info',
+                               'verify_email_sending_form', 'email_self_form' ];
     this.client_data = {
       needs : null,
       zip_code : null,
@@ -889,6 +894,9 @@ class SelectionHandler {
     let winRef = window.open(url, '_blank');
     console.log(winRef);
   }
+  send_self_email() {
+    window.open(this.get_email_self_url(), '_blank');
+  }
   send_provider_emails() {
     let provider_array = [];
     let matches = this.get_matches();
@@ -940,12 +948,12 @@ class SelectionHandler {
     return s;
   }
   email_to_user() {
+    let button_html = '<input  style="color: #518846;"type="submit" ' + 
+                  'value="Email the organization list to yourself"/><br/><br/>';
     return '<div class="usa-prose"><p>Click on a phone number to call an organization. ' +
-      'Some organizations have a contact form on their website.</p>' +
-      '<p>To email this information to yourself, click on ' +
-      '<a href="' + this.get_email_self_url() +
-      '" target="_blank">*this link*.</a> ' +
-      ' You must enter your email address on the "To:" line.</p></div>';
+      'Some organizations have a contact form on their website.</p><br/>' +
+      'To send these emails, you must enter your email address in "To:" and click "Send".<br/>' +
+      button_html + '</div>';
   }
   get_email_self_url() {
     let s = '';
@@ -1067,7 +1075,7 @@ class SelectionHandler {
   }
   load_send_email_form() {
     let html = '<input style="color: #518846;" type="submit" ' + 
-              'value="Provide my contact information to these organizations."/>'
+              'value="Email my information to the organizations"/>'
     this.load_form('send_emails_form', html);
   }
   show_matches() {
