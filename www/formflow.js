@@ -162,7 +162,7 @@ class SelectionHandler {
       "I want to get an Associate or Bachelor's degree"
     ]    
     this.race_types = [
-      "African American", "White", "Hispanic or Latino",
+      "Black/African American", "White", "Hispanic or Latino",
       "American Indian or Alaskan Native", "Asian American", "Asian", 
       "African", "Some other race", "Prefer not to say"
     ]    
@@ -388,7 +388,7 @@ class SelectionHandler {
         "gmap_link": "",
         "email": "dongilbert876@gmail.com",
         "client_characteristics" : {
-          "race_types" : [ "African American" ],
+          "race_types" : [ "Black/African American" ],
         }
       },
       "World Relief Memphis": {
@@ -558,7 +558,7 @@ class SelectionHandler {
         "gmap_link": "https://goo.gl/maps/gnpWyySQ5ABVKkv26",
         "email" : "",
         "client_characteristics" : {
-          "race" : [ "African American", "Hispanic or Latino" ],
+          "race" : [ "Black/African American", "Hispanic or Latino" ],
           "education_level" : [ "No high school diploma or equivalent (for example: no GED)" ]
         }
       },
