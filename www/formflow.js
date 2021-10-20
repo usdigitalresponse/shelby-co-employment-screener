@@ -966,11 +966,11 @@ class SelectionHandler {
       }
       s += '\r\n';
     }
-    return '<div class="usa-prose"><p><i>To email this information to yourself, tap on ' +
+    return '<div class="usa-prose"><p><i>To email this information to yourself, click on ' +
             '<a href="mailto:?subject=' +
             encodeURIComponent('Organizations with employment services') +
             '&body=' + encodeURIComponent(s) +
-            '" target="_blank">this link</a> ' +
+            '" target="_blank">*this link*</a> ' +
             ' and enter your email address in the "To:" line.</i></p></div>';
   }
   get_small_separator() {
@@ -1060,7 +1060,7 @@ class SelectionHandler {
               'If you are willing to provide your contact information ' + 
               'to these organizations:' +
               '<br/>' +
-              '<input style="color: #518846;" type="submit" value="Please tap (or click) here"/>'
+              '<input style="color: #518846;" type="submit" value="Please click here"/>'
     let the_form = $('#send_emails_form');
     the_form.empty();
     the_form.append(html);
@@ -1073,8 +1073,8 @@ class SelectionHandler {
     let email_self = $("#email_self");
     email_self.empty();
     email_self.append(this.email_to_user());
-    email_self.append('<br/><div class="usa-prose"><p><i>To call any organization, tap on their phone number. ' +
-                      'If there is no phone number, tap on their website and fill out their contact form.</i></p></div>');
+    email_self.append('<br/><div class="usa-prose"><p><i>To call any organization, click on their phone number. ' +
+                      'If there is no phone number, click on their website and fill out their contact form.</i></p></div>');
     let el = $(".matches_div");
     el.empty();
     for (let m of matches) {
