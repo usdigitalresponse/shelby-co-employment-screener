@@ -2226,16 +2226,89 @@
       ],
       "value": "Employability/job readiness skills (e.g., making a resume)"
     }, {
-      "id": "4f3c3e3b-729f-45c4-a8cc-ef8d7f0427e7",
+      "id": "9cfdc40a-f7ae-48b9-9ebe-0a1d02e29788",
       "comment": "",
       "command": "click",
-      "target": "css=input",
+      "target": "css=input:nth-child(1)",
       "targets": [
-        ["css=input", "css:finder"],
-        ["xpath=//input[@value='Please tap (or click) here']", "xpath:attributes"],
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='Email my information to the organizations']", "xpath:attributes"],
         ["xpath=//form[@id='send_emails_form']/input", "xpath:idRelative"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c49c953a-276c-4fbc-8099-b0207635ce67",
+      "comment": "",
+      "command": "click",
+      "target": "id=client_name",
+      "targets": [
+        ["id=client_name", "id"],
+        ["css=#client_name", "css:finder"],
+        ["xpath=//input[@id='client_name']", "xpath:attributes"],
+        ["xpath=//form[@id='personal_info']/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "c0f62d70-efee-47f2-aa5f-44277297d796",
+      "comment": "",
+      "command": "type",
+      "target": "id=client_name",
+      "targets": [
+        ["id=client_name", "id"],
+        ["css=#client_name", "css:finder"],
+        ["xpath=//input[@id='client_name']", "xpath:attributes"],
+        ["xpath=//form[@id='personal_info']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test name"
+    }, {
+      "id": "65c0d41e-ab3e-41c5-ac07-25a7abfd9fd8",
+      "comment": "",
+      "command": "type",
+      "target": "id=client_email",
+      "targets": [
+        ["id=client_email", "id"],
+        ["css=#client_email", "css:finder"],
+        ["xpath=//input[@id='client_email']", "xpath:attributes"],
+        ["xpath=//form[@id='personal_info']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "fubar@example.com"
+    }, {
+      "id": "c023d6a3-f462-49b3-823c-53975320bcee",
+      "comment": "",
+      "command": "click",
+      "target": "id=personal_info",
+      "targets": [
+        ["id=personal_info", "id"],
+        ["css=#personal_info", "css:finder"],
+        ["xpath=//form[@id='personal_info']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc66f5b4-3de1-4220-8613-319320ce3c22",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(10)",
+      "targets": [
+        ["css=input:nth-child(10)", "css:finder"],
+        ["xpath=//input[@value='Send email']", "xpath:attributes"],
+        ["xpath=//form[@id='personal_info']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win334",
+      "windowTimeout": 2000
+    }, {
+      "id": "9074b909-0071-414d-b4fb-ec82ccb2199a",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win334}",
+      "targets": [],
       "value": ""
     }]
   }, {

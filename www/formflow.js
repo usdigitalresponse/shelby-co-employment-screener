@@ -103,13 +103,10 @@ $(document).ready(function() {
           if (!selection_handler.check_client_data()) {
             alert_message = 'Please provide your name. You must also provide at least an email or phone number.';
           } else {
+            selection_handler.send_provider_emails();
             alert_message = '';
           }
           break;
-        case 'verify_email_sending_form':
-          selection_handler.send_provider_emails();
-          alert_message = '';
-          break; 
         case 'email_self_form':
           selection_handler.send_self_email();
           alert_message = '';
@@ -117,7 +114,7 @@ $(document).ready(function() {
       }
       if (alert_message) {
         alert(alert_message);
-      } else if (id !== 'email_self_form') {
+      } else if (!['email_self_form', 'personal_info'].includes(id)) {
         selection_handler.handle();
       }
       event.preventDefault();
@@ -135,13 +132,14 @@ class SelectionHandler {
                              'q_work_status', 'q_english_lang',
                              'q_disabilities',  'q_legal_resident', 
                              'q_race', 'q_criminal_history',
-                             'matches', 'personal_info', 'verify_email_sending' ];
+                             'matches', 'personal_info'
+                            ];
     this.question_form_ids = [ 'client_needs', 'client_education',
                                'client_age', 'criminal_history',
                                'zip_code', 'race',
                                'gender', 'legal_resident', 'disabilities', 'work_status',
                                'english_lang', 'send_emails_form', 'personal_info',
-                               'verify_email_sending_form', 'email_self_form' ];
+                               'email_self_form' ];
     this.client_data = {
       needs : null,
       zip_code : null,
@@ -736,9 +734,11 @@ class SelectionHandler {
       console.log(p + ': no email');
     }
   }
+  get_non_question_screens() {
+    return ['matches', 'send_emails_form', 'personal_info'];
+  }
   load(name) {
-    if (!(['matches', 'send_emails_form',
-           'personal_info', 'verify_email_sending'].includes(name))) {
+    if (!(this.get_non_question_screens().includes(name))) {
       this.add_question_count(name + '_count');
     }
     switch (name) {
@@ -781,9 +781,6 @@ class SelectionHandler {
       case 'personal_info' :
         this.show_personal_info();
         break;  
-      case 'verify_email_sending' :
-        this.verify_email_sending();
-        break; 
     } 
   }
   show_personal_info() {
@@ -796,7 +793,9 @@ class SelectionHandler {
               '<label for="client_phone">Phone:</label>' +
               '<input type="tel" id="client_phone">' +
               '<br/>' +
-              '<input style="color: #518846;" type="submit" value="Verify emails"/>';
+              '<input style="color: #518846;" type="submit" value="Send email"/>' +
+              '<br/><div class="usa-prose"><i>We will save your demographic data (for example, age) for analysis.<br/>' +
+              'We will <b>not</b>, however, save your contact information (name, phone number and email address).</div>';
     el.append(html);
   }
   build_client_html(client_data, client_id_data) {
@@ -822,29 +821,6 @@ class SelectionHandler {
     html += '</ul>'
     return html;
   }
-  verify_email_sending() {
-    let html = '<p><b>Not implemented yet!</b></p>' +
-              '<p>An email will be sent to the following organizations:</p>' +
-              '<ul>'
-    let matches = this.get_matches();
-    for (let m of matches) {
-      if (this.provider_data[m].email) {
-        html += '<li>' + m + '</li>';
-      }
-    }
-    html += '</ul><p>Containing the following information:</p>'
-    html += this.build_client_html(this.client_data, this.client_id_data);
-    html += '<i>We will save your demographic data (for example, age) for analysis.<br/>' +
-            'We will <b>not</b>, however, save your contact information (name, phone number and email address).'
-    let el = $('.verify_email_sending_class');
-    el.empty();
-    el.append(html);
-
-    html = '<p> </p><p style="color: #518846;"><input type="submit" value="Send emails"></p>';
-    let the_form = $('#verify_email_sending_form');
-    the_form.empty();
-    the_form.append(html);
-  }
   check_client_data() {
     this.client_id_data.name = $("#client_name").val();
     if (!this.client_id_data.name) {
@@ -857,6 +833,8 @@ class SelectionHandler {
     }
     return true;
   }
+  // NOTE: This won't work in Google Chrome if the user has more than one profile
+  // and the browser isn't open.
   open_email(provider_array) {
     let provider_emails = '';
     for (let m of provider_array) {
@@ -891,8 +869,7 @@ class SelectionHandler {
                 '?bcc=' + provider_emails + '&subject=' +
             encodeURIComponent('How do I sign up for your employment services?') +
             '&body=' + encodeURIComponent(body);
-    let winRef = window.open(url, '_blank');
-    console.log(winRef);
+    window.open(url, '_blank');
   }
   send_self_email() {
     window.open(this.get_email_self_url(), '_blank');
@@ -910,9 +887,7 @@ class SelectionHandler {
     let data = { client_data : this.client_data,
                  client_id_data : this.client_id_data,
                  providers: provider_array };
-    $.post( "sendemails", data, function( data ) {
-      $(".target").html("Thank you for sharing your anonymous data.")
-    });
+    $.post("sendemails", data);
     this.open_email(provider_array);
   }
   add_211() {
@@ -1003,7 +978,6 @@ class SelectionHandler {
            '</a></li>';
     }
     if (provider_manual_data["email"]) {
-      // NOTE: This won't work in Google Chrome if the user has more than one profile.
       s += '<li><b>Email</b>: ' + provider_manual_data["email"] + '</li>';
     }
     if (provider["website"]) {
@@ -1105,7 +1079,7 @@ class SelectionHandler {
     next_elem.show();
   }
   add_question_count(div_id) {
-  const NON_QUESTION_SCREENS = 4;
+    const NON_QUESTION_SCREENS = this.get_non_question_screens().length;
     let str = '<p>' + 'Question ' + this.current_content_index +
             ' of ' + (this.content_classes.length - NON_QUESTION_SCREENS) + '</p>';
     let el = $("#" + div_id);
