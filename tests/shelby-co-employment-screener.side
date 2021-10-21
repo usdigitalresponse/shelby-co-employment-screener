@@ -2289,7 +2289,7 @@
       ],
       "value": ""
     }, {
-      "id": "fc66f5b4-3de1-4220-8613-319320ce3c22",
+      "id": "de9aa1fe-abcd-4bae-921d-68ce63e28685",
       "comment": "",
       "command": "click",
       "target": "css=input:nth-child(10)",
@@ -2301,15 +2301,8 @@
       ],
       "value": "",
       "opensWindow": true,
-      "windowHandleName": "win334",
+      "windowHandleName": "win2950",
       "windowTimeout": 2000
-    }, {
-      "id": "9074b909-0071-414d-b4fb-ec82ccb2199a",
-      "comment": "",
-      "command": "selectWindow",
-      "target": "handle=${win334}",
-      "targets": [],
-      "value": ""
     }]
   }, {
     "id": "d5e6f622-6b32-4ca6-839a-5f9af48222e0",
