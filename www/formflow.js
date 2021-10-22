@@ -786,11 +786,11 @@ class SelectionHandler {
   show_personal_info() {
     let el = $('#personal_info');
     el.empty();
-    let html ='<label for="client_name">Name:&nbsp;&nbsp;</label>' +
-              '<input type="text" id="client_name"><br>' +
-              '<label for="client_email">Email:&nbsp;&nbsp;</label>' +
-              '<input type="email" id="client_email"><br>' +
-              '<label for="client_phone">Phone:</label>' +
+    let html ='<label for="client_name">*Name:&nbsp;&nbsp;</label>' +
+              '<input type="text" id="client_name" required><br>' +
+              '<label for="client_email">*Email:&nbsp;&nbsp;</label>' +
+              '<input type="email" id="client_email" required><br>' +
+              '<label for="client_phone">&nbsp;Phone:&nbsp;&nbsp;</label>' +
               '<input type="tel" id="client_phone">' +
               '<br/>' +
               '<input style="color: #518846;" type="submit" value="Send email"/>' +
