@@ -925,9 +925,8 @@ class SelectionHandler {
   email_to_user() {
     let button_html = '<input  style="color: #518846;"type="submit" ' + 
                   'value="Email the organization list to yourself"/><br/><br/>';
-    return '<div class="usa-prose" style="max-width:68ex;"><p>Click on a phone number to call an organization. ' +
-      'Some organizations have a contact form on their website.</p><br/>' +
-      'To send these emails, you must enter your email address in "To:" and click "Send".<br/>' +
+    return '<div class="usa-prose" style="max-width:68ex;">' +
+      'To send an email, enter your email address in "To:" and click "Send".<br/>' +
       button_html + '</div>';
   }
   get_email_self_url() {

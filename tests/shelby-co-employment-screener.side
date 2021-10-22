@@ -2276,33 +2276,6 @@
         ["xpath=//input[2]", "xpath:position"]
       ],
       "value": "fubar@example.com"
-    }, {
-      "id": "c023d6a3-f462-49b3-823c-53975320bcee",
-      "comment": "",
-      "command": "click",
-      "target": "id=personal_info",
-      "targets": [
-        ["id=personal_info", "id"],
-        ["css=#personal_info", "css:finder"],
-        ["xpath=//form[@id='personal_info']", "xpath:attributes"],
-        ["xpath=//form", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "de9aa1fe-abcd-4bae-921d-68ce63e28685",
-      "comment": "",
-      "command": "click",
-      "target": "css=input:nth-child(10)",
-      "targets": [
-        ["css=input:nth-child(10)", "css:finder"],
-        ["xpath=//input[@value='Send email']", "xpath:attributes"],
-        ["xpath=//form[@id='personal_info']/input[4]", "xpath:idRelative"],
-        ["xpath=//input[4]", "xpath:position"]
-      ],
-      "value": "",
-      "opensWindow": true,
-      "windowHandleName": "win2950",
-      "windowTimeout": 2000
     }]
   }, {
     "id": "d5e6f622-6b32-4ca6-839a-5f9af48222e0",
