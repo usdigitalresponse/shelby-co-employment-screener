@@ -963,12 +963,20 @@ class SelectionHandler {
   get_small_separator() {
     return '<hr align="left" style="height:2px;border:none;color:#518846;background-color:#518846;max-width:68ex;"/>';
   }
-  load_provider(el, provider_name) {
+  load_provider(el, provider_name, all_orgs) {
     let provider = this.provider_data[provider_name];
     let provider_manual_data = this.provider_data[provider_name];
     let s = this.get_small_separator();
     s += '<h4><b><i>' + provider_name + '</i></b></h4>';
-    s += this.append_services(provider_name);
+    if (all_orgs) {
+      s += "<h5><i>Services</i></h5><ul>";
+      for (let service of this.provider_data[provider_name].services) {
+        s += "<li>" + service + "</li>";
+      }
+      s += "</ul>"  
+    } else {
+      s += this.append_services(provider_name);
+    }
     s += "<h5><i>Contact Information</i></h5><ul>";
     if (provider_manual_data["phone_number"]) {
       s += '<li><b>Phone Number</b>: ';
@@ -1060,7 +1068,7 @@ class SelectionHandler {
     let el = $(".matches_div");
     el.empty();
     for (let m of matches) {
-      this.load_provider(el, m);
+      this.load_provider(el, m, false);
     }
     this.load_send_email_form();
   }
@@ -1099,5 +1107,17 @@ class SelectionHandler {
     }
     s += '<p> </p><p style="color: #518846;"><input type="submit" value="Next"></p>';
     el.append(s);
+  }
+  show_all_orgs() {
+    let targetElem = $(".target");
+    targetElem.empty();
+    let html = '<form action="/"><input type="submit" id="home" name="home" value="Back"></form>'
+    targetElem.append(html);
+    for (let provider_name of Object.keys(this.provider_data).sort()) {
+      if (this.provider_data[provider_name].services &&
+          this.provider_data[provider_name].services.length > 0) {
+        this.load_provider(targetElem, provider_name, true);
+      }
+    }
   }
 }
