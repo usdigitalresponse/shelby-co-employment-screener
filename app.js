@@ -81,9 +81,13 @@ app.get('/dbdelete', (req, res) => {
     res.send('Disabled')
   } else {
     try {
-      new Emailer().sendEmail('chris.keith@gmail.com', 'chris.keith@gmail.com',
-                              'workforce.midsouth@gmail.com', 'test body');
-      res.send('new Emailer(); done');
+      new Emailer().sendEmail('workforce.midsouth@gmail.com',
+                              'workforce.midsouth@gmail.com',
+                              'workforce.midsouth@gmail.com',
+                              'test body',
+                              function resolve(retVal) {
+                                res.send(retVal.message);
+                              });
     } catch (e) {
       res.send(JSON.stringify(e))
     }
@@ -142,7 +146,7 @@ class Emailer {
     const authClient = await auth.getClient();
     google.options({auth: authClient});
   }
-  async sendEmail(to, from, userId, html) {
+  async sendEmail(to, from, userId, html, resolve) {
     const messageParts = [
       'From: ' + from,
       'To: ' + to,
@@ -161,13 +165,13 @@ class Emailer {
       .replace(/\//g, '_')
       .replace(/=+$/, '');
  
-    const res = await gmail.users.messages.send({
+    var resx = await gmail.users.messages.send({
       userId: userId,
       requestBody: {
         raw: encodedMessage,
       },
-    });
-    return res;
+    }).catch(err => resx = err);
+    resolve(resx);
   }
 }
 let emailer = new Emailer();
