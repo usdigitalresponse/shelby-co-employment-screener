@@ -795,7 +795,8 @@ class SelectionHandler {
               '<br/>' +
               '<input style="color: #518846;" type="submit" value="Send email"/>' +
               '<br/><div class="usa-prose" style="max-width:68ex;"><i>We will save your demographic data (for example, age) for analysis.<br/>' +
-              'We will <b>not</b>, however, save your contact information (name, phone number and email address).</div>';
+              'We will <b>not</b>, however, save your contact information (name, phone number and email address).</div>' +
+              '<br/>To return to the beginning screen, refresh your browser (e.g., F5)';
     el.append(html);
   }
   build_client_html(client_data, client_id_data) {
