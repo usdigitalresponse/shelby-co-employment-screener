@@ -76,6 +76,20 @@ app.get('/dbdelete', (req, res) => {
   }
 })
 
+app.get('/dbclear', (req, res) => {
+    res.send('Disabled')
+/*
+    try {
+      let cds = new ClientDataSaver(req.body)
+      cds.clear(function resolve(data) {
+        res.send(data)
+      });
+    } catch (e) {
+      res.send(JSON.stringify(e))
+    }
+*/
+})
+
  app.get('/testemail', (req, res) => {
   if (isProduction(req)) {
     res.send('Disabled')
@@ -330,6 +344,17 @@ class ClientDataSaver {
     } else {
       resolve('Missing id')
     }
+  }
+  async clear(resolve) {
+    let snapshot = await db.getSnapshot()
+    let ids = []
+    snapshot.forEach(function delete_it(doc) {
+      ids.push(doc.data().id)
+    })
+    for (let id of ids) {
+      await db.deleteRec(id)
+    }
+    resolve('All data (' + ids.length + ' records) deleted from database.')
   }
 }
  
