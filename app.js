@@ -26,29 +26,19 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'www/index.html'))
 })
  
-function isProduction(req) {
-  const h = req.get('host').toLowerCase()
-  return h.includes('shelby-co-emp-screener-prod') || h.includes('nextstep901')
-}
- 
 app.post('/sendemails', (req, res) => {
-  if (isProduction(req)) {
     res.send('Disabled')
-  } else {
+/*
     try {
       let c = new ProviderEmailer(req.body).sendEmails()
       new ClientDataSaver(req.body).doSave()
       let ret;
-      if (isProduction(req)) {
-        ret = '[Not implemented yet.]'
-      } else {
-        ret = '[Emails not sent. You are using a non-production site: ' + req.get("host") + ']'    
-      }
       res.send('<i>' + ret + '</i><br/><span>' + c + ' emails.' + '</span>');
     } catch (e) {
       res.send(JSON.stringify(e))
     }
   }
+*/
 })
  
 app.get('/dbquery', (req, res) => {
@@ -62,9 +52,8 @@ app.get('/dbquery', (req, res) => {
 })
  
 app.get('/dbdelete', (req, res) => {
-  if (isProduction(req)) {
-    res.send('Disabled')
-  } else {
+  res.send('Disabled')
+/*
     try {
       let cds = new ClientDataSaver(req.body)
       cds.delete(req.query, function resolve(data) {
@@ -74,6 +63,7 @@ app.get('/dbdelete', (req, res) => {
       res.send(JSON.stringify(e))
     }
   }
+*/
 })
 
 app.get('/dbclear', (req, res) => {
@@ -91,9 +81,8 @@ app.get('/dbclear', (req, res) => {
 })
 
  app.get('/testemail', (req, res) => {
-  if (isProduction(req)) {
-    res.send('Disabled')
-  } else {
+  res.send('Disabled')
+/*
     try {
       let em = new Emailer();
       em.setupCredentials(function resolve(retVal) {
@@ -110,6 +99,7 @@ app.get('/dbclear', (req, res) => {
       res.send(JSON.stringify(e))
     }
   }
+*/
 })
  
 app.listen(PORT, () => {
@@ -117,34 +107,30 @@ app.listen(PORT, () => {
 })
  
 app.get('/listBuckets', function(req, res) {
-  if (isProduction(req)) {
-    res.send('Not available.')
-  } else {
-    listBuckets(function(data) {
+  res.send('Not available.')
+/*
+  listBuckets(function(data) {
       res.send(data);
     }, req)
   }
+*/
 })
  
 const listBuckets = async function(resolve, req) {
-  if (isProduction(req)) {
-    res.send('Disabled')
-  } else {
-    let ret = 'Buckets:<br/>';
-    try {
-      const {Storage} = require('@google-cloud/storage');
-      const storage = new Storage();
-      const results = await storage.getBuckets();
-      const [buckets] = results;
-      buckets.forEach(bucket => {
-        ret += bucket.name
-        ret += '<br/>';
-      });
-    } catch (err) {
-      ret = 'ERROR:' + err;
-    }
-    resolve(ret);
+  let ret = 'Buckets:<br/>';
+  try {
+    const {Storage} = require('@google-cloud/storage');
+    const storage = new Storage();
+    const results = await storage.getBuckets();
+    const [buckets] = results;
+    buckets.forEach(bucket => {
+      ret += bucket.name
+      ret += '<br/>';
+    });
+  } catch (err) {
+    ret = 'ERROR:' + err;
   }
+  resolve(ret);
 }
  
 class Emailer {
@@ -302,9 +288,6 @@ class ClientDataSaver {
       }
     })
     let title = '<span>Total records:</span> ' + c + '<br/><br/>'
-    if (!isProduction(http_req)) {
-      title += '<strong>Demonstration data only</strong><br/><br/>'
-    }
     title += 'timestamp,provider,zip code,race,age range,education level,employment status,disabilities,' +
         'criminal history,legal resident,english lang,id<br/>'
     resolve(title + s)
