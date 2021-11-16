@@ -233,6 +233,21 @@ class SelectionHandler {
           "criminal_history" : [ "Yes", "Exonerated", "Prefer not to say" ]
         }
       },
+      "Dress for Success Memphis": {
+        "website": "https://www.dfsmemphisvirtualcc.org",
+        "services": [
+          "Job training",
+          "Job placement",
+          "Supportive services (e.g., housing)",
+          "Networking",
+          "Mentorship/ Entrepreneurship"
+        ],
+        "client_qualifications": "",
+        "phone_number": "901-363-3100",
+        "location": "3121 Directors Row,  Suite 102 Memphis, TN 38131",
+        "gmap_link": "https://goo.gl/maps/YBAjxg4ms3GRzKer5",
+        "email" : "memphis@dressforsuccess.org",
+      },
       "Shelby County Division of Community Services": {
         "website": "https://shelbycountytn.gov/16/Community-Services",
         "services": [
