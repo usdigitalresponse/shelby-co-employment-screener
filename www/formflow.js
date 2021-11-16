@@ -335,6 +335,7 @@ class SelectionHandler {
           "Education - GED",
           "Employability/job readiness skills (e.g., making a resume)",
           "Financial counseling",
+          "ESL (English as a Second Language) Services",
         ],
         "client_qualifications": "Generational Poverty, Incarceration, High School Drop Outs",
         "phone_number": "901-272-3700",
