@@ -288,7 +288,7 @@ class ClientDataSaver {
       }
     })
     let host = http_req.get('host').toLowerCase()
-    let title = '<span>[' + host + '] Total records:</span> ' + c + '<br/><br/>'
+    let title = '<span>Total records:</span> ' + c + '<br/>[' + host + ']<br/></br>'
     title += 'timestamp,provider,zip code,race,age range,education level,employment status,disabilities,' +
         'criminal history,legal resident,english lang,id<br/>'
     resolve(title + s)
