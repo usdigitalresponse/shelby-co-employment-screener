@@ -457,7 +457,7 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'4 matches')]", "xpath:innerText"]
       ],
-      "value": "7 matches"
+      "value": "8 matches"
     }, {
       "id": "17ec16d8-5608-48b5-97ca-6a18b1c632a6",
       "comment": "",
@@ -481,24 +481,24 @@
       ],
       "value": "Employability/job readiness skills (e.g., making a resume)"
     }, {
-      "id": "cb1238ed-c460-4989-9f96-d8320f9eaa33",
+      "id": "bcac978e-d883-450d-87f0-6e32024a4fdd",
       "comment": "",
       "command": "verifyText",
-      "target": "css=h4:nth-child(38) i",
+      "target": "css=h4:nth-child(44) i",
       "targets": [
-        ["css=h4:nth-child(38) i", "css:finder"],
-        ["xpath=//h4[7]/b/i", "xpath:position"],
+        ["css=h4:nth-child(44) i", "css:finder"],
+        ["xpath=//h4[8]/b/i", "xpath:position"],
         ["xpath=//i[contains(.,'Priority Teachers University')]", "xpath:innerText"]
       ],
       "value": "Priority Teachers University"
     }, {
-      "id": "c23f6096-f773-491a-9b0f-62a4f91e33d7",
+      "id": "45541fd6-4c1c-4ff2-9474-9e6c00822910",
       "comment": "",
       "command": "verifyText",
-      "target": "css=ul:nth-child(40) > li:nth-child(1)",
+      "target": "css=ul:nth-child(46) > li:nth-child(1)",
       "targets": [
-        ["css=ul:nth-child(40) > li:nth-child(1)", "css:finder"],
-        ["xpath=//ul[13]/li", "xpath:position"]
+        ["css=ul:nth-child(46) > li:nth-child(1)", "css:finder"],
+        ["xpath=//ul[15]/li", "xpath:position"]
       ],
       "value": "Employability/job readiness skills (e.g., making a resume)"
     }]
@@ -841,15 +841,15 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'5 matches')]", "xpath:innerText"]
       ],
-      "value": "8 matches"
+      "value": "9 matches"
     }, {
-      "id": "c0ef5a46-067b-4147-abc8-e8c3579c4ec9",
+      "id": "993c3e0f-79b2-43bf-9dfa-e10d64935180",
       "comment": "",
       "command": "verifyText",
-      "target": "css=h4:nth-child(44) i",
+      "target": "css=h4:nth-child(50) i",
       "targets": [
-        ["css=h4:nth-child(44) i", "css:finder"],
-        ["xpath=//h4[8]/b/i", "xpath:position"],
+        ["css=h4:nth-child(50) i", "css:finder"],
+        ["xpath=//h4[9]/b/i", "xpath:position"],
         ["xpath=//i[contains(.,'Priority Teachers University')]", "xpath:innerText"]
       ],
       "value": "Priority Teachers University"
@@ -1170,15 +1170,15 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'7 matches')]", "xpath:innerText"]
       ],
-      "value": "10 matches"
+      "value": "11 matches"
     }, {
-      "id": "3eaa3b87-d1bc-477d-b4fb-34c03e414ab8",
+      "id": "395e57b4-8914-4c8d-9ead-08c290da33ce",
       "comment": "",
-      "command": "verifyText",
-      "target": "css=h4:nth-child(56) i",
+      "command": "assertText",
+      "target": "css=h4:nth-child(62) i",
       "targets": [
-        ["css=h4:nth-child(56) i", "css:finder"],
-        ["xpath=//h4[10]/b/i", "xpath:position"],
+        ["css=h4:nth-child(62) i", "css:finder"],
+        ["xpath=//h4[11]/b/i", "xpath:position"],
         ["xpath=//i[contains(.,'Shelby County Office of Reentry')]", "xpath:innerText"]
       ],
       "value": "Shelby County Office of Reentry"
@@ -2181,7 +2181,7 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'4 matches')]", "xpath:innerText"]
       ],
-      "value": "7 matches"
+      "value": "8 matches"
     }, {
       "id": "7b9f162b-799f-4857-a1b3-67e14ce4cd41",
       "comment": "",
@@ -2208,23 +2208,13 @@
       "id": "0d1db9fb-44aa-4ec9-aff8-9aac84a93e85",
       "comment": "",
       "command": "verifyText",
-      "target": "css=h4:nth-child(38) i",
+      "target": "css=h4:nth-child(44) i",
       "targets": [
         ["css=h4:nth-child(32) i", "css:finder"],
         ["xpath=//h4[6]/b/i", "xpath:position"],
         ["xpath=//i[contains(.,'Priority Teachers University')]", "xpath:innerText"]
       ],
       "value": "Priority Teachers University"
-    }, {
-      "id": "87b91e6f-9fec-4a43-b566-a3a630c7ac83",
-      "comment": "",
-      "command": "verifyText",
-      "target": "css=ul:nth-child(40) > li:nth-child(1)",
-      "targets": [
-        ["css=ul:nth-child(34) > li:nth-child(1)", "css:finder"],
-        ["xpath=//ul[11]/li", "xpath:position"]
-      ],
-      "value": "Employability/job readiness skills (e.g., making a resume)"
     }, {
       "id": "9cfdc40a-f7ae-48b9-9ebe-0a1d02e29788",
       "comment": "",
