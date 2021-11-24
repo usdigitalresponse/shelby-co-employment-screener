@@ -27,10 +27,8 @@ app.get('/', (req, res) => {
 })
  
 app.post('/sendemails', (req, res) => {
-    res.send('Disabled')
-/*
     try {
-      let c = new ProviderEmailer(req.body).sendEmails()
+//      let c = new ProviderEmailer(req.body).sendEmails()
       new ClientDataSaver(req.body).doSave()
       let ret;
       res.send('<i>' + ret + '</i><br/><span>' + c + ' emails.' + '</span>');
@@ -38,8 +36,7 @@ app.post('/sendemails', (req, res) => {
       res.send(JSON.stringify(e))
     }
   }
-*/
-})
+)
  
 app.get('/dbquery', (req, res) => {
   try {
