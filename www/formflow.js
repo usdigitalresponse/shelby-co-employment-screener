@@ -240,7 +240,9 @@ class SelectionHandler {
     "Job training",
     "Employability/job readiness skills (resume creation, interview readiness, workplace behavior, communication skills, and financial literacy)",
     "Education - high school",
+    "Education - GED",
     "Certifications"
+  
   ],
   "client_qualifications": "Person that are criminal justice involved/formerly incarcerated",
   "phone_number": "901-701-6036",
