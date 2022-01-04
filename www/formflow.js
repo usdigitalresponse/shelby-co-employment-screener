@@ -228,11 +228,30 @@ class SelectionHandler {
         "phone_number": "",
         "location": "",
         "gmap_link": "",
-        "email" : '',
+        "email" : '',Shelby County Office of Reentry
         "client_characteristics" : {
           "criminal_history" : [ "Yes", "Exonerated", "Prefer not to say" ]
         }
       },
+      
+"ProGeny": {
+  "website": "https://www.progenyplace.org",
+  "services": [
+    "Job training",
+    "Employability/job readiness skills (resume creation, interview readiness, workplace behavior, communication skills, and financial literacy)",
+    "Education - high school",
+    "Certifications"
+  ],
+  "client_qualifications": "Person that are criminal justice involved/formerly incarcerated",
+  "phone_number": "901-701-6036",
+  "location": "",
+  "gmap_link": "",
+  "email" : 'info@progenyplace.org',
+  "client_characteristics" : {
+    "criminal_history" : [ "Yes", "Exonerated", "Prefer not to say" ]
+  }
+},
+
       "Dress for Success Memphis": {
         "website": "https://www.dfsmemphisvirtualcc.org",
         "services": [
