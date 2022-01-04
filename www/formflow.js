@@ -228,7 +228,7 @@ class SelectionHandler {
         "phone_number": "",
         "location": "",
         "gmap_link": "",
-        "email" : '',Shelby County Office of Reentry
+        "email" : '',
         "client_characteristics" : {
           "criminal_history" : [ "Yes", "Exonerated", "Prefer not to say" ]
         }
