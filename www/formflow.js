@@ -239,7 +239,7 @@ class SelectionHandler {
   "services": [
     "Job training",
     "Employability/job readiness skills (resume creation, interview readiness, workplace behavior, communication skills, and financial literacy)",
-    "Education - high school",
+    "Education - High School",
     "Education - GED",
     "Certifications"
   
@@ -249,6 +249,19 @@ class SelectionHandler {
   "location": "",
   "gmap_link": "",
   "email" : 'info@progenyplace.org',
+  "client_characteristics" : {
+    "criminal_history" : [ "Yes", "Exonerated", "Prefer not to say" ]
+  }
+},
+"Meritan": {
+  "website": "www.meritan.org",
+  "services": ["Skilled home health & personal assistance", "In-Home Care Services", "Therapeutic foster care", "Adoption home studies", "Private home placement & oversight for individuals with intellectual and development disabilities", "Senior job retraining (SCSEP)", "Coordinated Response to Elder Abuse"
+],
+  "client_qualifications": "Person that are criminal justice involved/formerly incarcerated",
+  "phone_number": "901-766-0600",
+  "location": "345 Adams Avenue, Memphis, TN 38103",
+  "gmap_link": "",
+  "email" : 'kyleeaton@meritan.org',
   "client_characteristics" : {
     "criminal_history" : [ "Yes", "Exonerated", "Prefer not to say" ]
   }
