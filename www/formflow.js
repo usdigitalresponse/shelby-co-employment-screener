@@ -266,6 +266,15 @@ class SelectionHandler {
     "criminal_history" : [ "Yes", "Exonerated", "Prefer not to say" ]
   }
 },
+"Lab Four Professional Development Center": {
+  "website": "https://www.labfour.com",
+  "services": ["Technology Training", "Employability/ Job Readiness ( e.g., Resume Assistance, Mock Interviews)", "Employment and Entrepreneurship Assistance Service"],
+  "client_qualifications": "Person that are criminal justice involved/formerly incarcerated",
+  "phone_number": "901-261-111",
+  "location": "1255 Lynnfield Rd., Bldg. A, Ste 160, Memphis, TN 38119",
+  "gmap_link": "",
+  "email" : 'Hello@labfour.com',
+},
 
       "Dress for Success Memphis": {
         "website": "https://www.dfsmemphisvirtualcc.org",
