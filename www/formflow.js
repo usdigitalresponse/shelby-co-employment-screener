@@ -233,7 +233,28 @@ class SelectionHandler {
           "criminal_history" : [ "Yes", "Exonerated", "Prefer not to say" ]
         }
       },
+
+
+      "The Gradus Project": {
+        "website": "https://www.grad-us.org",
+        "services": ["Employability/ Job Readiness ( e.g., Resume Assistance, Mock Interviews)", "Job placement"],
+        "client_qualifications": "Person that are criminal justice involved/formerly incarcerated",
+        "phone_number": "615-424-1301",
+        "location": "",
+        "gmap_link": "",
+        "email" : '',
+      },
       
+      
+      "American Job Center": {
+        "website": "www.jobs4TN.gov",
+        "services": ["Job Search", "Training", "Supportive Services", "Resume and Job Interview Assistance", "Career Path Exploration", "Financial Education", "Youth Services", "Access to Resource Room (internet, computers, fax machines, printers, copiers, etc.)", "On-the-Job training programs, hiring events, job fairs, employee sourcing, Incumbent Worker Training, Apprenticeships"],
+        "client_qualifications": "Person that are criminal justice involved/formerly incarcerated",
+        "phone_number": "901-707-8426",
+        "location": "155 Angelus Street Memphis, TN 38104",
+        "gmap_link": "",
+        "email" : 'brian.wilks@ajcmemphis.com',
+      },
 "ProGeny": {
   "website": "https://www.progenyplace.org",
   "services": [
