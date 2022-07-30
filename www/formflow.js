@@ -873,7 +873,7 @@ class SelectionHandler {
               '<label for="client_phone">&nbsp;Phone:&nbsp;&nbsp;</label>' +
               '<input type="tel" id="client_phone">' +
               '<br/>' +
-              '<input style="color: #518846;" type="submit" value="Send email"/>' +
+              '<p style="color: #518846;"><input type="submit" value="Send email"/></p>' +
               '<br/><div class="usa-prose" style="max-width:68ex;"><i>We will save your demographic data (for example, age) for analysis.<br/>' +
               'We will <b>not</b>, however, save your contact information (name, phone number and email address).</div>' +
               '<br/>To return to the beginning screen, refresh your browser.';
@@ -1004,8 +1004,8 @@ class SelectionHandler {
     return s;
   }
   email_to_user() {
-    let button_html = '<input  style="color: #518846;"type="submit" ' + 
-                  'value="Email the organization list to yourself"/><br/><br/>';
+    let button_html = '<p style="color: #518846;"><input type="submit" ' + 
+                  'value="Email the organization list to yourself"/></p><br/><br/>';
     return '<div class="usa-prose" style="max-width:68ex;">' +
     'To send an email, enter your email address in "To:" and click "Send".<br/>' +
     button_html + '</div>';
@@ -1137,8 +1137,8 @@ class SelectionHandler {
   }
   load_send_email_form() {
     let html = 'Print or copy this information before you click this button.<br/>' +
-               '<input style="color: #518846;" type="submit" ' + 
-               'value="Email my information to the organizations"/>'
+               '<p style="color: #518846;"><input type="submit" ' + 
+               'value="Email my information to the organizations"/></p>'
     this.load_form('send_emails_form', html);
   }
   show_matches() {
