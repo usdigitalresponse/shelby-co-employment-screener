@@ -873,7 +873,7 @@ class SelectionHandler {
               '<label for="client_phone">&nbsp;Phone:&nbsp;&nbsp;</label>' +
               '<input type="tel" id="client_phone">' +
               '<br/>' +
-              '<p style="color: #518846;"><input type="submit" value="Send email" style="-webkit-appearance: none;"/></p>' +
+              '<p style="color: #518846;"><input type="submit" value="Send email" style="-webkit-appearance: none;background-color:#E8E8E8;"/></p>' +
               '<br/><div class="usa-prose" style="max-width:68ex;"><i>We will save your demographic data (for example, age) for analysis.<br/>' +
               'We will <b>not</b>, however, save your contact information (name, phone number and email address).</div>' +
               '<br/>To return to the beginning screen, refresh your browser.';
@@ -1005,7 +1005,7 @@ class SelectionHandler {
   }
   email_to_user() {
     let button_html = '<p style="color: #518846;"><input type="submit" ' + 
-                  'value="Email the organization list to yourself" style="-webkit-appearance: none;"/></p><br/><br/>';
+                  'value="Email the organization list to yourself" style="-webkit-appearance: none;background-color:#E8E8E8;"/></p><br/><br/>';
     return '<div class="usa-prose" style="max-width:68ex;">' +
     'To send an email, enter your email address in "To:" and click "Send".<br/>' +
     button_html + '</div>';
@@ -1138,7 +1138,7 @@ class SelectionHandler {
   load_send_email_form() {
     let html = 'Print or copy this information before you click this button.<br/>' +
                '<p style="color: #518846;"><input type="submit" ' + 
-               'value="Email my information to the organizations"  style="-webkit-appearance: none;"/></p>'
+               'value="Email my information to the organizations"  style="-webkit-appearance: none;background-color:#E8E8E8;"/></p>'
     this.load_form('send_emails_form', html);
   }
   show_matches() {
@@ -1187,13 +1187,13 @@ class SelectionHandler {
         '" value="' + the_name + 
         '" /><span>&nbsp;&nbsp;</span>' + val + '</label><br/>';
     }
-    s += '<p> </p><p style="color: #518846;"><input type="submit" value="Next" style="-webkit-appearance: none;"></p>';
+    s += '<p> </p><p style="color: #518846;"><input type="submit" value="Next" style="-webkit-appearance: none;background-color:#E8E8E8;"></p>';
     el.append(s);
   }
   show_all_orgs() {
     let targetElem = $(".target");
     targetElem.empty();
-    let html = '<form action="/"><input type="submit" id="home" name="home" value="Back" style="-webkit-appearance: none;"></form>'
+    let html = '<form action="/"><input type="submit" id="home" name="home" value="Back" style="-webkit-appearance: none;background-color:#E8E8E8;"></form>'
     targetElem.append(html);
     for (let provider_name of Object.keys(this.provider_data).sort()) {
       if (this.provider_data[provider_name].services &&
